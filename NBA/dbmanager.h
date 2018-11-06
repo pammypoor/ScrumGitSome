@@ -1,7 +1,6 @@
 #ifndef DBMANAGER_H
 #define DBMANAGER_H
 
-
 #include "filesused.h"
 #include <QSqlDatabase>
 #include <QSql>

@@ -141,6 +141,17 @@ public:
         teamMaintenanceTableView = new QTableView(page_2);
         teamMaintenanceTableView->setObjectName(QStringLiteral("teamMaintenanceTableView"));
         teamMaintenanceTableView->setGeometry(QRect(5, 11, 781, 481));
+        teamMaintenanceTableView->setStyleSheet(QLatin1String("QScrollBar{\n"
+"	border: 1px solid #999999;\n"
+"	background: white;\n"
+"	width: 10px;\n"
+"	margin: 0px 0px 0px 0px;\n"
+"}\n"
+"QScrollBar::handle:vertical{\n"
+"	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop: 0 rgb(32, 47, 130), stop: 0.5 rgb(32, 47, 130), stop:1 rgb(32, 47, 130));\n"
+"	min-height: 0px;\n"
+"}\n"
+""));
         stackedWidget->addWidget(page_2);
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
@@ -226,7 +237,7 @@ public:
 
         retranslateUi(maintenance);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(maintenance);

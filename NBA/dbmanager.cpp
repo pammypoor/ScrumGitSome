@@ -126,7 +126,7 @@ bool DbManager::souvenirExist(souvenir aSouvenir)
     }
     else
     {
-        qDebug() << "Souvenir Exists already.";
+        qDebug() << "Souvenir already exists.";
     }
     return exists;
 }
@@ -150,7 +150,6 @@ void DbManager::deleteSouvenir(souvenir aSouvenir)
             qDebug() << "Delete Souvenir failed";
         }
     }
-
 }
 
 void DbManager::editSouvenir(souvenir aSouvenir, double newPrice)
@@ -167,7 +166,7 @@ void DbManager::editSouvenir(souvenir aSouvenir, double newPrice)
     }
     else
     {
-        qDebug() << "Edit souvenir failed.";
+        qDebug() << "Souvenir does not exist";
     }
 }
 

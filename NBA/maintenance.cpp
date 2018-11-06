@@ -123,11 +123,11 @@ void maintenance::on_SouvenirTableView_doubleClicked(const QModelIndex &index)
                 msgBox.setWindowTitle("Error");
                 msgBox.exec();
             }
-
         }
     }
 }
 
+//reads excel sheet
 void maintenance::on_addTeamButton_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this, tr("Open Image"), FOLDER, tr("*.xlsx"));
@@ -153,6 +153,7 @@ void maintenance::on_addTeamButton_clicked()
             int intRows = rows->property("Count").toInt();
 
             team newTeam;
+            //Row starts at 1 to remove header columns
             for (int row=intRowStart + 1 ; row < intRowStart+intRows ; row++) {
                 for (int col=intColStart ; col < intColStart+intCols ; col++)
                 {
@@ -162,16 +163,15 @@ void maintenance::on_addTeamButton_clicked()
                     {
                         continue;
                     }
-
                     switch (col)
                     {
                         case 1: newTeam.conference=value.toString();
                             break;
-                    case 2: newTeam.division=value.toString();
+                        case 2: newTeam.division=value.toString();
                             break;
-                    case 3: newTeam.teamname=value.toString();
+                        case 3: newTeam.teamname=value.toString();
                             break;
-                    case 4: newTeam.location=value.toString();
+                        case 4: newTeam.location=value.toString();
                             break;
                         case 5: newTeam.arena=value.toString();
                             break;
@@ -179,21 +179,21 @@ void maintenance::on_addTeamButton_clicked()
                             break;
                         case 7: newTeam.year=value.toInt();
                             break;
-                    case 8: {newTeam.coach = value.toString();
+                        case 8: {newTeam.coach = value.toString();
                                 if(DbManager::instance().addTeam(newTeam))
-                                {
-
-                                }}
+                                {}}
                             break;
                     }
                 }
             }
             workbook->dynamicCall("Close()");
             excel->dynamicCall("Quit()");
+            loadTeamData();
 }
 
 void maintenance::on_showTeamsCombo_currentIndexChanged(const QString &arg1)
 {
+    qDebug() << "Showing souvenirs for " << arg1 << ".";
     loadSouvenirData();
 }
 
@@ -203,6 +203,7 @@ void maintenance::loadTeamData()
     ui->teamMaintenanceTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->teamMaintenanceTableView->setAlternatingRowColors(true);
     ui->teamMaintenanceTableView->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+    qDebug() << "Showing teams.";
 }
 
 void maintenance::on_teamMaintenanceTableView_doubleClicked(const QModelIndex &index)
@@ -241,11 +242,15 @@ void maintenance::on_teamMaintenanceTableView_doubleClicked(const QModelIndex &i
         else if(inputOperation.textValue() == "Edit arena capacity")
         {
             bool ok;
-            int capacity = QInputDialog::getInt(this, tr("Edit Option"), tr("Edit Souvenir cost: "), aTeam.capacity, 1, 1000000,0,&ok);
+            int capacity = QInputDialog::getInt(this, tr("Edit Option"), tr("Edit Souvenir cost: "), aTeam.capacity, 1, 1000000,1,&ok);
             if(ok && capacity!=0)
             {
                 DbManager::instance().updateCapacity(aTeam, capacity);
                 loadTeamData();
+            }
+            if(capacity == 0)
+            {
+                qDebug() << "Arena capacity cannot be zero.";
             }
         }
     }
