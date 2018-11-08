@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "dbmanager.h"
 #include "maintenance.h"
+#include "fanpage.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,6 +26,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     maintenance* adminPage;
+    fanpage* fanPage;
 };
 
 #endif // MAINWINDOW_H

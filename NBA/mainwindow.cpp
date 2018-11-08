@@ -24,23 +24,29 @@ void MainWindow::on_logOnPushButton_clicked()
     {
         qDebug() << "Nothing entered.";
     }
-
     QString usertype = DbManager::instance().LoginCheck(ui->usernameLineEdit->text(), ui->passwordLineEdit->text());
 
     if(usertype=="fan")
     {
         //open fan page
+        close();
+        fanPage = new fanpage;
+        fanPage->show();
         qDebug() << "Fan page opened.";
     }
     else if(usertype == "admin")
     {
+        //open maintenance page
         close();
         adminPage = new maintenance;
         adminPage->show();
         qDebug() <<"Maintanence page opened.";
     }
+    ui->usernameLineEdit->clear();
+    ui->passwordLineEdit->clear();
 }
 
+//Allows user to hide or show password when logging in
 void MainWindow::on_showPassword_stateChanged(int arg1)
 {
     ui->passwordLineEdit->setEchoMode(ui->showPassword->checkState()== Qt::Checked ? QLineEdit::Normal: QLineEdit::Password);

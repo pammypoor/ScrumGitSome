@@ -27,14 +27,17 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     dbmanager.cpp \
-    maintenance.cpp
+    maintenance.cpp \
+    fanpage.cpp
 
 HEADERS += \
         mainwindow.h \
     dbmanager.h \
     filesused.h \
-    maintenance.h
+    maintenance.h \
+    fanpage.h
 
 FORMS += \
         mainwindow.ui \
-    maintenance.ui
+    maintenance.ui \
+    fanpage.ui
