@@ -51,6 +51,7 @@ public:
     bool teamExist(team aTeam);
     QSqlQueryModel* toTableSingleTeamSouvenirs(QString team);
     QSqlQueryModel* toTableTeam();
+    QSqlQueryModel* getSingleTeam(QString teamName);
 
     void updateArena(team aTeam, QString newArena);
     void updateCapacity(team aTeam, int newCapacity);

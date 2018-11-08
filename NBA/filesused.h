@@ -5,6 +5,6 @@
 #define LOGOPIC "C://Users//pammy//Documents//GitHub//ScrumGitSome//NBA//NBALogo"
 #define SETTINGSPIC "C://Users//pammy//Documents//GitHub//ScrumGitSome//NBA//settings"
 #define FOLDER "C://Users//pammy//Documents//GitHub//ScrumGitSome//NBA"
-
+#define MAINPIC "C://Users//pammy//Documents//GitHub//ScrumGitSome//NBA//mainmenu.png"
 
 #endif // FILESUSED_H

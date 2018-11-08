@@ -305,3 +305,11 @@ void DbManager::updateCapacity(team aTeam, int newCapacity)
         qDebug() << "Update capacity failed.";
     }
 }
+
+QSqlQueryModel* DbManager::getSingleTeam(QString teamName)
+{
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QString queryString = "SELECT * FROM teams WHERE team = '" + teamName + "';";
+    modal->setQuery(queryString);
+    return modal;
+}

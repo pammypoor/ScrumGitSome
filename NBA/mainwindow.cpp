@@ -26,7 +26,7 @@ void MainWindow::on_logOnPushButton_clicked()
     }
     QString usertype = DbManager::instance().LoginCheck(ui->usernameLineEdit->text(), ui->passwordLineEdit->text());
 
-    if(usertype=="fan")
+    if(usertype == "fan")
     {
         //open fan page
         close();

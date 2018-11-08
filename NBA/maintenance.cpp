@@ -42,8 +42,8 @@ void maintenance::on_souvenirBackButton_clicked()
     ui->stackedWidget->setCurrentIndex(0);
     ui->SouvenirNameLineEdit->clear();
     ui->SouvenirCostSpin->clear();
-    ui->SouvenirTeamCombo->setCurrentIndex(0);
-    ui->showTeamsCombo->setCurrentIndex(0);
+    ui->SouvenirTeamCombo->clear();
+    ui->showTeamsCombo->clear();
 }
 
 void maintenance::on_pushButton_clicked()
