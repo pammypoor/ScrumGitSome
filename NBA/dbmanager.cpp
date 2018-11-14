@@ -313,3 +313,30 @@ QSqlQueryModel* DbManager::getSingleTeam(QString teamName)
     modal->setQuery(queryString);
     return modal;
 }
+
+QSqlQueryModel* DbManager::getDivision(QString division, QString sort)
+{
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QString queryString;
+    queryString = "SELECT * FROM teams WHERE division = '" + division + "' ORDER BY " + sort + " ASC;";
+    modal->setQuery(queryString);
+    return modal;
+}
+
+QSqlQueryModel* DbManager::getConference(QString conference, QString sort)
+{
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QString queryString;
+
+    if(conference != '*')
+    {
+        queryString = "SELECT * FROM teams WHERE conference = '" + conference + "' ORDER BY " + sort + " ASC;";
+    }
+    else if(conference == '*')
+    {
+        queryString = "SELECT * FROM teams ORDER BY " + sort + " ASC;";
+    }
+
+    modal->setQuery(queryString);
+    return modal;
+}

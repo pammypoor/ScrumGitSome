@@ -520,6 +520,32 @@ debug/moc_fanpage.cpp: D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QMainWindow \
 		D:/Qt/5.10.1/mingw53_32/include/QtGui/qtouchdevice.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qtabwidget.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtGui/qicon.h \
+		filesused.h \
+		dbmanager.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/QSqlDatabase \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/qsqldatabase.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/qtsqlglobal.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/QSql \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/QSqlQuery \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/qsqlquery.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/QSqlRecord \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/qsqlrecord.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtCore/QDebug \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QMessageBox \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qmessagebox.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qdialog.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/QSqlQueryModel \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtCore/QFile \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QInputDialog \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qinputdialog.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qlineedit.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qframe.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtGui/qtextformat.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtGui/qpen.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtGui/qtextoption.h \
 		fanpage.h \
 		debug/moc_predefs.h \
 		D:/Qt/5.10.1/mingw53_32/bin/moc.exe
@@ -1321,6 +1347,32 @@ debug/fanpage.o: fanpage.cpp fanpage.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtGui/qtouchdevice.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qtabwidget.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtGui/qicon.h \
+		filesused.h \
+		dbmanager.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/QSqlDatabase \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/qsqldatabase.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/qtsqlglobal.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/QSql \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/QSqlQuery \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/qsqlquery.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/QSqlRecord \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/qsqlrecord.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtCore/QDebug \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QMessageBox \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qmessagebox.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qdialog.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/QSqlQueryModel \
+		D:/Qt/5.10.1/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtCore/QFile \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QInputDialog \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qinputdialog.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qlineedit.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qframe.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtGui/qtextformat.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtGui/qpen.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtGui/qtextoption.h \
 		ui_fanpage.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtCore/QVariant \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QAction \
@@ -1335,13 +1387,8 @@ debug/fanpage.o: fanpage.cpp fanpage.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtGui/qinputmethod.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QButtonGroup \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QHeaderView \
-		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qframe.h \
-		D:/Qt/5.10.1/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/5.10.1/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QComboBox \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qcombobox.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qstyleoption.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qabstractspinbox.h \
@@ -1352,10 +1399,27 @@ debug/fanpage.o: fanpage.cpp fanpage.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qstyle.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qtabbar.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qrubberband.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QFrame \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QGroupBox \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qgroupbox.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QHeaderView \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qheaderview.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QLabel \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qlabel.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QPushButton \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qpushbutton.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QRadioButton \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qradiobutton.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QStackedWidget \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qstackedwidget.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QStatusBar \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qstatusbar.h \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QTableView \
+		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/qtableview.h \
 		D:/Qt/5.10.1/mingw53_32/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\fanpage.o fanpage.cpp
 

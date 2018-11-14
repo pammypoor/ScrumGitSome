@@ -50,11 +50,19 @@ public:
     bool addTeam(team newTeam);
     bool teamExist(team aTeam);
     QSqlQueryModel* toTableSingleTeamSouvenirs(QString team);
-    QSqlQueryModel* toTableTeam();
+
     QSqlQueryModel* getSingleTeam(QString teamName);
 
     void updateArena(team aTeam, QString newArena);
     void updateCapacity(team aTeam, int newCapacity);
+
+    QSqlQueryModel* toTableTeam();
+    QSqlQueryModel* toTableTeambyArena();
+    QSqlQueryModel* toTableTeambyCapacity();
+    QSqlQueryModel* toTableTeambyYear();
+
+    QSqlQueryModel* getDivision(QString division, QString sort);
+    QSqlQueryModel* getConference(QString conference, QString sort);
 
 private:
     QSqlDatabase database;

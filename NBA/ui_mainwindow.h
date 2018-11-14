@@ -46,7 +46,8 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(908, 682);
-        MainWindow->setStyleSheet(QStringLiteral("background: #003366;"));
+        MainWindow->setStyleSheet(QLatin1String("background: #003366;\n"
+"color: white;"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         frame = new QFrame(centralWidget);

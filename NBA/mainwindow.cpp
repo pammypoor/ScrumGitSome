@@ -42,6 +42,10 @@ void MainWindow::on_logOnPushButton_clicked()
         adminPage->show();
         qDebug() <<"Maintanence page opened.";
     }
+    else
+    {
+        QMessageBox::information(this, "Login", "Invalid Login. Try Again.");
+    }
     ui->usernameLineEdit->clear();
     ui->passwordLineEdit->clear();
 }
