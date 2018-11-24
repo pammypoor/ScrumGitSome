@@ -231,13 +231,22 @@ void maintenance::on_teamMaintenanceTableView_doubleClicked(const QModelIndex &i
     {
         if(inputOperation.textValue() == "Edit arena name")
         {
-            bool ok;
-            QString arena = QInputDialog::getText(this, "Edit Option", "Edit arena name: ", QLineEdit::Normal, "", &ok);
-            if(ok && !arena.isEmpty())
+            bool ok, allSpace;
+            QString arena = QInputDialog::getText(this, "Edit Option", "Edit arena name: ", QLineEdit::Normal, aTeam.arena, &ok);
+
+            for (std::size_t i = 0; i < arena.size(); ++i)
+                    if (!((arena[i]>='a' && arena[i]<='z') || (arena[i]>='A' && arena[i]<='Z') || arena[i]==' ' || arena[i]=='-' ))
+                            ok = false;
+            for (std::size_t i = 0; i < arena.size(); ++i)
+                    if (!(arena[i] == ' '))
+                            allSpace = false;
+
+            if(ok && !allSpace)
             {
                 DbManager::instance().updateArena(aTeam, arena);
                 loadTeamData();
             }
+
         }
         else if(inputOperation.textValue() == "Edit arena capacity")
         {

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1052</width>
+    <height>603</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>801</width>
+      <width>1051</width>
       <height>581</height>
      </rect>
     </property>
@@ -27,14 +27,14 @@
      <string notr="true">background: #003366;</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="settingsPic">
       <property name="geometry">
        <rect>
-        <x>260</x>
-        <y>120</y>
+        <x>420</x>
+        <y>110</y>
         <width>281</width>
         <height>221</height>
        </rect>
@@ -49,8 +49,8 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>60</y>
+        <x>460</x>
+        <y>50</y>
         <width>201</width>
         <height>41</height>
        </rect>
@@ -66,8 +66,8 @@ font-size: 35px;</string>
      <widget class="QPushButton" name="menuSouvenirButton">
       <property name="geometry">
        <rect>
-        <x>410</x>
-        <y>380</y>
+        <x>570</x>
+        <y>370</y>
         <width>171</width>
         <height>121</height>
        </rect>
@@ -92,8 +92,8 @@ border-radius: 10px;
      <widget class="QPushButton" name="MenuTeamButton">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>380</y>
+        <x>360</x>
+        <y>370</y>
         <width>171</width>
         <height>121</height>
        </rect>
@@ -120,8 +120,8 @@ border-radius: 10px;
      <widget class="QPushButton" name="teamBackButton">
       <property name="geometry">
        <rect>
-        <x>700</x>
-        <y>540</y>
+        <x>960</x>
+        <y>550</y>
         <width>80</width>
         <height>22</height>
        </rect>
@@ -146,7 +146,7 @@ border-radius: 10px;
      <widget class="QPushButton" name="addTeamButton">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>460</x>
         <y>510</y>
         <width>201</width>
         <height>22</height>
@@ -174,7 +174,7 @@ border-radius: 10px;
        <rect>
         <x>5</x>
         <y>11</y>
-        <width>781</width>
+        <width>1031</width>
         <height>481</height>
        </rect>
       </property>
@@ -323,8 +323,8 @@ border-radius: 10px;
      <widget class="QPushButton" name="souvenirBackButton">
       <property name="geometry">
        <rect>
-        <x>700</x>
-        <y>540</y>
+        <x>960</x>
+        <y>550</y>
         <width>80</width>
         <height>22</height>
        </rect>
@@ -351,7 +351,7 @@ border-radius: 10px;
        <rect>
         <x>15</x>
         <y>11</y>
-        <width>771</width>
+        <width>1021</width>
         <height>381</height>
        </rect>
       </property>
@@ -362,8 +362,8 @@ border-radius: 10px;
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>430</y>
+        <x>760</x>
+        <y>410</y>
         <width>47</width>
         <height>14</height>
        </rect>
@@ -378,8 +378,8 @@ border-radius: 10px;
      <widget class="QComboBox" name="showTeamsCombo">
       <property name="geometry">
        <rect>
-        <x>550</x>
-        <y>421</y>
+        <x>800</x>
+        <y>401</y>
         <width>231</width>
         <height>31</height>
        </rect>

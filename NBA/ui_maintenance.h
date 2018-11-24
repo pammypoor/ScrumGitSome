@@ -61,27 +61,27 @@ public:
     {
         if (maintenance->objectName().isEmpty())
             maintenance->setObjectName(QStringLiteral("maintenance"));
-        maintenance->resize(800, 600);
+        maintenance->resize(1052, 603);
         centralwidget = new QWidget(maintenance);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        stackedWidget->setGeometry(QRect(0, 0, 801, 581));
+        stackedWidget->setGeometry(QRect(0, 0, 1051, 581));
         stackedWidget->setStyleSheet(QStringLiteral("background: #003366;"));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
         settingsPic = new QLabel(page);
         settingsPic->setObjectName(QStringLiteral("settingsPic"));
-        settingsPic->setGeometry(QRect(260, 120, 281, 221));
+        settingsPic->setGeometry(QRect(420, 110, 281, 221));
         settingsPic->setPixmap(QPixmap(QString::fromUtf8("settings.png")));
         label = new QLabel(page);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(300, 60, 201, 41));
+        label->setGeometry(QRect(460, 50, 201, 41));
         label->setStyleSheet(QLatin1String("color: white;\n"
 "font-size: 35px;"));
         menuSouvenirButton = new QPushButton(page);
         menuSouvenirButton->setObjectName(QStringLiteral("menuSouvenirButton"));
-        menuSouvenirButton->setGeometry(QRect(410, 380, 171, 121));
+        menuSouvenirButton->setGeometry(QRect(570, 370, 171, 121));
         menuSouvenirButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -95,7 +95,7 @@ public:
 "}"));
         MenuTeamButton = new QPushButton(page);
         MenuTeamButton->setObjectName(QStringLiteral("MenuTeamButton"));
-        MenuTeamButton->setGeometry(QRect(200, 380, 171, 121));
+        MenuTeamButton->setGeometry(QRect(360, 370, 171, 121));
         MenuTeamButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -112,7 +112,7 @@ public:
         page_2->setObjectName(QStringLiteral("page_2"));
         teamBackButton = new QPushButton(page_2);
         teamBackButton->setObjectName(QStringLiteral("teamBackButton"));
-        teamBackButton->setGeometry(QRect(700, 540, 80, 22));
+        teamBackButton->setGeometry(QRect(960, 550, 80, 22));
         teamBackButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -126,7 +126,7 @@ public:
 "}color: white;"));
         addTeamButton = new QPushButton(page_2);
         addTeamButton->setObjectName(QStringLiteral("addTeamButton"));
-        addTeamButton->setGeometry(QRect(290, 510, 201, 22));
+        addTeamButton->setGeometry(QRect(460, 510, 201, 22));
         addTeamButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -140,7 +140,7 @@ public:
 "}color: white;"));
         teamMaintenanceTableView = new QTableView(page_2);
         teamMaintenanceTableView->setObjectName(QStringLiteral("teamMaintenanceTableView"));
-        teamMaintenanceTableView->setGeometry(QRect(5, 11, 781, 481));
+        teamMaintenanceTableView->setGeometry(QRect(5, 11, 1031, 481));
         teamMaintenanceTableView->setStyleSheet(QLatin1String("QScrollBar{\n"
 "	border: 1px solid #999999;\n"
 "	background: white;\n"
@@ -202,7 +202,7 @@ public:
 "}color: white;"));
         souvenirBackButton = new QPushButton(page_3);
         souvenirBackButton->setObjectName(QStringLiteral("souvenirBackButton"));
-        souvenirBackButton->setGeometry(QRect(700, 540, 80, 22));
+        souvenirBackButton->setGeometry(QRect(960, 550, 80, 22));
         souvenirBackButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -216,15 +216,15 @@ public:
 "}"));
         SouvenirTableView = new QTableView(page_3);
         SouvenirTableView->setObjectName(QStringLiteral("SouvenirTableView"));
-        SouvenirTableView->setGeometry(QRect(15, 11, 771, 381));
+        SouvenirTableView->setGeometry(QRect(15, 11, 1021, 381));
         SouvenirTableView->setStyleSheet(QStringLiteral(""));
         label_4 = new QLabel(page_3);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(510, 430, 47, 14));
+        label_4->setGeometry(QRect(760, 410, 47, 14));
         label_4->setStyleSheet(QStringLiteral("color: white;"));
         showTeamsCombo = new QComboBox(page_3);
         showTeamsCombo->setObjectName(QStringLiteral("showTeamsCombo"));
-        showTeamsCombo->setGeometry(QRect(550, 421, 231, 31));
+        showTeamsCombo->setGeometry(QRect(800, 401, 231, 31));
         showTeamsCombo->setStyleSheet(QLatin1String("background: white;\n"
 "border: 1px solid Gray;\n"
 "border-radius: 5px;\n"
@@ -237,7 +237,7 @@ public:
 
         retranslateUi(maintenance);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(maintenance);

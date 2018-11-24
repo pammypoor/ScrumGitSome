@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1011</width>
+    <width>1052</width>
     <height>629</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
      <rect>
       <x>-20</x>
       <y>0</y>
-      <width>1031</width>
+      <width>1081</width>
       <height>661</height>
      </rect>
     </property>
@@ -27,7 +27,7 @@
      <string notr="true">background: #003366;</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QFrame" name="frame">
@@ -224,7 +224,7 @@ color: white;</string>
        <rect>
         <x>35</x>
         <y>61</y>
-        <width>981</width>
+        <width>1031</width>
         <height>511</height>
        </rect>
       </property>
@@ -232,7 +232,7 @@ color: white;</string>
      <widget class="QPushButton" name="backSouvenirButton">
       <property name="geometry">
        <rect>
-        <x>940</x>
+        <x>980</x>
         <y>580</y>
         <width>80</width>
         <height>22</height>
@@ -309,7 +309,7 @@ font-size: 25px;</string>
      <widget class="QPushButton" name="backTeamButton">
       <property name="geometry">
        <rect>
-        <x>940</x>
+        <x>990</x>
         <y>580</y>
         <width>80</width>
         <height>22</height>
@@ -354,7 +354,7 @@ font-size: 25px;</string>
        <rect>
         <x>35</x>
         <y>61</y>
-        <width>981</width>
+        <width>1031</width>
         <height>391</height>
        </rect>
       </property>
@@ -645,7 +645,7 @@ color: #003366;</string>
        <rect>
         <x>40</x>
         <y>60</y>
-        <width>971</width>
+        <width>1021</width>
         <height>471</height>
        </rect>
       </property>
@@ -670,7 +670,7 @@ font-size: 25px;</string>
      <widget class="QPushButton" name="backArenaButton">
       <property name="geometry">
        <rect>
-        <x>940</x>
+        <x>990</x>
         <y>580</y>
         <width>80</width>
         <height>22</height>

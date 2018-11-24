@@ -85,12 +85,12 @@ public:
     {
         if (fanpage->objectName().isEmpty())
             fanpage->setObjectName(QStringLiteral("fanpage"));
-        fanpage->resize(1011, 629);
+        fanpage->resize(1052, 629);
         centralwidget = new QWidget(fanpage);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        stackedWidget->setGeometry(QRect(-20, 0, 1031, 661));
+        stackedWidget->setGeometry(QRect(-20, 0, 1081, 661));
         stackedWidget->setStyleSheet(QStringLiteral("background: #003366;"));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
@@ -189,10 +189,10 @@ public:
         page_3->setObjectName(QStringLiteral("page_3"));
         souvenirTable = new QTableView(page_3);
         souvenirTable->setObjectName(QStringLiteral("souvenirTable"));
-        souvenirTable->setGeometry(QRect(35, 61, 981, 511));
+        souvenirTable->setGeometry(QRect(35, 61, 1031, 511));
         backSouvenirButton = new QPushButton(page_3);
         backSouvenirButton->setObjectName(QStringLiteral("backSouvenirButton"));
-        backSouvenirButton->setGeometry(QRect(940, 580, 80, 22));
+        backSouvenirButton->setGeometry(QRect(980, 580, 80, 22));
         backSouvenirButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -225,7 +225,7 @@ public:
         page_4->setObjectName(QStringLiteral("page_4"));
         backTeamButton = new QPushButton(page_4);
         backTeamButton->setObjectName(QStringLiteral("backTeamButton"));
-        backTeamButton->setGeometry(QRect(940, 580, 80, 22));
+        backTeamButton->setGeometry(QRect(990, 580, 80, 22));
         backTeamButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -244,7 +244,7 @@ public:
 "font-size: 25px;"));
         teamTable = new QTableView(page_4);
         teamTable->setObjectName(QStringLiteral("teamTable"));
-        teamTable->setGeometry(QRect(35, 61, 981, 391));
+        teamTable->setGeometry(QRect(35, 61, 1031, 391));
         groupBox = new QGroupBox(page_4);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(30, 460, 561, 141));
@@ -328,7 +328,7 @@ public:
         page_5->setObjectName(QStringLiteral("page_5"));
         teamTable_2 = new QTableView(page_5);
         teamTable_2->setObjectName(QStringLiteral("teamTable_2"));
-        teamTable_2->setGeometry(QRect(40, 60, 971, 471));
+        teamTable_2->setGeometry(QRect(40, 60, 1021, 471));
         label_9 = new QLabel(page_5);
         label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setGeometry(QRect(450, 30, 141, 21));
@@ -336,7 +336,7 @@ public:
 "font-size: 25px;"));
         backArenaButton = new QPushButton(page_5);
         backArenaButton->setObjectName(QStringLiteral("backArenaButton"));
-        backArenaButton->setGeometry(QRect(940, 580, 80, 22));
+        backArenaButton->setGeometry(QRect(990, 580, 80, 22));
         backArenaButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -373,7 +373,7 @@ public:
 
         retranslateUi(fanpage);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(4);
         divisionCombo->setCurrentIndex(-1);
 
 

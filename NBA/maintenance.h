@@ -6,6 +6,9 @@
 #include <QAxObject>
 #include "filesused.h"
 #include "dbmanager.h"
+#include <algorithm>
+#include <cctype>
+#include <string>
 
 namespace Ui {
 class maintenance;
