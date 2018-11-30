@@ -274,6 +274,13 @@ QSqlQueryModel* DbManager::toTableTeam()
     return modal;
 }
 
+QSqlQueryModel * DbManager::toTableTeamName()
+{
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    modal->setQuery("SELECT team, location FROM teams ORDER BY team ASC;");
+    return modal;
+}
+
 void DbManager::updateArena(team aTeam, QString newArena)
 {
     QSqlQuery query;
@@ -339,4 +346,35 @@ QSqlQueryModel* DbManager::getConference(QString conference, QString sort)
 
     modal->setQuery(queryString);
     return modal;
+}
+
+QSqlQueryModel* DbManager::toTableDistances()
+{
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QString queryString;
+    queryString = "SELECT * FROM distances ORDER BY bTeam ASC;";
+    modal->setQuery(queryString);
+    return modal;
+}
+
+bool DbManager::addDistance(QString bTeam, QString bArena, QString eTeam, double distance)
+{
+    QSqlQuery query;
+    query.prepare("INSERT INTO distances(bTeam, bArena, eTeam, distance) VALUES(:bTeam, :bArena, :eTeam, :distance)");
+    query.bindValue(":bTeam", bTeam);
+    query.bindValue(":bArena", bArena);
+    query.bindValue(":eTeam", eTeam);
+    query.bindValue(":distance", distance);
+
+    if(query.exec())
+    {
+        qDebug() << "distance added.";
+        return true;
+    }
+    else
+    {
+        qDebug() << bTeam << bArena << eTeam, distance;
+        qDebug() << "distance failed.";
+        return false;
+    }
 }

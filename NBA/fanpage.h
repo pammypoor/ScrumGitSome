@@ -7,6 +7,7 @@
 #include <QVector>
 #include <algorithm>
 
+
 namespace Ui {
 class fanpage;
 }
@@ -19,6 +20,7 @@ public:
     explicit fanpage(QWidget *parent = 0);
     void loadAllSouvenirs();
     void loadAllTeams();
+    void loadPlanTeams();
     void loadCapacity(QSqlQueryModel* modal);
     ~fanpage();
 
@@ -29,8 +31,6 @@ private slots:
     void on_mainViewSouvenirsButton_clicked();
 
     void on_mainViewTeamsButton_clicked();
-
-    void on_mainViewArenasButton_clicked();
 
     void on_backSouvenirButton_clicked();
 
@@ -56,14 +56,14 @@ private slots:
 
     void on_divisionCombo_currentIndexChanged(const QString &arg1);
 
-    void on_backArenaButton_clicked();
 
-    void on_mainViewArenasButton_2_clicked();
+    void on_backTripButton_clicked();
 
-    void on_backCoachButton_clicked();
+    void on_planTripTable_activated(const QModelIndex &index);
 
 private:
     Ui::fanpage *ui;
+    QVector<QString> tripTeams;
 };
 
 #endif // FANPAGE_H

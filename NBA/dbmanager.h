@@ -12,6 +12,8 @@
 #include <QFile>
 #include <QInputDialog>
 #include <vector>
+#include <QStandardItemModel>
+#include <QHeaderView>
 
 struct souvenir
 {
@@ -57,12 +59,16 @@ public:
     void updateCapacity(team aTeam, int newCapacity);
 
     QSqlQueryModel* toTableTeam();
+    QSqlQueryModel* toTableTeamName();
     QSqlQueryModel* toTableTeambyArena();
     QSqlQueryModel* toTableTeambyCapacity();
     QSqlQueryModel* toTableTeambyYear();
 
     QSqlQueryModel* getDivision(QString division, QString sort);
     QSqlQueryModel* getConference(QString conference, QString sort);
+
+    QSqlQueryModel* toTableDistances();
+    bool addDistance(QString bTeam, QString bArena, QString eTeam, double distance);
 
 private:
     QSqlDatabase database;

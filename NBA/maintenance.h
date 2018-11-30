@@ -22,6 +22,7 @@ public:
     explicit maintenance(QWidget *parent = 0);
     void loadSouvenirData();
     void loadTeamData();
+    void loadDistances();
     ~maintenance();
 
 private slots:
@@ -42,6 +43,12 @@ private slots:
     void on_showTeamsCombo_currentIndexChanged(const QString &arg1);
 
     void on_teamMaintenanceTableView_doubleClicked(const QModelIndex &index);
+
+    void on_distanceBackButton_clicked();
+
+    void on_menuDistanceButton_clicked();
+
+    void on_addDistancesButton_clicked();
 
 private:
     Ui::maintenance *ui;

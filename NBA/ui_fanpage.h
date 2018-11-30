@@ -24,6 +24,7 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableView>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -38,11 +39,19 @@ public:
     QPushButton *mainPlanTripButton;
     QPushButton *mainViewSouvenirsButton;
     QPushButton *mainViewTeamsButton;
-    QPushButton *mainViewArenasButton;
-    QPushButton *mainViewArenasButton_2;
     QLabel *mainLogo;
     QLabel *label;
     QWidget *page_2;
+    QPushButton *backTripButton;
+    QGroupBox *groupBox_3;
+    QRadioButton *distanceButton;
+    QRadioButton *orderButton;
+    QComboBox *teamCombo;
+    QLabel *label_9;
+    QTableView *planTripTable;
+    QLabel *label_11;
+    QLabel *label_13;
+    QTableWidget *selectedTeamsTable;
     QWidget *page_3;
     QTableView *souvenirTable;
     QPushButton *backSouvenirButton;
@@ -71,15 +80,10 @@ public:
     QLabel *label_10;
     QLabel *capacityLabel;
     QLabel *label_12;
-    QWidget *page_5;
-    QTableView *teamTable_2;
-    QLabel *label_9;
-    QPushButton *backArenaButton;
-    QWidget *page_6;
-    QPushButton *backCoachButton;
     QStatusBar *statusbar;
     QButtonGroup *sortByGroup;
     QButtonGroup *conferenceGroup;
+    QButtonGroup *sortTripGroup;
 
     void setupUi(QMainWindow *fanpage)
     {
@@ -96,7 +100,7 @@ public:
         page->setObjectName(QStringLiteral("page"));
         frame = new QFrame(page);
         frame->setObjectName(QStringLiteral("frame"));
-        frame->setGeometry(QRect(70, 400, 921, 191));
+        frame->setGeometry(QRect(280, 400, 561, 191));
         frame->setStyleSheet(QLatin1String("background: Gainsboro;\n"
 "border-radius: 25px;"));
         frame->setFrameShape(QFrame::StyledPanel);
@@ -143,34 +147,6 @@ public:
 "color: white;\n"
 "border-radius: 10px;\n"
 "}"));
-        mainViewArenasButton = new QPushButton(frame);
-        mainViewArenasButton->setObjectName(QStringLiteral("mainViewArenasButton"));
-        mainViewArenasButton->setGeometry(QRect(560, 30, 161, 131));
-        mainViewArenasButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background: #003366;\n"
-"color: white;\n"
-"border-radius: 10px;\n"
-"}\n"
-"QPushButton:hover:!pressed\n"
-"{\n"
-"background: #17408B;\n"
-"color: white;\n"
-"border-radius: 10px;\n"
-"}"));
-        mainViewArenasButton_2 = new QPushButton(frame);
-        mainViewArenasButton_2->setObjectName(QStringLiteral("mainViewArenasButton_2"));
-        mainViewArenasButton_2->setGeometry(QRect(740, 30, 161, 131));
-        mainViewArenasButton_2->setStyleSheet(QLatin1String("QPushButton{\n"
-"background: #003366;\n"
-"color: white;\n"
-"border-radius: 10px;\n"
-"}\n"
-"QPushButton:hover:!pressed\n"
-"{\n"
-"background: #17408B;\n"
-"color: white;\n"
-"border-radius: 10px;\n"
-"}"));
         mainLogo = new QLabel(page);
         mainLogo->setObjectName(QStringLiteral("mainLogo"));
         mainLogo->setGeometry(QRect(440, 50, 241, 241));
@@ -184,6 +160,60 @@ public:
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
+        backTripButton = new QPushButton(page_2);
+        backTripButton->setObjectName(QStringLiteral("backTripButton"));
+        backTripButton->setGeometry(QRect(980, 570, 80, 22));
+        backTripButton->setStyleSheet(QLatin1String("QPushButton{\n"
+"background:DarkGrey ;\n"
+"color: white;\n"
+"border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover:!pressed\n"
+"{\n"
+"background: Gray;\n"
+"color: white;\n"
+"border-radius: 10px;\n"
+"}color: white;"));
+        groupBox_3 = new QGroupBox(page_2);
+        groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
+        groupBox_3->setGeometry(QRect(40, 490, 491, 61));
+        groupBox_3->setStyleSheet(QStringLiteral("color: white;"));
+        distanceButton = new QRadioButton(groupBox_3);
+        sortTripGroup = new QButtonGroup(fanpage);
+        sortTripGroup->setObjectName(QStringLiteral("sortTripGroup"));
+        sortTripGroup->addButton(distanceButton);
+        distanceButton->setObjectName(QStringLiteral("distanceButton"));
+        distanceButton->setGeometry(QRect(10, 30, 121, 20));
+        orderButton = new QRadioButton(groupBox_3);
+        sortTripGroup->addButton(orderButton);
+        orderButton->setObjectName(QStringLiteral("orderButton"));
+        orderButton->setGeometry(QRect(120, 30, 91, 20));
+        teamCombo = new QComboBox(groupBox_3);
+        teamCombo->setObjectName(QStringLiteral("teamCombo"));
+        teamCombo->setGeometry(QRect(280, 30, 201, 21));
+        teamCombo->setStyleSheet(QLatin1String("background: white;\n"
+"border: 1px solid Gray;\n"
+"border-radius: 5px;\n"
+"color: #003366;"));
+        label_9 = new QLabel(groupBox_3);
+        label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setGeometry(QRect(220, 30, 51, 21));
+        planTripTable = new QTableView(page_2);
+        planTripTable->setObjectName(QStringLiteral("planTripTable"));
+        planTripTable->setGeometry(QRect(40, 41, 661, 431));
+        label_11 = new QLabel(page_2);
+        label_11->setObjectName(QStringLiteral("label_11"));
+        label_11->setGeometry(QRect(320, 10, 91, 20));
+        label_11->setStyleSheet(QLatin1String("color: white;\n"
+"font-size: 25px;"));
+        label_13 = new QLabel(page_2);
+        label_13->setObjectName(QStringLiteral("label_13"));
+        label_13->setGeometry(QRect(800, 10, 211, 20));
+        label_13->setStyleSheet(QLatin1String("color: white;\n"
+"font-size: 25px;"));
+        selectedTeamsTable = new QTableWidget(page_2);
+        selectedTeamsTable->setObjectName(QStringLiteral("selectedTeamsTable"));
+        selectedTeamsTable->setGeometry(QRect(730, 40, 321, 431));
         stackedWidget->addWidget(page_2);
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
@@ -324,48 +354,6 @@ public:
         label_12->setObjectName(QStringLiteral("label_12"));
         label_12->setGeometry(QRect(130, 80, 47, 14));
         stackedWidget->addWidget(page_4);
-        page_5 = new QWidget();
-        page_5->setObjectName(QStringLiteral("page_5"));
-        teamTable_2 = new QTableView(page_5);
-        teamTable_2->setObjectName(QStringLiteral("teamTable_2"));
-        teamTable_2->setGeometry(QRect(40, 60, 1021, 471));
-        label_9 = new QLabel(page_5);
-        label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(450, 30, 141, 21));
-        label_9->setStyleSheet(QLatin1String("color: white;\n"
-"font-size: 25px;"));
-        backArenaButton = new QPushButton(page_5);
-        backArenaButton->setObjectName(QStringLiteral("backArenaButton"));
-        backArenaButton->setGeometry(QRect(990, 580, 80, 22));
-        backArenaButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background:DarkGrey ;\n"
-"color: white;\n"
-"border-radius: 10px;\n"
-"}\n"
-"QPushButton:hover:!pressed\n"
-"{\n"
-"background: Gray;\n"
-"color: white;\n"
-"border-radius: 10px;\n"
-"}color: white;"));
-        stackedWidget->addWidget(page_5);
-        page_6 = new QWidget();
-        page_6->setObjectName(QStringLiteral("page_6"));
-        backCoachButton = new QPushButton(page_6);
-        backCoachButton->setObjectName(QStringLiteral("backCoachButton"));
-        backCoachButton->setGeometry(QRect(940, 580, 80, 22));
-        backCoachButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background:DarkGrey ;\n"
-"color: white;\n"
-"border-radius: 10px;\n"
-"}\n"
-"QPushButton:hover:!pressed\n"
-"{\n"
-"background: Gray;\n"
-"color: white;\n"
-"border-radius: 10px;\n"
-"}color: white;"));
-        stackedWidget->addWidget(page_6);
         fanpage->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(fanpage);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -373,7 +361,7 @@ public:
 
         retranslateUi(fanpage);
 
-        stackedWidget->setCurrentIndex(4);
+        stackedWidget->setCurrentIndex(1);
         divisionCombo->setCurrentIndex(-1);
 
 
@@ -383,13 +371,18 @@ public:
     void retranslateUi(QMainWindow *fanpage)
     {
         fanpage->setWindowTitle(QApplication::translate("fanpage", "MainWindow", nullptr));
-        mainPlanTripButton->setText(QApplication::translate("fanpage", "Plan Custom Trip", nullptr));
+        mainPlanTripButton->setText(QApplication::translate("fanpage", "Plan Trip", nullptr));
         mainViewSouvenirsButton->setText(QApplication::translate("fanpage", "View Souvenirs", nullptr));
         mainViewTeamsButton->setText(QApplication::translate("fanpage", "View Teams", nullptr));
-        mainViewArenasButton->setText(QApplication::translate("fanpage", "View Arenas", nullptr));
-        mainViewArenasButton_2->setText(QApplication::translate("fanpage", "View Coaches", nullptr));
         mainLogo->setText(QString());
         label->setText(QApplication::translate("fanpage", "Main Menu", nullptr));
+        backTripButton->setText(QApplication::translate("fanpage", "Back", nullptr));
+        groupBox_3->setTitle(QApplication::translate("fanpage", "Trip Options", nullptr));
+        distanceButton->setText(QApplication::translate("fanpage", "shortest distance", nullptr));
+        orderButton->setText(QApplication::translate("fanpage", "order specified", nullptr));
+        label_9->setText(QApplication::translate("fanpage", "Starting at", nullptr));
+        label_11->setText(QApplication::translate("fanpage", "Teams", nullptr));
+        label_13->setText(QApplication::translate("fanpage", "Teams selected:", nullptr));
         backSouvenirButton->setText(QApplication::translate("fanpage", "Back", nullptr));
         label_2->setText(QApplication::translate("fanpage", "Show by:", nullptr));
         label_3->setText(QApplication::translate("fanpage", "View Souvenirs", nullptr));
@@ -411,9 +404,6 @@ public:
         label_10->setText(QApplication::translate("fanpage", "Total Capacity for teams shown:", nullptr));
         capacityLabel->setText(QApplication::translate("fanpage", "capacity", nullptr));
         label_12->setText(QApplication::translate("fanpage", "seats", nullptr));
-        label_9->setText(QApplication::translate("fanpage", "View Arenas", nullptr));
-        backArenaButton->setText(QApplication::translate("fanpage", "Back", nullptr));
-        backCoachButton->setText(QApplication::translate("fanpage", "Back", nullptr));
     } // retranslateUi
 
 };

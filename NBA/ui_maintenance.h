@@ -38,6 +38,7 @@ public:
     QLabel *label;
     QPushButton *menuSouvenirButton;
     QPushButton *MenuTeamButton;
+    QPushButton *menuDistanceButton;
     QWidget *page_2;
     QPushButton *teamBackButton;
     QPushButton *addTeamButton;
@@ -55,6 +56,10 @@ public:
     QTableView *SouvenirTableView;
     QLabel *label_4;
     QComboBox *showTeamsCombo;
+    QWidget *page_4;
+    QPushButton *distanceBackButton;
+    QTableView *distancesTable;
+    QPushButton *addDistancesButton;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *maintenance)
@@ -81,7 +86,7 @@ public:
 "font-size: 35px;"));
         menuSouvenirButton = new QPushButton(page);
         menuSouvenirButton->setObjectName(QStringLiteral("menuSouvenirButton"));
-        menuSouvenirButton->setGeometry(QRect(570, 370, 171, 121));
+        menuSouvenirButton->setGeometry(QRect(500, 370, 171, 121));
         menuSouvenirButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -95,7 +100,7 @@ public:
 "}"));
         MenuTeamButton = new QPushButton(page);
         MenuTeamButton->setObjectName(QStringLiteral("MenuTeamButton"));
-        MenuTeamButton->setGeometry(QRect(360, 370, 171, 121));
+        MenuTeamButton->setGeometry(QRect(300, 370, 171, 121));
         MenuTeamButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -104,6 +109,20 @@ public:
 "QPushButton:hover:!pressed\n"
 "{\n"
 "background: gray;\n"
+"color: white;\n"
+"border-radius: 10px;\n"
+"}"));
+        menuDistanceButton = new QPushButton(page);
+        menuDistanceButton->setObjectName(QStringLiteral("menuDistanceButton"));
+        menuDistanceButton->setGeometry(QRect(700, 370, 171, 121));
+        menuDistanceButton->setStyleSheet(QLatin1String("QPushButton{\n"
+"background:DarkGrey ;\n"
+"color: white;\n"
+"border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover:!pressed\n"
+"{\n"
+"background: Gray;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}"));
@@ -230,6 +249,40 @@ public:
 "border-radius: 5px;\n"
 "color: #003366;"));
         stackedWidget->addWidget(page_3);
+        page_4 = new QWidget();
+        page_4->setObjectName(QStringLiteral("page_4"));
+        distanceBackButton = new QPushButton(page_4);
+        distanceBackButton->setObjectName(QStringLiteral("distanceBackButton"));
+        distanceBackButton->setGeometry(QRect(960, 550, 80, 22));
+        distanceBackButton->setStyleSheet(QLatin1String("QPushButton{\n"
+"background:DarkGrey ;\n"
+"color: white;\n"
+"border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover:!pressed\n"
+"{\n"
+"background: Gray;\n"
+"color: white;\n"
+"border-radius: 10px;\n"
+"}"));
+        distancesTable = new QTableView(page_4);
+        distancesTable->setObjectName(QStringLiteral("distancesTable"));
+        distancesTable->setGeometry(QRect(10, 10, 1031, 501));
+        addDistancesButton = new QPushButton(page_4);
+        addDistancesButton->setObjectName(QStringLiteral("addDistancesButton"));
+        addDistancesButton->setGeometry(QRect(400, 530, 201, 22));
+        addDistancesButton->setStyleSheet(QLatin1String("QPushButton{\n"
+"background:DarkGrey ;\n"
+"color: white;\n"
+"border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover:!pressed\n"
+"{\n"
+"background: Gray;\n"
+"color: white;\n"
+"border-radius: 10px;\n"
+"}color: white;"));
+        stackedWidget->addWidget(page_4);
         maintenance->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(maintenance);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -237,7 +290,7 @@ public:
 
         retranslateUi(maintenance);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(maintenance);
@@ -250,6 +303,7 @@ public:
         label->setText(QApplication::translate("maintenance", "Maintenance", nullptr));
         menuSouvenirButton->setText(QApplication::translate("maintenance", "Modify Souvenirs", nullptr));
         MenuTeamButton->setText(QApplication::translate("maintenance", "Modify Teams", nullptr));
+        menuDistanceButton->setText(QApplication::translate("maintenance", "Modify Distances", nullptr));
         teamBackButton->setText(QApplication::translate("maintenance", "Back", nullptr));
         addTeamButton->setText(QApplication::translate("maintenance", "Add Team File", nullptr));
         groupBox_2->setTitle(QApplication::translate("maintenance", "Add Souvenir", nullptr));
@@ -259,6 +313,8 @@ public:
         pushButton->setText(QApplication::translate("maintenance", "Add", nullptr));
         souvenirBackButton->setText(QApplication::translate("maintenance", "Back", nullptr));
         label_4->setText(QApplication::translate("maintenance", "Show:", nullptr));
+        distanceBackButton->setText(QApplication::translate("maintenance", "Back", nullptr));
+        addDistancesButton->setText(QApplication::translate("maintenance", "Add distances file", nullptr));
     } // retranslateUi
 
 };

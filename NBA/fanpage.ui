@@ -27,15 +27,15 @@
      <string notr="true">background: #003366;</string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QFrame" name="frame">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>280</x>
         <y>400</y>
-        <width>921</width>
+        <width>561</width>
         <height>191</height>
        </rect>
       </property>
@@ -72,7 +72,7 @@ border-radius: 10px;
 }</string>
        </property>
        <property name="text">
-        <string>Plan Custom Trip</string>
+        <string>Plan Trip</string>
        </property>
       </widget>
       <widget class="QPushButton" name="mainViewSouvenirsButton">
@@ -127,58 +127,6 @@ border-radius: 10px;
         <string>View Teams</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="mainViewArenasButton">
-       <property name="geometry">
-        <rect>
-         <x>560</x>
-         <y>30</y>
-         <width>161</width>
-         <height>131</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-background: #003366;
-color: white;
-border-radius: 10px;
-}
-QPushButton:hover:!pressed
-{
-background: #17408B;
-color: white;
-border-radius: 10px;
-}</string>
-       </property>
-       <property name="text">
-        <string>View Arenas</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="mainViewArenasButton_2">
-       <property name="geometry">
-        <rect>
-         <x>740</x>
-         <y>30</y>
-         <width>161</width>
-         <height>131</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-background: #003366;
-color: white;
-border-radius: 10px;
-}
-QPushButton:hover:!pressed
-{
-background: #17408B;
-color: white;
-border-radius: 10px;
-}</string>
-       </property>
-       <property name="text">
-        <string>View Coaches</string>
-       </property>
-      </widget>
      </widget>
      <widget class="QLabel" name="mainLogo">
       <property name="geometry">
@@ -217,7 +165,165 @@ color: white;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_2"/>
+    <widget class="QWidget" name="page_2">
+     <widget class="QPushButton" name="backTripButton">
+      <property name="geometry">
+       <rect>
+        <x>980</x>
+        <y>570</y>
+        <width>80</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background:DarkGrey ;
+color: white;
+border-radius: 10px;
+}
+QPushButton:hover:!pressed
+{
+background: Gray;
+color: white;
+border-radius: 10px;
+}color: white;</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>490</y>
+        <width>491</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="title">
+       <string>Trip Options</string>
+      </property>
+      <widget class="QRadioButton" name="distanceButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>shortest distance</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">sortTripGroup</string>
+       </attribute>
+      </widget>
+      <widget class="QRadioButton" name="orderButton">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>30</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>order specified</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">sortTripGroup</string>
+       </attribute>
+      </widget>
+      <widget class="QComboBox" name="teamCombo">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>30</y>
+         <width>201</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: white;
+border: 1px solid Gray;
+border-radius: 5px;
+color: #003366;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>30</y>
+         <width>51</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Starting at</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTableView" name="planTripTable">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>41</y>
+        <width>661</width>
+        <height>431</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>10</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+font-size: 25px;</string>
+      </property>
+      <property name="text">
+       <string>Teams</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>10</y>
+        <width>211</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+font-size: 25px;</string>
+      </property>
+      <property name="text">
+       <string>Teams selected:</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="selectedTeamsTable">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>40</y>
+        <width>321</width>
+        <height>431</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="page_3">
      <widget class="QTableView" name="souvenirTable">
       <property name="geometry">
@@ -639,89 +745,6 @@ color: #003366;</string>
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_5">
-     <widget class="QTableView" name="teamTable_2">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>60</y>
-        <width>1021</width>
-        <height>471</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_9">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>30</y>
-        <width>141</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;
-font-size: 25px;</string>
-      </property>
-      <property name="text">
-       <string>View Arenas</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="backArenaButton">
-      <property name="geometry">
-       <rect>
-        <x>990</x>
-        <y>580</y>
-        <width>80</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-background:DarkGrey ;
-color: white;
-border-radius: 10px;
-}
-QPushButton:hover:!pressed
-{
-background: Gray;
-color: white;
-border-radius: 10px;
-}color: white;</string>
-      </property>
-      <property name="text">
-       <string>Back</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="page_6">
-     <widget class="QPushButton" name="backCoachButton">
-      <property name="geometry">
-       <rect>
-        <x>940</x>
-        <y>580</y>
-        <width>80</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-background:DarkGrey ;
-color: white;
-border-radius: 10px;
-}
-QPushButton:hover:!pressed
-{
-background: Gray;
-color: white;
-border-radius: 10px;
-}color: white;</string>
-      </property>
-      <property name="text">
-       <string>Back</string>
-      </property>
-     </widget>
-    </widget>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -731,5 +754,6 @@ border-radius: 10px;
  <buttongroups>
   <buttongroup name="sortByGroup"/>
   <buttongroup name="conferenceGroup"/>
+  <buttongroup name="sortTripGroup"/>
  </buttongroups>
 </ui>

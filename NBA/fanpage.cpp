@@ -19,7 +19,19 @@ fanpage::~fanpage()
 void fanpage::on_mainPlanTripButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
-
+    loadPlanTeams();
+    ui->teamCombo->addItems(DbManager::instance().getTeams());
+    int index = ui->teamCombo->findText("Denver Nuggets");
+    ui->teamCombo->setCurrentIndex(index);
+    ui->planTripTable->setSelectionMode(QAbstractItemView::MultiSelection);
+    ui->planTripTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->distanceButton->setChecked(1);
+    ui->selectedTeamsTable->insertColumn(0);
+    ui->selectedTeamsTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->selectedTeamsTable->setAlternatingRowColors(true);
+    ui->selectedTeamsTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+    ui->selectedTeamsTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Team Name"));
+    ui->selectedTeamsTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
 void fanpage::on_mainViewSouvenirsButton_clicked()
@@ -43,11 +55,6 @@ void fanpage::on_mainViewTeamsButton_clicked()
 
     loadAllTeams();
     loadCapacity(DbManager::instance().getConference("*", "capacity"));
-}
-
-void fanpage::on_mainViewArenasButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(4);
 }
 
 void fanpage::on_backSouvenirButton_clicked()
@@ -97,6 +104,14 @@ void fanpage::loadAllTeams()
     ui->teamTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->teamTable->setAlternatingRowColors(true);
     ui->teamTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+}
+
+void fanpage::loadPlanTeams()
+{
+    ui->planTripTable->setModel(DbManager::instance().toTableTeamName());
+    ui->planTripTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->planTripTable->setAlternatingRowColors(true);
+    ui->planTripTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
 }
 
 void fanpage::on_teamNameTeamCombo_currentIndexChanged(const QString &arg1)
@@ -366,38 +381,46 @@ void fanpage::on_divisionCombo_currentIndexChanged(const QString &arg1)
     }
 }
 
-//Brings back to main page
-void fanpage::on_backArenaButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-//Brings to page to view arenas
-void fanpage::on_mainViewArenasButton_2_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(5);
-}
-
-//Brings back to main page
-void fanpage::on_backCoachButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-//If duplicate arena, counts smallest capacity for arena [PLEASE CHECK WITH PROF]
 void fanpage::loadCapacity(QSqlQueryModel* modal)
 {
     int sum = 0;
-    QSet<QString> teamList;
     for(int i = 0; i < modal->rowCount(); i++)
     {
-        QString toFind = modal->record(i).value(4).toString();
-        if(teamList.find(toFind) == teamList.end())
-        {
-            sum +=modal->record(i).value(5).toInt();
-            teamList.insert(toFind);
-        }
+        sum +=modal->record(i).value(5).toInt();
     }
     ui->capacityLabel->setText(QString::number(sum));
+}
+
+
+void fanpage::on_backTripButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void fanpage::on_planTripTable_activated(const QModelIndex &index)
+{
+    bool isFound = false;
+    int count;
+    int foundAt = 0;
+    for(count = 0; count < tripTeams.size(); count++)
+    {
+        if(tripTeams.at(count) == index.sibling(index.row(), 0).data().toString())
+        {
+            isFound = true;
+            foundAt = count;
+        }
+    }
+
+    if(!isFound)
+    {
+        tripTeams.push_back(index.sibling(index.row(), 0).data().toString());
+        ui->selectedTeamsTable->insertRow(ui->selectedTeamsTable->rowCount());
+        ui->selectedTeamsTable->setItem( ui->selectedTeamsTable->rowCount()-1, 0,  new QTableWidgetItem(index.sibling(index.row(), 0).data().toString()));
+    }
+    else
+    {
+        tripTeams.remove(foundAt);
+        ui->selectedTeamsTable->removeRow(foundAt);
+    }
 }
 

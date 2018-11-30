@@ -264,3 +264,81 @@ void maintenance::on_teamMaintenanceTableView_doubleClicked(const QModelIndex &i
         }
     }
 }
+
+void maintenance::on_distanceBackButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void maintenance::on_menuDistanceButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+    loadDistances();
+}
+
+void maintenance::loadDistances()
+{
+    ui->distancesTable->setModel(DbManager::instance().toTableDistances());
+    ui->distancesTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->distancesTable->setAlternatingRowColors(true);
+    ui->distancesTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+}
+
+void maintenance::on_addDistancesButton_clicked()
+{
+
+
+    QString filename = QFileDialog::getOpenFileName(this, tr("Open Image"), FOLDER, tr("*.xlsx"));
+    if(filename.isEmpty())
+    {
+        return;
+    }
+    filename.replace('/','\\');
+    QAxObject* excel = new QAxObject( "Excel.Application", 0 );
+    QAxObject* workbooks = excel->querySubObject( "Workbooks" );
+    QAxObject* workbook = workbooks->querySubObject( "Open(const QString&)", filename );
+    QAxObject* sheets = workbook->querySubObject( "Worksheets" );
+    int sheetCount = sheets->dynamicCall("Count()").toInt();        //worksheets count
+    QAxObject* sheet = sheets->querySubObject( "Item( int )", sheetCount );
+
+    // Find the cells that actually have content
+    QAxObject* usedrange = sheet->querySubObject( "UsedRange");
+    QAxObject * rows = usedrange->querySubObject("Rows");
+    QAxObject * columns = usedrange->querySubObject("Columns");
+    int intRowStart = usedrange->property("Row").toInt();
+    int intColStart = usedrange->property("Column").toInt();
+    int intCols = columns->property("Count").toInt();
+    int intRows = rows->property("Count").toInt();
+
+    QString b;
+    QString arena;
+    QString e;
+    double d;
+
+    //Row starts at 1 to remove header columns
+    for (int row=intRowStart + 1 ; row < intRowStart + intRows ; row++) {
+
+        for (int col=intColStart ; col < intColStart + intCols ; col++)
+        {
+            QAxObject* cell = sheet->querySubObject( "Cells( int, int )", row, col );
+            QVariant value = cell->dynamicCall( "Value()" );
+
+            switch (col)
+            {
+                case 1: b=value.toString();
+                    break;
+                case 2: arena=value.toString();
+                    break;
+                case 3: e=value.toString();
+                    break;
+                case 4: {d=value.toDouble();
+                          if(DbManager::instance().addDistance(b,arena,e,d))
+                            {}};
+                    break;
+            }
+        }
+    }
+    workbook->dynamicCall("Close()");
+    excel->dynamicCall("Quit()");
+    loadDistances();
+}
