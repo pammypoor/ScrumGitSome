@@ -68,6 +68,7 @@ void fanpage::populateGraph()
 
     myGraph = new Graph(links.begin(), links.end(), sizeOfGraph);
     myGraph->PrintGraph();
+
 }
 
 void fanpage::on_mainViewSouvenirsButton_clicked()
