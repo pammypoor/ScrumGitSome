@@ -6,7 +6,7 @@
 #include "dbmanager.h"
 #include <QVector>
 #include <algorithm>
-
+#include "graph.h"
 
 namespace Ui {
 class fanpage;
@@ -27,6 +27,8 @@ public:
 private slots:
 
     void on_mainPlanTripButton_clicked();
+    //fills the graph in with the distances from the database
+    void populateGraph();
 
     void on_mainViewSouvenirsButton_clicked();
 
@@ -64,6 +66,7 @@ private slots:
 private:
     Ui::fanpage *ui;
     QVector<QString> tripTeams;
+    Graph<QString, double> *myGraph;
 };
 
 #endif // FANPAGE_H

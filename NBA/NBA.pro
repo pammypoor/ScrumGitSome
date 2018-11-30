@@ -35,7 +35,8 @@ HEADERS += \
     dbmanager.h \
     filesused.h \
     maintenance.h \
-    fanpage.h
+    fanpage.h \
+    graph.h
 
 FORMS += \
         mainwindow.ui \

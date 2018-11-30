@@ -1,6 +1,6 @@
 #include "fanpage.h"
 #include "ui_fanpage.h"
-
+#include <algorithm>
 fanpage::fanpage(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::fanpage)
@@ -9,6 +9,7 @@ fanpage::fanpage(QWidget *parent) :
     QPixmap pix(MAINPIC);
     ui->mainLogo->setPixmap(pix.scaled(200,200, Qt::IgnoreAspectRatio, Qt::FastTransformation));
     ui->stackedWidget->setCurrentIndex(0);
+    populateGraph();
 }
 
 fanpage::~fanpage()
@@ -32,6 +33,39 @@ void fanpage::on_mainPlanTripButton_clicked()
     ui->selectedTeamsTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
     ui->selectedTeamsTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Team Name"));
     ui->selectedTeamsTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+}
+
+void fanpage::populateGraph()
+{
+    typedef Graph<QString, double> Graph; //readability purposes
+    typedef Graph::Link Link;         //readability purposes
+
+    vector<Link> links;
+    int sizeOfGraph = 31;
+    QVector<QString> fromTeams;
+    QVector<QString> toTeams;
+    QVector<double>  weights;
+    QVector<double> insertedEdges;
+    QVector<double>::iterator fIt;
+
+
+    fromTeams = DbManager::instance().getFromTeams();
+    toTeams   = DbManager::instance().getToTeams();
+    weights   = DbManager::instance().getWeights();
+
+    for(int i = 0; i < fromTeams.size(); i++)
+    {
+        fIt = std::find(insertedEdges.begin(), insertedEdges.end(), weights[i]);
+
+        if(fIt == insertedEdges.end())
+        {
+           links.push_back(Link(make_pair(fromTeams[i], toTeams[i]), weights[i]));
+           insertedEdges.push_back(weights[i]);
+        }
+    }
+
+    myGraph = new Graph(links.begin(), links.end(), sizeOfGraph);
+    myGraph->PrintGraph();
 }
 
 void fanpage::on_mainViewSouvenirsButton_clicked()

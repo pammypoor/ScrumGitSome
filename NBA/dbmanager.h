@@ -54,6 +54,9 @@ public:
     QSqlQueryModel* toTableSingleTeamSouvenirs(QString team);
 
     QSqlQueryModel* getSingleTeam(QString teamName);
+    QVector<QString> getFromTeams();
+    QVector<QString> getToTeams();
+    QVector<double> getWeights();
 
     void updateArena(team aTeam, QString newArena);
     void updateCapacity(team aTeam, int newCapacity);

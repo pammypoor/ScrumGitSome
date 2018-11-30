@@ -1,5 +1,7 @@
 #include "dbmanager.h"
-
+#include<string>
+#include<iostream>
+using namespace std;
 DbManager::DbManager()
 {
     database = QSqlDatabase::addDatabase("QSQLITE");
@@ -184,6 +186,46 @@ QStringList DbManager::getTeams()
         lst << query.value(0).toString();
     }
     return lst;
+}
+
+QVector<QString> DbManager::getFromTeams()
+{
+    QSqlQuery query;
+    QVector<QString> fromTeams;
+
+    query.prepare("SELECT bTeam FROM distances");
+    query.exec();
+    while(query.next())
+    {
+        fromTeams.push_back(query.value(0).toString());
+    }
+    return fromTeams;
+}
+QVector<QString> DbManager::getToTeams()
+{
+    QSqlQuery query;
+    QVector<QString> toTeams;
+
+    query.prepare("Select eTeam FROM distances");
+    query.exec();
+    while(query.next())
+    {
+        toTeams.push_back(query.value(0).toString());
+    }
+    return toTeams;
+}
+QVector<double> DbManager::getWeights()
+{
+    QSqlQuery query;
+    QVector<double> weights;
+
+    query.prepare("SELECT distance FROM distances");
+    query.exec();
+    while(query.next())
+    {
+        weights.push_back(query.value(0).toDouble());
+    }
+    return weights;
 }
 
 bool DbManager::addTeam(team newTeam)

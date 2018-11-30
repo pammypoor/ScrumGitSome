@@ -55,3 +55,8 @@ void MainWindow::on_showPassword_stateChanged(int arg1)
 {
     ui->passwordLineEdit->setEchoMode(ui->showPassword->checkState()== Qt::Checked ? QLineEdit::Normal: QLineEdit::Password);
 }
+
+void MainWindow::on_passwordLineEdit_returnPressed()
+{
+    on_logOnPushButton_clicked();
+}
