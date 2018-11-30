@@ -66,13 +66,14 @@ class Graph
             friend class Graph;
 
             Edge(const pair<VertexIt, VertexIt>& vp, const WeightType& w)
-            :incidentVertices(vp), weight(w) {}
+            :incidentVertices(vp), weight(w), null(false) {}
         public:
             Edge()
             {
                 VertexIt rVIt;
                 incidentVertices = make_pair(rVIt, rVIt);
                 weight = 0;
+                null = true;
             }
         private:
             VertexIt adjVertexTo(const VertexIt& v)
@@ -90,6 +91,7 @@ class Graph
 
             pair<VertexIt, VertexIt> incidentVertices;
             WeightType weight;
+            bool null;
         };
 
         /**********************************************************************
@@ -246,7 +248,7 @@ class Graph
             {
 //				cout << " col: " << col;
                 Edge incidentEdge = adjacencyMatrix[row][col];
-                if(incidentEdge.weight != 0)
+                if(incidentEdge.null != true)
                 {
                     incidentEdgesV.push_back(adjacencyMatrix[row][col]);
 //					cout << "NEW EDGE: " << incidentEdge.weight;
