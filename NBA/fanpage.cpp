@@ -41,10 +41,12 @@ void fanpage::populateGraph()
     typedef Graph::Link Link;         //readability purposes
 
     vector<Link> links;
-    int sizeOfGraph = 31;
+    int sizeOfGraph = 31; // modify when adding another team or distance
+
     QVector<QString> fromTeams;
     QVector<QString> toTeams;
     QVector<double>  weights;
+
     QVector<double> insertedEdges;
     QVector<double>::iterator fIt;
 
@@ -66,6 +68,7 @@ void fanpage::populateGraph()
 
     myGraph = new Graph(links.begin(), links.end(), sizeOfGraph);
     myGraph->PrintGraph();
+
 }
 
 void fanpage::on_mainViewSouvenirsButton_clicked()
