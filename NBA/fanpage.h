@@ -7,6 +7,7 @@
 #include <QVector>
 #include <algorithm>
 #include "graph.h"
+#include "trip.h"
 
 namespace Ui {
 class fanpage;
@@ -15,13 +16,13 @@ class fanpage;
 class fanpage : public QMainWindow
 {
     Q_OBJECT
-
 public:
     explicit fanpage(QWidget *parent = 0);
     void loadAllSouvenirs();
     void loadAllTeams();
     void loadPlanTeams();
     void loadCapacity(QSqlQueryModel* modal);
+    QVector<QString> getTripTeams() {return tripTeams;}
     ~fanpage();
 
 private slots:
@@ -63,10 +64,14 @@ private slots:
 
     void on_planTripTable_activated(const QModelIndex &index);
 
+    void on_tripButton_clicked();
+
 private:
     Ui::fanpage *ui;
     QVector<QString> tripTeams;
+    QVector<souvenir> fanSouvenirs;
     Graph<QString, double> *myGraph;
+    trip* tripPage;
 };
 
 #endif // FANPAGE_H

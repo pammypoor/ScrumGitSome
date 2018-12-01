@@ -420,3 +420,13 @@ bool DbManager::addDistance(QString bTeam, QString bArena, QString eTeam, double
         return false;
     }
 }
+
+QSqlQueryModel* DbManager::getTeamSouvenir(QString team)
+{
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QString queryString;
+    queryString = "SELECT * FROM souvenirs WHERE team = '" + team + "' ORDER BY name ASC;";
+    modal->setQuery(queryString);
+    modal->insertColumn(0);
+    return modal;
+}

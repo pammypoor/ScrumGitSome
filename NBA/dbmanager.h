@@ -14,6 +14,9 @@
 #include <vector>
 #include <QStandardItemModel>
 #include <QHeaderView>
+#include <QItemDelegate>
+#include <QStandardItemModel>
+#include <QSpinBox>
 
 struct souvenir
 {
@@ -47,6 +50,7 @@ public:
     bool souvenirExist(souvenir aSouvenir);
     void deleteSouvenir(souvenir aSouvenir);
     void editSouvenir(souvenir aSouvenir, double newPrice);
+    QSqlQueryModel* getTeamSouvenir(QString team);
 
     QStringList getTeams();
     bool addTeam(team newTeam);

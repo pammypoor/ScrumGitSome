@@ -195,7 +195,7 @@ border-radius: 10px;
      <widget class="QGroupBox" name="groupBox_3">
       <property name="geometry">
        <rect>
-        <x>40</x>
+        <x>130</x>
         <y>490</y>
         <width>491</width>
         <height>61</height>
@@ -321,6 +321,32 @@ font-size: 25px;</string>
         <width>321</width>
         <height>431</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tripButton">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>560</y>
+        <width>181</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background:DarkGrey ;
+color: white;
+border-radius: 10px;
+}
+QPushButton:hover:!pressed
+{
+background: Gray;
+color: white;
+border-radius: 10px;
+}color: white;</string>
+      </property>
+      <property name="text">
+       <string>Plan Trip</string>
       </property>
      </widget>
     </widget>
@@ -752,8 +778,8 @@ color: #003366;</string>
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="sortByGroup"/>
   <buttongroup name="conferenceGroup"/>
   <buttongroup name="sortTripGroup"/>
+  <buttongroup name="sortByGroup"/>
  </buttongroups>
 </ui>

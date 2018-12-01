@@ -28,7 +28,8 @@ SOURCES += \
         mainwindow.cpp \
     dbmanager.cpp \
     maintenance.cpp \
-    fanpage.cpp
+    fanpage.cpp \
+    trip.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -36,9 +37,11 @@ HEADERS += \
     filesused.h \
     maintenance.h \
     fanpage.h \
-    graph.h
+    graph.h \
+    trip.h
 
 FORMS += \
         mainwindow.ui \
     maintenance.ui \
-    fanpage.ui
+    fanpage.ui \
+    trip.ui

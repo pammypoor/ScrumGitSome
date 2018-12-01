@@ -52,6 +52,7 @@ public:
     QLabel *label_11;
     QLabel *label_13;
     QTableWidget *selectedTeamsTable;
+    QPushButton *tripButton;
     QWidget *page_3;
     QTableView *souvenirTable;
     QPushButton *backSouvenirButton;
@@ -81,9 +82,9 @@ public:
     QLabel *capacityLabel;
     QLabel *label_12;
     QStatusBar *statusbar;
-    QButtonGroup *sortByGroup;
     QButtonGroup *conferenceGroup;
     QButtonGroup *sortTripGroup;
+    QButtonGroup *sortByGroup;
 
     void setupUi(QMainWindow *fanpage)
     {
@@ -176,7 +177,7 @@ public:
 "}color: white;"));
         groupBox_3 = new QGroupBox(page_2);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(40, 490, 491, 61));
+        groupBox_3->setGeometry(QRect(130, 490, 491, 61));
         groupBox_3->setStyleSheet(QStringLiteral("color: white;"));
         distanceButton = new QRadioButton(groupBox_3);
         sortTripGroup = new QButtonGroup(fanpage);
@@ -214,6 +215,20 @@ public:
         selectedTeamsTable = new QTableWidget(page_2);
         selectedTeamsTable->setObjectName(QStringLiteral("selectedTeamsTable"));
         selectedTeamsTable->setGeometry(QRect(730, 40, 321, 431));
+        tripButton = new QPushButton(page_2);
+        tripButton->setObjectName(QStringLiteral("tripButton"));
+        tripButton->setGeometry(QRect(230, 560, 181, 22));
+        tripButton->setStyleSheet(QLatin1String("QPushButton{\n"
+"background:DarkGrey ;\n"
+"color: white;\n"
+"border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover:!pressed\n"
+"{\n"
+"background: Gray;\n"
+"color: white;\n"
+"border-radius: 10px;\n"
+"}color: white;"));
         stackedWidget->addWidget(page_2);
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
@@ -383,6 +398,7 @@ public:
         label_9->setText(QApplication::translate("fanpage", "Starting at", nullptr));
         label_11->setText(QApplication::translate("fanpage", "Teams", nullptr));
         label_13->setText(QApplication::translate("fanpage", "Teams selected:", nullptr));
+        tripButton->setText(QApplication::translate("fanpage", "Plan Trip", nullptr));
         backSouvenirButton->setText(QApplication::translate("fanpage", "Back", nullptr));
         label_2->setText(QApplication::translate("fanpage", "Show by:", nullptr));
         label_3->setText(QApplication::translate("fanpage", "View Souvenirs", nullptr));

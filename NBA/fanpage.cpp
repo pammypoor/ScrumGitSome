@@ -21,10 +21,6 @@ void fanpage::on_mainPlanTripButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
     loadPlanTeams();
-    ui->teamCombo->addItems(DbManager::instance().getTeams());
-    int index = ui->teamCombo->findText("Denver Nuggets");
-    ui->teamCombo->setCurrentIndex(index);
-    ui->planTripTable->setSelectionMode(QAbstractItemView::MultiSelection);
     ui->planTripTable->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->distanceButton->setChecked(1);
     ui->selectedTeamsTable->insertColumn(0);
@@ -447,17 +443,24 @@ void fanpage::on_planTripTable_activated(const QModelIndex &index)
             foundAt = count;
         }
     }
-
     if(!isFound)
     {
         tripTeams.push_back(index.sibling(index.row(), 0).data().toString());
         ui->selectedTeamsTable->insertRow(ui->selectedTeamsTable->rowCount());
         ui->selectedTeamsTable->setItem( ui->selectedTeamsTable->rowCount()-1, 0,  new QTableWidgetItem(index.sibling(index.row(), 0).data().toString()));
+        ui->teamCombo->addItem(index.sibling(index.row(), 0).data().toString());
     }
     else
     {
         tripTeams.remove(foundAt);
         ui->selectedTeamsTable->removeRow(foundAt);
+        ui->teamCombo->removeItem(foundAt);
     }
 }
 
+
+void fanpage::on_tripButton_clicked()
+{
+    tripPage = new trip(this, tripTeams);
+    tripPage->show();
+}
