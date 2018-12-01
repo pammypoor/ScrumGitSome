@@ -583,7 +583,9 @@ class Graph
             qDebug() << right;
         }
 
-        void Dijkstra(const VertexType& v)
+        //Dijkstra - returns a vector of vertexType, and returns the cost through modifying
+        //           the cost parameter
+        QVector<VertexType> Dijkstra(const VertexType& start, const VertexType& end, int& cost)
         {
             int dist[maxSize]; // The output array. dist[i] will hold the shortest
                          // distance from v to i
@@ -597,9 +599,9 @@ class Graph
                 sptSet[i] = false;
                 parent[i] = 0;
             }
-            parent[findVertex(v)->i] = -1;
+            parent[findVertex(start)->i] = -1;
 
-            dist[findVertex(v)->i] = 0;
+            dist[findVertex(start)->i] = 0;
             for(int count = 0; count < maxSize; count++)
             {
                 int u = minDistance(dist, sptSet);
@@ -615,9 +617,61 @@ class Graph
                 }
             }
 
-            printSolution(dist, parent, v);
+//            printSolution(dist, parent, start); // prints all the solutions
+            QVector<VertexType> shortestPath;
+            shortestPath = GetDijkstraPath(start, end, dist, parent);// returns a list of VertexType's
+            cost = GetDijkstraCost(end, dist);
+
+            return shortestPath;
         }
 
+    protected:
+        int GetDijkstraCost(const VertexType& end, int dist[])
+        {
+            int endingUniqInt;
+
+            endingUniqInt = findVertex(end)->i;
+
+            return dist[endingUniqInt];
+        }
+
+        QVector<VertexType> GetDijkstraPath(const VertexType& start,
+                                            const VertexType& end,
+                                            int dist[], int parent[])
+        {
+            QVector<VertexType> shortestPath;
+            int startingUniqInt;
+            int endingUniqInt;
+
+            startingUniqInt = findVertex(start)->i;
+            endingUniqInt = findVertex(end)->i;
+
+
+            stack<int> path;
+            qDebug() << "A path from " << start << " to ";
+            qDebug() << findVertex(endingUniqInt)->vertexElem << ": ";
+
+            int i = endingUniqInt;
+            path.push(i);
+            while(parent[i] != -1)
+            {
+                path.push(parent[i]);
+                i = parent[i];
+            }
+
+            while(!path.empty())
+            {
+                qDebug() << findVertex(path.top())->vertexElem << " ";
+                shortestPath.push_back(findVertex(path.top())->vertexElem);
+                path.pop();
+            }
+
+            qDebug() << "(cost: " << dist[endingUniqInt] << ")" << endl;
+
+            return shortestPath; //nothing for now qDebug() to test
+        }
+
+    public:
         void MinimumSpanningTreePrimJarnik()
         {
             int parent[maxSize];

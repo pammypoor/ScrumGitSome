@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'fanpage.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.10.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'fanpage.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.10.1. It"
+#error "This file was generated using the moc from 5.11.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_fanpage_t {
-    QByteArrayData data[23];
-    char stringdata0[607];
+    QByteArrayData data[28];
+    char stringdata0[694];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -52,8 +52,13 @@ QT_MOC_LITERAL(17, 460, 28), // "on_teamYearSortRadio_clicked"
 QT_MOC_LITERAL(18, 489, 36), // "on_divisionCombo_currentIndex..."
 QT_MOC_LITERAL(19, 526, 25), // "on_backTripButton_clicked"
 QT_MOC_LITERAL(20, 552, 26), // "on_planTripTable_activated"
-QT_MOC_LITERAL(21, 579, 5), // "index"
-QT_MOC_LITERAL(22, 585, 21) // "on_tripButton_clicked"
+QT_MOC_LITERAL(21, 579, 11), // "QModelIndex"
+QT_MOC_LITERAL(22, 591, 5), // "index"
+QT_MOC_LITERAL(23, 597, 21), // "on_tripButton_clicked"
+QT_MOC_LITERAL(24, 619, 29), // "on_shortestTripButton_clicked"
+QT_MOC_LITERAL(25, 649, 33), // "on_selectedTeamsTable_cellCha..."
+QT_MOC_LITERAL(26, 683, 3), // "row"
+QT_MOC_LITERAL(27, 687, 6) // "column"
 
     },
     "fanpage\0on_mainPlanTripButton_clicked\0"
@@ -72,8 +77,11 @@ QT_MOC_LITERAL(22, 585, 21) // "on_tripButton_clicked"
     "on_teamYearSortRadio_clicked\0"
     "on_divisionCombo_currentIndexChanged\0"
     "on_backTripButton_clicked\0"
-    "on_planTripTable_activated\0index\0"
-    "on_tripButton_clicked"
+    "on_planTripTable_activated\0QModelIndex\0"
+    "index\0on_tripButton_clicked\0"
+    "on_shortestTripButton_clicked\0"
+    "on_selectedTeamsTable_cellChanged\0row\0"
+    "column"
 };
 #undef QT_MOC_LITERAL
 
@@ -83,7 +91,7 @@ static const uint qt_meta_data_fanpage[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      19,   14, // methods
+      21,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -91,25 +99,27 @@ static const uint qt_meta_data_fanpage[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  109,    2, 0x08 /* Private */,
-       3,    0,  110,    2, 0x08 /* Private */,
-       4,    0,  111,    2, 0x08 /* Private */,
-       5,    0,  112,    2, 0x08 /* Private */,
-       6,    0,  113,    2, 0x08 /* Private */,
-       7,    1,  114,    2, 0x08 /* Private */,
-       9,    0,  117,    2, 0x08 /* Private */,
-      10,    1,  118,    2, 0x08 /* Private */,
-      11,    0,  121,    2, 0x08 /* Private */,
-      12,    0,  122,    2, 0x08 /* Private */,
-      13,    0,  123,    2, 0x08 /* Private */,
-      14,    0,  124,    2, 0x08 /* Private */,
-      15,    0,  125,    2, 0x08 /* Private */,
-      16,    0,  126,    2, 0x08 /* Private */,
-      17,    0,  127,    2, 0x08 /* Private */,
-      18,    1,  128,    2, 0x08 /* Private */,
-      19,    0,  131,    2, 0x08 /* Private */,
-      20,    1,  132,    2, 0x08 /* Private */,
-      22,    0,  135,    2, 0x08 /* Private */,
+       1,    0,  119,    2, 0x08 /* Private */,
+       3,    0,  120,    2, 0x08 /* Private */,
+       4,    0,  121,    2, 0x08 /* Private */,
+       5,    0,  122,    2, 0x08 /* Private */,
+       6,    0,  123,    2, 0x08 /* Private */,
+       7,    1,  124,    2, 0x08 /* Private */,
+       9,    0,  127,    2, 0x08 /* Private */,
+      10,    1,  128,    2, 0x08 /* Private */,
+      11,    0,  131,    2, 0x08 /* Private */,
+      12,    0,  132,    2, 0x08 /* Private */,
+      13,    0,  133,    2, 0x08 /* Private */,
+      14,    0,  134,    2, 0x08 /* Private */,
+      15,    0,  135,    2, 0x08 /* Private */,
+      16,    0,  136,    2, 0x08 /* Private */,
+      17,    0,  137,    2, 0x08 /* Private */,
+      18,    1,  138,    2, 0x08 /* Private */,
+      19,    0,  141,    2, 0x08 /* Private */,
+      20,    1,  142,    2, 0x08 /* Private */,
+      23,    0,  145,    2, 0x08 /* Private */,
+      24,    0,  146,    2, 0x08 /* Private */,
+      25,    2,  147,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -129,8 +139,10 @@ static const uint qt_meta_data_fanpage[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    8,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QModelIndex,   21,
+    QMetaType::Void, 0x80000000 | 21,   22,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   26,   27,
 
        0        // eod
 };
@@ -160,6 +172,8 @@ void fanpage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 16: _t->on_backTripButton_clicked(); break;
         case 17: _t->on_planTripTable_activated((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
         case 18: _t->on_tripButton_clicked(); break;
+        case 19: _t->on_shortestTripButton_clicked(); break;
+        case 20: _t->on_selectedTeamsTable_cellChanged((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     }
@@ -190,13 +204,13 @@ int fanpage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 19)
+        if (_id < 21)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 19;
+        _id -= 21;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 19)
+        if (_id < 21)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 19;
+        _id -= 21;
     }
     return _id;
 }

@@ -40,6 +40,7 @@ public:
     explicit trip(QWidget *parent = 0);
     explicit trip(QWidget *parent, QVector<QString> teams);
     void loadSouvenirs(QString team);
+    void loadTotalDistance(int distance);
     ~trip();
 
 private slots:
@@ -48,6 +49,7 @@ private slots:
 private:
     Ui::trip *ui;
     int teamCount;
+    int totalDistance;
     QVector<QString> teams;
 };
 

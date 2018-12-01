@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'trip.ui'
 **
-** Created by: Qt User Interface Compiler version 5.10.1
+** Created by: Qt User Interface Compiler version 5.11.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,9 +10,7 @@
 #define UI_TRIP_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListView>
@@ -37,6 +35,8 @@ public:
     QLabel *label_2;
     QLabel *tripTeamName;
     QTableView *souvenirsTable;
+    QLabel *totalDistanceLabel;
+    QLabel *totalDistanceNum;
     QWidget *page_2;
     QStatusBar *statusbar;
 
@@ -88,6 +88,17 @@ public:
         souvenirsTable = new QTableView(page);
         souvenirsTable->setObjectName(QStringLiteral("souvenirsTable"));
         souvenirsTable->setGeometry(QRect(5, 61, 671, 581));
+        totalDistanceLabel = new QLabel(page);
+        totalDistanceLabel->setObjectName(QStringLiteral("totalDistanceLabel"));
+        totalDistanceLabel->setGeometry(QRect(730, 650, 91, 20));
+        QFont font;
+        font.setPointSize(10);
+        totalDistanceLabel->setFont(font);
+        totalDistanceNum = new QLabel(page);
+        totalDistanceNum->setObjectName(QStringLiteral("totalDistanceNum"));
+        totalDistanceNum->setGeometry(QRect(840, 650, 111, 16));
+        totalDistanceNum->setFont(font);
+        totalDistanceNum->setAutoFillBackground(false);
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
@@ -99,6 +110,9 @@ public:
 
         retranslateUi(trip);
 
+        stackedWidget->setCurrentIndex(0);
+
+
         QMetaObject::connectSlotsByName(trip);
     } // setupUi
 
@@ -109,6 +123,8 @@ public:
         tripButton->setText(QApplication::translate("trip", "Next Team", nullptr));
         label_2->setText(QApplication::translate("trip", "Cart", nullptr));
         tripTeamName->setText(QApplication::translate("trip", "TEAM NAME", nullptr));
+        totalDistanceLabel->setText(QApplication::translate("trip", "Total Distance", nullptr));
+        totalDistanceNum->setText(QApplication::translate("trip", "TextLabel", nullptr));
     } // retranslateUi
 
 };

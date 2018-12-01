@@ -349,6 +349,32 @@ border-radius: 10px;
        <string>Plan Trip</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="shortestTripButton">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>500</y>
+        <width>181</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background:DarkGrey ;
+color: white;
+border-radius: 10px;
+}
+QPushButton:hover:!pressed
+{
+background: Gray;
+color: white;
+border-radius: 10px;
+}color: white;</string>
+      </property>
+      <property name="text">
+       <string>Travel Shortest Distance</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_3">
      <widget class="QTableView" name="souvenirTable">
@@ -779,7 +805,7 @@ color: #003366;</string>
  <connections/>
  <buttongroups>
   <buttongroup name="conferenceGroup"/>
-  <buttongroup name="sortTripGroup"/>
   <buttongroup name="sortByGroup"/>
+  <buttongroup name="sortTripGroup"/>
  </buttongroups>
 </ui>

@@ -76,6 +76,17 @@ void trip::loadSouvenirs(QString team)
     //ui->souvenirsTable->setItemDelegateForColumn(0, spin);
 }
 
+void trip::loadTotalDistance(int distance)
+{
+    QPalette palette;
+    palette.setColor(QPalette::WindowText, Qt::white);
+
+    ui->totalDistanceNum->setAutoFillBackground(true);
+    ui->totalDistanceNum->setPalette(palette);
+    ui->totalDistanceLabel->setPalette(palette);
+    ui->totalDistanceNum->setText(QString::number(distance));
+}
+
 
 trip::~trip()
 {
@@ -94,6 +105,4 @@ void trip::on_tripButton_clicked()
     {
 
     }
-
-
 }

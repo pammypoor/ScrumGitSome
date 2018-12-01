@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'fanpage.ui'
 **
-** Created by: Qt User Interface Compiler version 5.10.1
+** Created by: Qt User Interface Compiler version 5.11.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,7 +10,6 @@
 #define UI_FANPAGE_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
@@ -53,6 +52,7 @@ public:
     QLabel *label_13;
     QTableWidget *selectedTeamsTable;
     QPushButton *tripButton;
+    QPushButton *shortestTripButton;
     QWidget *page_3;
     QTableView *souvenirTable;
     QPushButton *backSouvenirButton;
@@ -83,8 +83,8 @@ public:
     QLabel *label_12;
     QStatusBar *statusbar;
     QButtonGroup *conferenceGroup;
-    QButtonGroup *sortTripGroup;
     QButtonGroup *sortByGroup;
+    QButtonGroup *sortTripGroup;
 
     void setupUi(QMainWindow *fanpage)
     {
@@ -219,6 +219,20 @@ public:
         tripButton->setObjectName(QStringLiteral("tripButton"));
         tripButton->setGeometry(QRect(230, 560, 181, 22));
         tripButton->setStyleSheet(QLatin1String("QPushButton{\n"
+"background:DarkGrey ;\n"
+"color: white;\n"
+"border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover:!pressed\n"
+"{\n"
+"background: Gray;\n"
+"color: white;\n"
+"border-radius: 10px;\n"
+"}color: white;"));
+        shortestTripButton = new QPushButton(page_2);
+        shortestTripButton->setObjectName(QStringLiteral("shortestTripButton"));
+        shortestTripButton->setGeometry(QRect(810, 500, 181, 22));
+        shortestTripButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
@@ -399,6 +413,7 @@ public:
         label_11->setText(QApplication::translate("fanpage", "Teams", nullptr));
         label_13->setText(QApplication::translate("fanpage", "Teams selected:", nullptr));
         tripButton->setText(QApplication::translate("fanpage", "Plan Trip", nullptr));
+        shortestTripButton->setText(QApplication::translate("fanpage", "Travel Shortest Distance", nullptr));
         backSouvenirButton->setText(QApplication::translate("fanpage", "Back", nullptr));
         label_2->setText(QApplication::translate("fanpage", "Show by:", nullptr));
         label_3->setText(QApplication::translate("fanpage", "View Souvenirs", nullptr));

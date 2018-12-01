@@ -10,6 +10,7 @@ fanpage::fanpage(QWidget *parent) :
     ui->mainLogo->setPixmap(pix.scaled(200,200, Qt::IgnoreAspectRatio, Qt::FastTransformation));
     ui->stackedWidget->setCurrentIndex(0);
     populateGraph();
+    ui->shortestTripButton->setDisabled(true);
 }
 
 fanpage::~fanpage()
@@ -455,6 +456,8 @@ void fanpage::on_planTripTable_activated(const QModelIndex &index)
         tripTeams.remove(foundAt);
         ui->selectedTeamsTable->removeRow(foundAt);
         ui->teamCombo->removeItem(foundAt);
+        //Check if theres 2 teams in selected table if true activate button for shortest distance
+        on_selectedTeamsTable_cellChanged(0, 0);
     }
 }
 
@@ -463,4 +466,57 @@ void fanpage::on_tripButton_clicked()
 {
     tripPage = new trip(this, tripTeams);
     tripPage->show();
+}
+
+//ShortestTripButtonClicked - activated when there are two teams selected
+//                            calculates dijkstra on the starting and ending team
+//                            and brings up trip UI, displays the total distance
+//                            and allows user to purchase souvenirs
+void fanpage::on_shortestTripButton_clicked()
+{
+    bool validNumOfTeams = false;
+    QVector<QString> shortestPath;
+    int cost;
+    QString starting;
+    QString ending;
+
+    if(ui->selectedTeamsTable->rowCount() == 2)
+    {
+        //Valid number of teams a starting team and an ending team to generate
+        //Dijkstra's shortest path
+        validNumOfTeams = true;
+
+        if(ui->teamCombo->currentText() == tripTeams[0])
+        {
+            starting = tripTeams[0];
+            ending   = tripTeams[1];
+        }
+        else
+        {
+            starting = tripTeams[1];
+            ending   = tripTeams[0];
+        }
+
+        shortestPath = myGraph->Dijkstra(starting, ending, cost);
+        //we have a vector with the path and cost with the cost
+
+        tripPage = new trip(this, shortestPath);
+        tripPage->show();
+        tripPage->loadTotalDistance(cost);
+    }
+
+}
+
+//SelectedTeamsTableChanged - activates button only when there are two teams selected
+//                            otherwise dont activate it
+void fanpage::on_selectedTeamsTable_cellChanged(int row, int column)
+{
+    if(ui->selectedTeamsTable->rowCount() == 2)
+    {
+        ui->shortestTripButton->setEnabled(true);
+    }
+    else
+    {
+        ui->shortestTripButton->setDisabled(true);
+    }
 }

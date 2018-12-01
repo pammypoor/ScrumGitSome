@@ -66,6 +66,10 @@ private slots:
 
     void on_tripButton_clicked();
 
+    void on_shortestTripButton_clicked();
+
+    void on_selectedTeamsTable_cellChanged(int row, int column);
+
 private:
     Ui::fanpage *ui;
     QVector<QString> tripTeams;
