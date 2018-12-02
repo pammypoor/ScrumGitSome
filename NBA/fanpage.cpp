@@ -429,6 +429,8 @@ void fanpage::loadCapacity(QSqlQueryModel* modal)
 void fanpage::on_backTripButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+    tripTeams.clear();
+    ui->selectedTeamsTable->setRowCount(0);
 }
 
 void fanpage::on_planTripTable_activated(const QModelIndex &index)
@@ -500,9 +502,13 @@ void fanpage::on_shortestTripButton_clicked()
         shortestPath = myGraph->Dijkstra(starting, ending, cost);
         //we have a vector with the path and cost with the cost
 
-        tripPage = new trip(this, shortestPath);
+
+
+        tripPage = new trip(this, shortestPath, QVector<QString> {starting, ending});
         tripPage->show();
         tripPage->loadTotalDistance(cost);
+        tripPage->loadTeamVisited(starting);
+        tripPage->loadTeamVisited(ending);
     }
 
 }

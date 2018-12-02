@@ -39,18 +39,23 @@ class trip : public QMainWindow
 public:
     explicit trip(QWidget *parent = 0);
     explicit trip(QWidget *parent, QVector<QString> teams);
+    explicit trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisited);
     void loadSouvenirs(QString team);
     void loadTotalDistance(int distance);
+    void loadTeamVisited(QString team);
     ~trip();
 
 private slots:
     void on_tripButton_clicked();
+
+    void on_souvenirsTable_doubleClicked(const QModelIndex &index);
 
 private:
     Ui::trip *ui;
     int teamCount;
     int totalDistance;
     QVector<QString> teams;
+    QVector<QString> teamsVisited;
 };
 
 #endif // TRIP_H

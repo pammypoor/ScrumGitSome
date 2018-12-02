@@ -427,6 +427,5 @@ QSqlQueryModel* DbManager::getTeamSouvenir(QString team)
     QString queryString;
     queryString = "SELECT * FROM souvenirs WHERE team = '" + team + "' ORDER BY name ASC;";
     modal->setQuery(queryString);
-    modal->insertColumn(0);
     return modal;
 }
