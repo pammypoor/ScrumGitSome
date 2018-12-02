@@ -27,7 +27,7 @@
      <string notr="true">background: #003366;</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QFrame" name="frame">
@@ -373,6 +373,32 @@ border-radius: 10px;
       </property>
       <property name="text">
        <string>Travel Shortest Distance</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="minimumSpanTreeButton">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>10</y>
+        <width>181</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background:DarkGrey ;
+color: white;
+border-radius: 10px;
+}
+QPushButton:hover:!pressed
+{
+background: Gray;
+color: white;
+border-radius: 10px;
+}color: white;</string>
+      </property>
+      <property name="text">
+       <string>Minimum Spanning Tree</string>
       </property>
      </widget>
     </widget>
@@ -804,8 +830,8 @@ color: #003366;</string>
  <resources/>
  <connections/>
  <buttongroups>
+  <buttongroup name="sortTripGroup"/>
   <buttongroup name="sortByGroup"/>
   <buttongroup name="conferenceGroup"/>
-  <buttongroup name="sortTripGroup"/>
  </buttongroups>
 </ui>

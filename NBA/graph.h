@@ -15,6 +15,7 @@
 #include<utility>
 #include<bits/stdc++.h>
 #include"filesused.h"
+#include<sstream>
 using namespace std;
 
 /*******************************************************************************
@@ -692,15 +693,20 @@ class Graph
                 mstSet[u] = true;
                 for(int v = 0; v < maxSize; v++)
                 {
-                    if(adjacencyMatrix[u][v].weight && mstSet[v] == false && adjacencyMatrix[u][v].weight < key[v])
+                    if(adjacencyMatrix[u][v].weight
+                       && mstSet[v] == false && adjacencyMatrix[u][v].weight < key[v])
                     {
                         parent[v] = u;
                         key[v] = adjacencyMatrix[u][v].weight;
                     }
+//                    if(adjacencyMatrix[u][v].weight == 0) //works when taken out but crashes because of the zero
+//                    {
+//                        parent[v] = u;
+//                        key[v] = adjacencyMatrix[u][v].weight;  // crashes when this is taken out zero is causing issues
+//                    }
                 }
             }
             printMST(parent);
-
         }
     protected:
 
@@ -769,20 +775,27 @@ class Graph
         //ACCESSOR - prints the solution for prim jarnik's algorithm
         void printMST(int parent[])
         {
+
+            for(typename list<Vertex>::iterator it = vertices.begin();
+                it != vertices.end(); it++)
+            {
+                qDebug() << "vertex: " << it->i;
+            }
+            for(int index = 0; index < maxSize; index++)
+            {
+                qDebug() << "par: " << parent[index];
+            }
             int totalWeight = 0;
-            cout << left;
-            cout << setw(33) << "EDGE" << "WEIGHT" << endl;
-            cout << setw(33) << "----" << "------" << endl;
+            qDebug() << "EDGE" << "WEIGHT" << endl;
+            qDebug() << "----" << "------" << endl;
             for(int i = 1; i < maxSize; i++)
             {
                 totalWeight = totalWeight + adjacencyMatrix[i][parent[i]].weight;
-                cout << left
-                     << setw(15) << findVertex(parent[i])->vertexElem << " - "
-                     << setw(15) << findVertex(i)->vertexElem
+                qDebug() << findVertex(parent[i])->vertexElem << " - "
+                     << findVertex(i)->vertexElem
                      << adjacencyMatrix[i][parent[i]].weight << endl;
             }
-            cout << endl << "Total weight is " << totalWeight << endl;
-            cout << right;
+            qDebug() << endl << "Total weight is " << totalWeight << endl;
         }
 
     private:

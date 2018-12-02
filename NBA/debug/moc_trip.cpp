@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'trip.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.10.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'trip.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.10.1. It"
+#error "This file was generated using the moc from 5.11.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -87,8 +87,8 @@ int SpinBoxDelegate::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 struct qt_meta_stringdata_trip_t {
-    QByteArrayData data[5];
-    char stringdata0[66];
+    QByteArrayData data[6];
+    char stringdata0[78];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -101,11 +101,13 @@ QT_MOC_LITERAL(0, 0, 4), // "trip"
 QT_MOC_LITERAL(1, 5, 21), // "on_tripButton_clicked"
 QT_MOC_LITERAL(2, 27, 0), // ""
 QT_MOC_LITERAL(3, 28, 31), // "on_souvenirsTable_doubleClicked"
-QT_MOC_LITERAL(4, 60, 5) // "index"
+QT_MOC_LITERAL(4, 60, 11), // "QModelIndex"
+QT_MOC_LITERAL(5, 72, 5) // "index"
 
     },
     "trip\0on_tripButton_clicked\0\0"
-    "on_souvenirsTable_doubleClicked\0index"
+    "on_souvenirsTable_doubleClicked\0"
+    "QModelIndex\0index"
 };
 #undef QT_MOC_LITERAL
 
@@ -128,7 +130,7 @@ static const uint qt_meta_data_trip[] = {
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QModelIndex,    4,
+    QMetaType::Void, 0x80000000 | 4,    5,
 
        0        // eod
 };
