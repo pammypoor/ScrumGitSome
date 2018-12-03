@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'trip.ui'
 **
-** Created by: Qt User Interface Compiler version 5.10.1
+** Created by: Qt User Interface Compiler version 5.11.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,9 +10,7 @@
 #define UI_TRIP_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -22,6 +20,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -51,6 +50,8 @@ public:
     QTableWidget *tableWidget_2;
     QLabel *label_8;
     QTableWidget *reviewTeamTable;
+    QWidget *page_3;
+    QTextBrowser *textBrowser;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *trip)
@@ -158,6 +159,12 @@ public:
         reviewTeamTable->setObjectName(QStringLiteral("reviewTeamTable"));
         reviewTeamTable->setGeometry(QRect(80, 120, 256, 321));
         stackedWidget->addWidget(page_2);
+        page_3 = new QWidget();
+        page_3->setObjectName(QStringLiteral("page_3"));
+        textBrowser = new QTextBrowser(page_3);
+        textBrowser->setObjectName(QStringLiteral("textBrowser"));
+        textBrowser->setGeometry(QRect(25, 21, 391, 421));
+        stackedWidget->addWidget(page_3);
         trip->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(trip);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -165,7 +172,7 @@ public:
 
         retranslateUi(trip);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(trip);

@@ -38,7 +38,7 @@ void fanpage::populateGraph()
     typedef Graph::Link Link;         //readability purposes
 
     vector<Link> links;
-    int sizeOfGraph = 31; // modify when adding another team or distance
+    int sizeOfGraph = 30; // modify when adding another team or distance
 
     QVector<QString> fromTeams;
     QVector<QString> toTeams;
@@ -503,12 +503,20 @@ void fanpage::on_shortestTripButton_clicked()
         //we have a vector with the path and cost with the cost
 
 
+        //I tried to fix it idk if this should affect the implementation in trip.cpp
+        // i commented what u had, feel free to delete this if its wrong
+//        tripPage = new trip(this, shortestPath, QVector<QString> {starting, ending});
+        tripPage = new trip(this, shortestPath, shortestPath);
 
-        tripPage = new trip(this, shortestPath, QVector<QString> {starting, ending});
         tripPage->show();
         tripPage->loadTotalDistance(cost);
-        tripPage->loadTeamVisited(starting);
-        tripPage->loadTeamVisited(ending);
+//        tripPage->loadTeamVisited(starting);
+//        tripPage->loadTeamVisited(ending);
+
+        for(int i = 0; i < shortestPath.size(); i++)
+        {
+            tripPage->loadTeamVisited(shortestPath[i]);
+        }
     }
 
 }
@@ -525,4 +533,15 @@ void fanpage::on_selectedTeamsTable_cellChanged(int row, int column)
     {
         ui->shortestTripButton->setDisabled(true);
     }
+}
+
+
+void fanpage::on_minimumSpanTreeButton_clicked()
+{
+    qDebug() << myGraph->Kruskal();
+
+    tripPage = new trip(this, tripTeams);
+    tripPage->show();
+    tripPage->displayInfo();
+
 }

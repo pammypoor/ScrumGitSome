@@ -15,6 +15,9 @@
 #include<utility>
 #include<bits/stdc++.h>
 #include"filesused.h"
+#include<sstream>
+#include<QFile>
+#include<functional>
 using namespace std;
 
 /*******************************************************************************
@@ -74,6 +77,15 @@ class Graph
                 incidentVertices = make_pair(rVIt, rVIt);
                 weight = 0;
                 null = true;
+            }
+
+            bool operator > (const Edge& rhs) const
+            {
+                return (weight > rhs.weight);
+            }
+            bool operator < (const Edge& rhs) const
+            {
+                return (weight < rhs.weight);
             }
         private:
             VertexIt adjVertexTo(const VertexIt& v)
@@ -692,7 +704,8 @@ class Graph
                 mstSet[u] = true;
                 for(int v = 0; v < maxSize; v++)
                 {
-                    if(adjacencyMatrix[u][v].weight && mstSet[v] == false && adjacencyMatrix[u][v].weight < key[v])
+                    if(adjacencyMatrix[u][v].weight
+                       && mstSet[v] == false && adjacencyMatrix[u][v].weight < key[v])
                     {
                         parent[v] = u;
                         key[v] = adjacencyMatrix[u][v].weight;
@@ -700,7 +713,6 @@ class Graph
                 }
             }
             printMST(parent);
-
         }
     protected:
 
@@ -769,20 +781,94 @@ class Graph
         //ACCESSOR - prints the solution for prim jarnik's algorithm
         void printMST(int parent[])
         {
+
+            for(typename list<Vertex>::iterator it = vertices.begin();
+                it != vertices.end(); it++)
+            {
+                qDebug() << "vertex: " << it->i;
+            }
+            for(int index = 0; index < maxSize; index++)
+            {
+                qDebug() << "par: " << parent[index];
+            }
             int totalWeight = 0;
-            cout << left;
-            cout << setw(33) << "EDGE" << "WEIGHT" << endl;
-            cout << setw(33) << "----" << "------" << endl;
+            qDebug() << "EDGE" << "WEIGHT" << endl;
+            qDebug() << "----" << "------" << endl;
             for(int i = 1; i < maxSize; i++)
             {
                 totalWeight = totalWeight + adjacencyMatrix[i][parent[i]].weight;
-                cout << left
-                     << setw(15) << findVertex(parent[i])->vertexElem << " - "
-                     << setw(15) << findVertex(i)->vertexElem
+                qDebug() << findVertex(parent[i])->vertexElem << " - "
+                     << findVertex(i)->vertexElem
                      << adjacencyMatrix[i][parent[i]].weight << endl;
             }
-            cout << endl << "Total weight is " << totalWeight << endl;
-            cout << right;
+            qDebug() << endl << "Total weight is " << totalWeight << endl;
+        }
+
+    private:
+        void initialize(int id[])
+        {
+            for(int i = 0; i < maxSize; i++)
+            {
+                id[i] = i;
+            }
+        }
+        int root(int x, int id[])
+        {
+            while(id[x] != x)
+            {
+                id[x] = id[id[x]];
+                x = id[x];
+            }
+
+            return x;
+        }
+        void union1(int x, int y, int id[])
+        {
+            int p = root(x, id);
+            int q = root(y, id);
+            id[p] = id[q];
+        }
+    public:
+        double Kruskal()
+        {
+            QFile fin(MSTFILE);
+            if(!fin.open(QFile::WriteOnly | QFile::Text))
+            {
+                qDebug() << "Could not open file";
+                return 0;
+            }
+            QTextStream out(&fin);
+
+            int id[maxSize];
+            initialize(id);
+            int x, y;
+            double cost, minimumCost = 0;
+//            sort(edges, edges + edges.size());
+            edges.sort();
+
+            out << "MINIMUM SPANNING TREE FOR GRAPH" << endl;
+            for(typename list<Edge>::iterator it = edges.begin();
+                it != edges.end(); it++)
+            {
+                x = it->incidentVertices.first->i;
+                y = it->incidentVertices.second->i;
+                cost = it->weight;
+
+                if(root(x, id) != root(y, id))
+                {
+                    out << findVertex(x)->vertexElem << " --- " << findVertex(y)->vertexElem;
+                    out << endl;
+                    minimumCost += cost;
+                    union1(x, y, id);
+                }
+            }
+            out << endl;
+            out << "COST MST: " << minimumCost << endl;
+
+            fin.flush();
+            fin.close();
+
+            return minimumCost;
         }
 
     private:

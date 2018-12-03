@@ -50,6 +50,8 @@ private slots:
 
     void on_souvenirsTable_doubleClicked(const QModelIndex &index);
 
+    void displayInfo();
+
 private:
     Ui::trip *ui;
     int teamCount;

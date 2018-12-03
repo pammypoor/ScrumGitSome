@@ -205,3 +205,30 @@ void trip::loadTeamVisited(QString team)
     ui->reviewTeamTable->insertRow(ui->reviewTeamTable->rowCount());
     ui->reviewTeamTable->setItem(ui->reviewTeamTable->rowCount()-1, 0, new QTableWidgetItem(team));
 }
+
+void trip::displayInfo()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+
+    QFile file(MSTFILE);
+    if(!file.exists())
+    {
+        qDebug() << "Doesnt exist";
+    }
+    else
+    {
+        qDebug() << "Opened...";
+    }
+
+    QString line;
+    ui->textBrowser->clear();
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QTextStream stream(&file);
+        while (!stream.atEnd()){
+            line = stream.readLine();
+            ui->textBrowser->setText(ui->textBrowser->toPlainText()+line+"\n");
+        }
+    }
+
+    file.close();
+}
