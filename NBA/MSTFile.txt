@@ -1,0 +1,32 @@
+MINIMUM SPANNING TREE FOR GRAPH
+Los Angeles Clippers --- Los Angeles Lakers
+Brooklyn Nets --- New York Knicks
+Golden State Warriors --- Sacramento Kings
+Chicago Bulls --- Milwaukee Bucks
+Brooklyn Nets --- Philadelphia 76ers
+Philadelphia 76ers --- Washington Wizards
+Cleveland Cavaliers --- Detroit Pistons
+Chicago Bulls --- Indiana Pacers
+Houston Rockets --- San Antonio Spurs
+Dallas Mavericks --- Oklahoma City Thunder
+Boston Celtics --- New York Knicks
+Detroit Pistons --- Toronto Raptors
+Miami Heat --- Orlando Magic
+Dallas Mavericks --- Houston Rockets
+Atlanta Hawks --- Charlotte Hornets
+Chicago Bulls --- Detroit Pistons
+Milwaukee Bucks --- Minnesota Timberwolves
+Houston Rockets --- New Orleans Pelicans
+Cleveland Cavaliers --- Washington Wizards
+Los Angeles Lakers --- Phoenix Suns
+Atlanta Hawks --- Memphis Grizzlies
+Golden State Warriors --- Los Angeles Lakers
+Memphis Grizzlies --- New Orleans Pelicans
+Charlotte Hornets --- Washington Wizards
+Atlanta Hawks --- Orlando Magic
+Denver Nuggets --- Utah Jazz
+Portland Trail Blazers --- Sacramento Kings
+Denver Nuggets --- Oklahoma City Thunder
+Los Angeles Lakers --- Utah Jazz
+
+COST MST: 8522.5

@@ -538,5 +538,10 @@ void fanpage::on_selectedTeamsTable_cellChanged(int row, int column)
 
 void fanpage::on_minimumSpanTreeButton_clicked()
 {
-    myGraph->MinimumSpanningTreePrimJarnik();
+    qDebug() << myGraph->Kruskal();
+
+    tripPage = new trip(this, tripTeams);
+    tripPage->show();
+    tripPage->displayInfo();
+
 }

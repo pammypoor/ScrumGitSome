@@ -6,5 +6,6 @@
 #define SETTINGSPIC "C://Users//samue//Desktop//ScrumGitSome//NBA//settings"
 #define FOLDER "C://Users//samue//Desktop//ScrumGitSome//NBA"
 #define MAINPIC "C://Users//samue//Desktop//ScrumGitSome//NBA//mainmenu.png"
+#define MSTFILE "C://Users//samue//Desktop//ScrumGitSome//NBA//MSTFile.txt"
 
 #endif // FILESUSED_H

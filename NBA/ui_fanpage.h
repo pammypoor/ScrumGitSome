@@ -83,8 +83,8 @@ public:
     QLabel *capacityLabel;
     QLabel *label_12;
     QStatusBar *statusbar;
-    QButtonGroup *sortTripGroup;
     QButtonGroup *sortByGroup;
+    QButtonGroup *sortTripGroup;
     QButtonGroup *conferenceGroup;
 
     void setupUi(QMainWindow *fanpage)
