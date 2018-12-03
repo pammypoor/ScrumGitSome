@@ -468,6 +468,7 @@ void fanpage::on_tripButton_clicked()
 {
     tripPage = new trip(this, tripTeams);
     tripPage->show();
+    tripPage->loadTotalDistance(getDistanceTrip(tripTeams));
 }
 
 //ShortestTripButtonClicked - activated when there are two teams selected
@@ -544,4 +545,24 @@ void fanpage::on_minimumSpanTreeButton_clicked()
     tripPage->show();
     tripPage->displayInfo();
 
+}
+
+double fanpage::getDistanceTrip(QVector<QString> teams)
+{
+    int sum = 0;
+    int cost =0;
+    QString starting;
+    QString ending;
+        for(int count = 0; count < teams.size()-1; count++)
+        {
+           starting = teams.at(count);
+           ending = teams.at(count+1);
+           QVector<QString> shortestPath = myGraph->Dijkstra(starting, ending, cost);
+           tripPage->loadTeamVisited(starting);
+           tripPage->loadArenas(starting);
+           sum += cost;
+        }
+        tripPage->loadTeamVisited(ending);
+        tripPage->loadArenas(ending);
+        return sum;
 }

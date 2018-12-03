@@ -43,6 +43,7 @@ public:
     void loadSouvenirs(QString team);
     void loadTotalDistance(int distance);
     void loadTeamVisited(QString team);
+    void loadArenas(QString team);
     ~trip();
 
 private slots:

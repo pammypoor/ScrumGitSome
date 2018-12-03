@@ -429,3 +429,18 @@ QSqlQueryModel* DbManager::getTeamSouvenir(QString team)
     modal->setQuery(queryString);
     return modal;
 }
+
+QString DbManager::getArena(QString teamName)
+{
+    QSqlQuery query;
+
+    query.prepare("SELECT arena FROM teams WHERE team = (:teamName)");
+    query.bindValue(":teamName", teamName);
+    query.exec();
+    if(query.next())
+    {
+        return query.value(0).toString();
+    }
+    return NULL;
+}
+

@@ -23,6 +23,7 @@ public:
     void loadPlanTeams();
     void loadCapacity(QSqlQueryModel* modal);
     QVector<QString> getTripTeams() {return tripTeams;}
+    double getDistanceTrip(QVector<QString> teams);
     ~fanpage();
 
 private slots:

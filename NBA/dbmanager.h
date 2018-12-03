@@ -51,6 +51,7 @@ public:
     void deleteSouvenir(souvenir aSouvenir);
     void editSouvenir(souvenir aSouvenir, double newPrice);
     QSqlQueryModel* getTeamSouvenir(QString team);
+    QString getArena(QString teamName);
 
     QStringList getTeams();
     bool addTeam(team newTeam);

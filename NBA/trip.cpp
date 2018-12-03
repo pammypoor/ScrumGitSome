@@ -60,20 +60,48 @@ trip::trip(QWidget *parent, QVector<QString> teams) :
         ui->souvenirsTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->souvenirsTable->setAlternatingRowColors(true);
         ui->souvenirsTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+
         teamCount = 0;
         if(teams.size() > 0)
         {
             ui->tripTeamName->setText(teams.at(0));
             loadSouvenirs(teams.at(0));
         }
+
         this->teams = teams;
         this->teamsVisited = teams;
+
         ui->cartTable->insertColumn(0); ui->cartTable->insertColumn(0); ui->cartTable->insertColumn(0); ui->cartTable->insertColumn(0);
+        ui->cartTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Item Name"));
+        ui->cartTable->setHorizontalHeaderItem(1, new QTableWidgetItem("Item Cost"));
+        ui->cartTable->setHorizontalHeaderItem(2, new QTableWidgetItem("Team Name"));
+        ui->cartTable->setHorizontalHeaderItem(3, new QTableWidgetItem("Item Amount"));
+
         ui->cartTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->cartTable->setAlternatingRowColors(true);
         ui->cartTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+
         ui->stackedWidget->setCurrentIndex(0);
+
         ui->reviewTeamTable->insertColumn(0);
+        ui->reviewTeamTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Team Name"));
+        ui->reviewTeamTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        ui->reviewTeamTable->setAlternatingRowColors(true);
+        ui->reviewTeamTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+
+        ui->arenaTable->insertColumn(0);
+        ui->arenaTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Arena Name"));
+        ui->arenaTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        ui->arenaTable->setAlternatingRowColors(true);
+        ui->arenaTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+
+        ui->reviewSouvenirTable->insertColumn(0); ui->reviewSouvenirTable->insertColumn(0); ui->reviewSouvenirTable->insertColumn(0);
+        ui->reviewSouvenirTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Item Name"));
+        ui->reviewSouvenirTable->setHorizontalHeaderItem(1, new QTableWidgetItem("Team Name"));
+        ui->reviewSouvenirTable->setHorizontalHeaderItem(2, new QTableWidgetItem("Item Amount"));
+        ui->reviewSouvenirTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        ui->reviewSouvenirTable->setAlternatingRowColors(true);
+        ui->reviewSouvenirTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
 }
 
 trip::trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisited) :
@@ -81,6 +109,7 @@ trip::trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisite
     ui(new Ui::trip)
 {
     ui->setupUi(this);
+    QTableWidgetItem colHeader;
         ui->tripTeamName->setAlignment(Qt::AlignCenter);
         ui->souvenirsTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->souvenirsTable->setAlternatingRowColors(true);
@@ -93,15 +122,38 @@ trip::trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisite
         }
         this->teams = teams;
         this->teamsVisited = teamsVisited;
+
         ui->cartTable->insertColumn(0); ui->cartTable->insertColumn(0); ui->cartTable->insertColumn(0); ui->cartTable->insertColumn(0);
+        ui->cartTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Item Name"));
+        ui->cartTable->setHorizontalHeaderItem(1, new QTableWidgetItem("Item Cost"));
+        ui->cartTable->setHorizontalHeaderItem(2, new QTableWidgetItem("Team Name"));
+        ui->cartTable->setHorizontalHeaderItem(3, new QTableWidgetItem("Item Amount"));
+
         ui->cartTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->cartTable->setAlternatingRowColors(true);
         ui->cartTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+
         ui->stackedWidget->setCurrentIndex(0);
+
         ui->reviewTeamTable->insertColumn(0);
+        ui->reviewTeamTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Team Name"));
         ui->reviewTeamTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->reviewTeamTable->setAlternatingRowColors(true);
         ui->reviewTeamTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+
+        ui->arenaTable->insertColumn(0);
+        ui->arenaTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Arena Name"));
+        ui->arenaTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        ui->arenaTable->setAlternatingRowColors(true);
+        ui->arenaTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+
+        ui->reviewSouvenirTable->insertColumn(0); ui->reviewSouvenirTable->insertColumn(0); ui->reviewSouvenirTable->insertColumn(0);
+        ui->reviewSouvenirTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Item Name"));
+        ui->reviewSouvenirTable->setHorizontalHeaderItem(1, new QTableWidgetItem("Team Name"));
+        ui->reviewSouvenirTable->setHorizontalHeaderItem(2, new QTableWidgetItem("Item Amount"));
+        ui->reviewSouvenirTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        ui->reviewSouvenirTable->setAlternatingRowColors(true);
+        ui->reviewSouvenirTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
 }
 
 void trip::loadSouvenirs(QString team)
@@ -128,6 +180,7 @@ trip::~trip()
 
 void trip::on_tripButton_clicked()
 {
+    int totalSpent = 0;
     teamCount++;
     qDebug() << teamCount << teamsVisited.size();
     if(teamCount < teamsVisited.size())
@@ -138,6 +191,16 @@ void trip::on_tripButton_clicked()
     else    //done with shopping
     {
         ui->stackedWidget->setCurrentIndex(1);
+        for(int count = 0; count < ui->cartTable->rowCount(); count++)
+        {
+            ui->reviewSouvenirTable->insertRow(ui->reviewSouvenirTable->rowCount());
+            ui->reviewSouvenirTable->setItem(ui->reviewSouvenirTable->rowCount()-1, 0, new QTableWidgetItem(ui->cartTable->item(count,0)->text()));
+            ui->reviewSouvenirTable->setItem(ui->reviewSouvenirTable->rowCount()-1, 1, new QTableWidgetItem(ui->cartTable->item(count,2)->text()));
+            ui->reviewSouvenirTable->setItem(ui->reviewSouvenirTable->rowCount()-1, 2, new QTableWidgetItem(ui->cartTable->item(count,3)->text()));
+            totalSpent+= (ui->cartTable->item(count,1)->text().toDouble()) * (ui->cartTable->item(count,3)->text().toDouble());
+        }
+        ui->totalSpent->setText(QString::number(totalSpent));
+        ui->totalArenasVisited->setText(QString::number(ui->arenaTable->rowCount()));
     }
 }
 
@@ -231,4 +294,26 @@ void trip::displayInfo()
     }
 
     file.close();
+}
+
+void trip::loadArenas(QString team)
+{
+    QVector<QString> arenas;
+    for(int count = 0; count < ui->arenaTable->rowCount(); count++)
+    {
+        arenas.push_back(ui->arenaTable->item(count,0)->text());
+    }
+
+    QString arena = DbManager::instance().getArena(team);
+
+    for(int count = 0; count < arenas.size(); count++)
+    {
+        if(arenas.at(count) == arena)
+        {
+            return;
+        }
+    }
+    ui->arenaTable->insertRow(ui->arenaTable->rowCount());
+    ui->arenaTable->setItem(ui->arenaTable->rowCount()-1, 0, new QTableWidgetItem(arena));
+    qDebug() << "TEST";
 }
