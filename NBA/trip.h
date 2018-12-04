@@ -44,6 +44,8 @@ public:
     void loadTotalDistance(int distance);
     void loadTeamVisited(QString team);
     void loadArenas(QString team);
+    void displayBFS();
+    void displayDFS();
     ~trip();
 
 private slots:

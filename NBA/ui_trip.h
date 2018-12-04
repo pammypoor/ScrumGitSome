@@ -56,6 +56,7 @@ public:
     QLabel *totalArenasVisited;
     QWidget *page_3;
     QTextBrowser *textBrowser;
+    QLabel *labelName;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *trip)
@@ -175,7 +176,13 @@ public:
         page_3->setObjectName(QStringLiteral("page_3"));
         textBrowser = new QTextBrowser(page_3);
         textBrowser->setObjectName(QStringLiteral("textBrowser"));
-        textBrowser->setGeometry(QRect(25, 21, 391, 421));
+        textBrowser->setGeometry(QRect(310, 120, 451, 481));
+        textBrowser->setStyleSheet(QStringLiteral("color: white;"));
+        labelName = new QLabel(page_3);
+        labelName->setObjectName(QStringLiteral("labelName"));
+        labelName->setGeometry(QRect(420, 60, 271, 41));
+        labelName->setStyleSheet(QLatin1String("color: white;\n"
+"font-size: 35px;"));
         stackedWidget->addWidget(page_3);
         trip->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(trip);
@@ -184,7 +191,7 @@ public:
 
         retranslateUi(trip);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(trip);
@@ -208,6 +215,7 @@ public:
         label_6->setText(QApplication::translate("trip", "Total Arenas", nullptr));
         totalSpent->setText(QApplication::translate("trip", "TextLabel", nullptr));
         totalArenasVisited->setText(QApplication::translate("trip", "TextLabel", nullptr));
+        labelName->setText(QApplication::translate("trip", "TextLabel", nullptr));
     } // retranslateUi
 
 };

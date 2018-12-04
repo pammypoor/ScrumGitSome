@@ -18,6 +18,7 @@
 #include<sstream>
 #include<QFile>
 #include<functional>
+#include <QTextBrowser>
 using namespace std;
 
 /*******************************************************************************
@@ -273,8 +274,16 @@ class Graph
         //METHOD - dfs traversal recursive implementation
         void dfs(const VertexIt& v, map<VertexType, bool>& visited)
         {
+            QFile fin(DFSFILE);
+            if(!fin.open(QFile::WriteOnly | QFile::Text))
+            {
+                qDebug() << "Could not open file";
+                return;
+            }
+            QTextStream out(&fin);
+
             visited[v->vertexElem] = true;
-            cout << v->vertexElem << ", ";
+            out << v->vertexElem << "\n";
 
             list<Edge> incList = returnListOfIncidentEdges(v);
 
@@ -286,11 +295,11 @@ class Graph
             {
                 WeightType temp = it->getWeight();
                 incidentWeights.push_back(temp);
-//				cout << " " << temp << " ";
+//              cout << " " << temp << " ";
             }
             //find smallest edge
             std::sort(incidentWeights.begin(), incidentWeights.end());
-//			cout << " s:" << incidentWeights[0] << " ";
+//            cout << " s:" << incidentWeights[0] << " ";
 
             //now search for the adj vertex with the smallest edge;
             incList = returnListOfIncidentEdges(v);
@@ -306,7 +315,7 @@ class Graph
                     if(!visited[w->vertexElem])
                     {
                         sum = sum + incidentWeights[index];
-//						cout << "Discovery Edge: " << incidentWeights[index];
+//                        cout << "Discovery Edge: " << incidentWeights[index];
                         dfs(w, visited);
                     }
                     if(visited[w->vertexElem])
@@ -320,6 +329,9 @@ class Graph
                     it++;
                 } //END IF
             } // END WHILE
+            out << "\n\nTotal distance traveled: " << sum << "\n\n";
+            fin.flush();
+            fin.close();
         }
 
         //METHOD - dfs used as interface for calling the dfs algorithm
@@ -332,6 +344,14 @@ class Graph
         //METHOD - breadth first traversal yet to be modified
         void bfs(const VertexType& start)
         {
+            QFile fin(BFSFILE);
+            if(!fin.open(QFile::WriteOnly | QFile::Text))
+            {
+                qDebug() << "Could not open file";
+                return;
+            }
+            QTextStream out(&fin);
+
             map<VertexType, bool> visited;
             queue<VertexIt> q;
 
@@ -339,7 +359,7 @@ class Graph
             VertexIt v = findVertex(start);
             q.push(v);
             visited[v->vertexElem] = true;
-            cout << v->vertexElem << ", ";
+            out << v->vertexElem << "\n";
 
             list<Edge> incList = returnListOfIncidentEdges(v);
             EdgeIt it = incList.begin();
@@ -392,7 +412,7 @@ class Graph
                         VertexIt w = it->adjVertexTo(v);
                         if(!visited[w->vertexElem])
                         {
-                            cout << w->vertexElem << ", ";
+                            out << w->vertexElem << "\n";
                             sum = sum + it->getWeight();
                             q.push(w);
                             visited[w->vertexElem] = true;
@@ -413,6 +433,9 @@ class Graph
                 }
                 incidentWeights.clear();
             }
+            out << "\n\nTotal distance traveled: " << sum << "\n\n";
+            fin.flush();
+            fin.close();
         }
 
         //METHOD - breadth first traversal yet to be modified

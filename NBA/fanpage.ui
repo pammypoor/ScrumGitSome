@@ -326,7 +326,7 @@ font-size: 25px;</string>
      <widget class="QPushButton" name="tripButton">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>160</x>
         <y>560</y>
         <width>181</width>
         <height>22</height>
@@ -352,8 +352,8 @@ border-radius: 10px;
      <widget class="QPushButton" name="shortestTripButton">
       <property name="geometry">
        <rect>
-        <x>810</x>
-        <y>500</y>
+        <x>400</x>
+        <y>560</y>
         <width>181</width>
         <height>22</height>
        </rect>
@@ -378,8 +378,8 @@ border-radius: 10px;
      <widget class="QPushButton" name="minimumSpanTreeButton">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>10</y>
+        <x>680</x>
+        <y>500</y>
         <width>181</width>
         <height>22</height>
        </rect>
@@ -399,6 +399,58 @@ border-radius: 10px;
       </property>
       <property name="text">
        <string>Minimum Spanning Tree</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="dfsButton">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>530</y>
+        <width>181</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background:DarkGrey ;
+color: white;
+border-radius: 10px;
+}
+QPushButton:hover:!pressed
+{
+background: Gray;
+color: white;
+border-radius: 10px;
+}color: white;</string>
+      </property>
+      <property name="text">
+       <string>DFS</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bfsButton">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>560</y>
+        <width>181</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background:DarkGrey ;
+color: white;
+border-radius: 10px;
+}
+QPushButton:hover:!pressed
+{
+background: Gray;
+color: white;
+border-radius: 10px;
+}color: white;</string>
+      </property>
+      <property name="text">
+       <string>BFS</string>
       </property>
      </widget>
     </widget>
@@ -830,8 +882,8 @@ color: #003366;</string>
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="sortByGroup"/>
   <buttongroup name="sortTripGroup"/>
   <buttongroup name="conferenceGroup"/>
+  <buttongroup name="sortByGroup"/>
  </buttongroups>
 </ui>

@@ -73,6 +73,10 @@ private slots:
 
     void on_minimumSpanTreeButton_clicked();
 
+    void on_bfsButton_clicked();
+
+    void on_dfsButton_clicked();
+
 private:
     Ui::fanpage *ui;
     QVector<QString> tripTeams;

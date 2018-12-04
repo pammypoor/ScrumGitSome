@@ -80,6 +80,7 @@ trip::trip(QWidget *parent, QVector<QString> teams) :
         ui->cartTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->cartTable->setAlternatingRowColors(true);
         ui->cartTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->cartTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
         ui->stackedWidget->setCurrentIndex(0);
 
@@ -88,12 +89,14 @@ trip::trip(QWidget *parent, QVector<QString> teams) :
         ui->reviewTeamTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->reviewTeamTable->setAlternatingRowColors(true);
         ui->reviewTeamTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->reviewTeamTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
         ui->arenaTable->insertColumn(0);
         ui->arenaTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Arena Name"));
         ui->arenaTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->arenaTable->setAlternatingRowColors(true);
         ui->arenaTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->arenaTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
         ui->reviewSouvenirTable->insertColumn(0); ui->reviewSouvenirTable->insertColumn(0); ui->reviewSouvenirTable->insertColumn(0);
         ui->reviewSouvenirTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Item Name"));
@@ -102,6 +105,7 @@ trip::trip(QWidget *parent, QVector<QString> teams) :
         ui->reviewSouvenirTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->reviewSouvenirTable->setAlternatingRowColors(true);
         ui->reviewSouvenirTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->reviewSouvenirTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
 trip::trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisited) :
@@ -128,6 +132,7 @@ trip::trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisite
         ui->cartTable->setHorizontalHeaderItem(1, new QTableWidgetItem("Item Cost"));
         ui->cartTable->setHorizontalHeaderItem(2, new QTableWidgetItem("Team Name"));
         ui->cartTable->setHorizontalHeaderItem(3, new QTableWidgetItem("Item Amount"));
+        ui->cartTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
         ui->cartTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->cartTable->setAlternatingRowColors(true);
@@ -140,12 +145,14 @@ trip::trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisite
         ui->reviewTeamTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->reviewTeamTable->setAlternatingRowColors(true);
         ui->reviewTeamTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->reviewTeamTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
         ui->arenaTable->insertColumn(0);
         ui->arenaTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Arena Name"));
         ui->arenaTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->arenaTable->setAlternatingRowColors(true);
         ui->arenaTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->arenaTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
         ui->reviewSouvenirTable->insertColumn(0); ui->reviewSouvenirTable->insertColumn(0); ui->reviewSouvenirTable->insertColumn(0);
         ui->reviewSouvenirTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Item Name"));
@@ -154,6 +161,7 @@ trip::trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisite
         ui->reviewSouvenirTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->reviewSouvenirTable->setAlternatingRowColors(true);
         ui->reviewSouvenirTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->reviewSouvenirTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
 void trip::loadSouvenirs(QString team)
@@ -272,8 +280,65 @@ void trip::loadTeamVisited(QString team)
 void trip::displayInfo()
 {
     ui->stackedWidget->setCurrentIndex(2);
+    ui->labelName->setText("Showing MST");
 
     QFile file(MSTFILE);
+    if(!file.exists())
+    {
+        qDebug() << "Doesnt exist";
+    }
+    else
+    {
+        qDebug() << "Opened...";
+    }
+
+    QString line;
+    ui->textBrowser->clear();
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QTextStream stream(&file);
+        while (!stream.atEnd()){
+            line = stream.readLine();
+            ui->textBrowser->setText(ui->textBrowser->toPlainText()+line+"\n");
+        }
+    }
+
+    file.close();
+}
+
+void trip::displayBFS()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+    ui->labelName->setText("Showing BFS");
+
+    QFile file(BFSFILE);
+    if(!file.exists())
+    {
+        qDebug() << "Doesnt exist";
+    }
+    else
+    {
+        qDebug() << "Opened...";
+    }
+
+    QString line;
+    ui->textBrowser->clear();
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QTextStream stream(&file);
+        while (!stream.atEnd()){
+            line = stream.readLine();
+            ui->textBrowser->setText(ui->textBrowser->toPlainText()+line+"\n");
+        }
+    }
+
+    file.close();
+}
+
+void trip::displayDFS()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+    ui->labelName->setText("Showing DFS");
+
+    QFile file(DFSFILE);
     if(!file.exists())
     {
         qDebug() << "Doesnt exist";

@@ -566,3 +566,21 @@ double fanpage::getDistanceTrip(QVector<QString> teams)
         tripPage->loadArenas(ending);
         return sum;
 }
+
+void fanpage::on_bfsButton_clicked()
+{
+    myGraph->bfs("Los Angeles Lakers");
+
+    tripPage = new trip(this, tripTeams);
+    tripPage->show();
+    tripPage->displayBFS();
+}
+
+void fanpage::on_dfsButton_clicked()
+{
+    myGraph->dfs("Denver Nuggets");
+
+    tripPage = new trip(this, tripTeams);
+    tripPage->show();
+    tripPage->displayDFS();
+}
