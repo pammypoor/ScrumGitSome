@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'maintenance.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.10.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'maintenance.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.10.1. It"
+#error "This file was generated using the moc from 5.11.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_maintenance_t {
-    QByteArrayData data[16];
-    char stringdata0[388];
+    QByteArrayData data[17];
+    char stringdata0[400];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,14 +39,15 @@ QT_MOC_LITERAL(4, 65, 29), // "on_menuSouvenirButton_clicked"
 QT_MOC_LITERAL(5, 95, 29), // "on_souvenirBackButton_clicked"
 QT_MOC_LITERAL(6, 125, 21), // "on_pushButton_clicked"
 QT_MOC_LITERAL(7, 147, 34), // "on_SouvenirTableView_doubleCl..."
-QT_MOC_LITERAL(8, 182, 5), // "index"
-QT_MOC_LITERAL(9, 188, 24), // "on_addTeamButton_clicked"
-QT_MOC_LITERAL(10, 213, 37), // "on_showTeamsCombo_currentInde..."
-QT_MOC_LITERAL(11, 251, 4), // "arg1"
-QT_MOC_LITERAL(12, 256, 41), // "on_teamMaintenanceTableView_d..."
-QT_MOC_LITERAL(13, 298, 29), // "on_distanceBackButton_clicked"
-QT_MOC_LITERAL(14, 328, 29), // "on_menuDistanceButton_clicked"
-QT_MOC_LITERAL(15, 358, 29) // "on_addDistancesButton_clicked"
+QT_MOC_LITERAL(8, 182, 11), // "QModelIndex"
+QT_MOC_LITERAL(9, 194, 5), // "index"
+QT_MOC_LITERAL(10, 200, 24), // "on_addTeamButton_clicked"
+QT_MOC_LITERAL(11, 225, 37), // "on_showTeamsCombo_currentInde..."
+QT_MOC_LITERAL(12, 263, 4), // "arg1"
+QT_MOC_LITERAL(13, 268, 41), // "on_teamMaintenanceTableView_d..."
+QT_MOC_LITERAL(14, 310, 29), // "on_distanceBackButton_clicked"
+QT_MOC_LITERAL(15, 340, 29), // "on_menuDistanceButton_clicked"
+QT_MOC_LITERAL(16, 370, 29) // "on_addDistancesButton_clicked"
 
     },
     "maintenance\0on_MenuTeamButton_clicked\0"
@@ -55,7 +56,7 @@ QT_MOC_LITERAL(15, 358, 29) // "on_addDistancesButton_clicked"
     "on_souvenirBackButton_clicked\0"
     "on_pushButton_clicked\0"
     "on_SouvenirTableView_doubleClicked\0"
-    "index\0on_addTeamButton_clicked\0"
+    "QModelIndex\0index\0on_addTeamButton_clicked\0"
     "on_showTeamsCombo_currentIndexChanged\0"
     "arg1\0on_teamMaintenanceTableView_doubleClicked\0"
     "on_distanceBackButton_clicked\0"
@@ -84,12 +85,12 @@ static const uint qt_meta_data_maintenance[] = {
        5,    0,   77,    2, 0x08 /* Private */,
        6,    0,   78,    2, 0x08 /* Private */,
        7,    1,   79,    2, 0x08 /* Private */,
-       9,    0,   82,    2, 0x08 /* Private */,
-      10,    1,   83,    2, 0x08 /* Private */,
-      12,    1,   86,    2, 0x08 /* Private */,
-      13,    0,   89,    2, 0x08 /* Private */,
-      14,    0,   90,    2, 0x08 /* Private */,
-      15,    0,   91,    2, 0x08 /* Private */,
+      10,    0,   82,    2, 0x08 /* Private */,
+      11,    1,   83,    2, 0x08 /* Private */,
+      13,    1,   86,    2, 0x08 /* Private */,
+      14,    0,   89,    2, 0x08 /* Private */,
+      15,    0,   90,    2, 0x08 /* Private */,
+      16,    0,   91,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -97,10 +98,10 @@ static const uint qt_meta_data_maintenance[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QModelIndex,    8,
+    QMetaType::Void, 0x80000000 | 8,    9,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   11,
-    QMetaType::Void, QMetaType::QModelIndex,    8,
+    QMetaType::Void, QMetaType::QString,   12,
+    QMetaType::Void, 0x80000000 | 8,    9,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,

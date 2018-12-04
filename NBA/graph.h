@@ -604,32 +604,91 @@ class Graph
             int parent[maxSize];
             bool sptSet[maxSize]; // sptSet[i] will be true if vertex i is included
                                   // in the shortest path tree
-            //Initialize all distance as INFINTE and stpSet[] as false;
+
+
+//            //Initialize all distance as INFINTE and stpSet[] as false;
+//            for(int i = 0; i < maxSize; i++)
+//            {
+//                dist[i] = INT_MAX;
+//                sptSet[i] = false;
+//                parent[i] = 0;
+//            }
+//            parent[findVertex(start)->i] = -1;
+
+//            dist[findVertex(start)->i] = 0;
+//            for(int count = 0; count < maxSize; count++)
+//            {
+//                int u = minDistance(dist, sptSet);
+//                sptSet[u] = true;
+//                for(int w = 0; w < maxSize - 1; w++)
+//                {
+//                    //zero weight ?
+//                    if(!sptSet[w] && adjacencyMatrix[u][w].weight && dist[u] != INT_MAX
+//                                  && dist[u] + (adjacencyMatrix[u][w].weight) < dist[w])
+//                    {
+//                        dist[w] = dist[u] + adjacencyMatrix[u][w].weight;
+//                        parent[w] = u;
+//                    }
+
+
+//                }
+//            }
+
+//            printSolution(dist, parent, start); // prints all the solutions
+
+
+            // Create a priority queue to store vertices that
+            // are being preprocessed. This is weird syntax in C++.
+            // Refer below link for details of this syntax
+            // https://www.geeksforgeeks.org/implement-min-heap-using-stl/
+            priority_queue< pair<double, int> , vector < pair<double, int> > , greater< pair<double, int> > > pq;
+
+            // Create a vector for distances and initialize all
+            // distances as infinite (INF)
             for(int i = 0; i < maxSize; i++)
             {
                 dist[i] = INT_MAX;
-                sptSet[i] = false;
-                parent[i] = 0;
+                parent[i] = 0; // crashing?
             }
-            parent[findVertex(start)->i] = -1;
 
+            // Insert source itself in priority queue and initialize
+            // its distance as 0.
+            pq.push(make_pair(0, findVertex(start)->i));
+            parent[findVertex(start)->i] = -1;
             dist[findVertex(start)->i] = 0;
-            for(int count = 0; count < maxSize; count++)
+
+            /* Looping till priority queue becomes empty (or all
+              distances are not finalized) */
+            while (!pq.empty())
             {
-                int u = minDistance(dist, sptSet);
-                sptSet[u] = true;
-                for(int w = 0; w < maxSize; w++)
+                // The first vertex in pair is the minimum distance
+                // vertex, extract it from priority queue.
+                // vertex label is stored in second of pair (it
+                // has to be done this way to keep the vertices
+                // sorted distance (distance must be first item
+                // in pair)
+                int u = pq.top().second;
+                pq.pop();
+
+                list<Edge> adjEdgesOfVertex = returnListOfIncidentEdges(findVertex(u));
+
+                for(typename list<Edge>::iterator it = adjEdgesOfVertex.begin();
+                    it != adjEdgesOfVertex.end(); it++)
                 {
-                    if(!sptSet[w] && adjacencyMatrix[u][w].weight && dist[u] != INT_MAX
-                                  && dist[u] + (adjacencyMatrix[u][w].weight) < dist[w])
+                    //Get Vertex label and weight of current adjacent
+                    // of u
+                    int v = it->adjVertexTo(findVertex(u))->i;
+                    double weight = it->weight;
+
+                    if(dist[v] > dist[u] + weight)
                     {
-                        dist[w] = dist[u] + adjacencyMatrix[u][w].weight;
-                        parent[w] = u;
+                        dist[v] = dist[u] + weight;
+                        pq.push(make_pair(dist[v], v));
+                        parent[v] = u;
                     }
                 }
             }
 
-//            printSolution(dist, parent, start); // prints all the solutions
             QVector<VertexType> shortestPath;
             shortestPath = GetDijkstraPath(start, end, dist, parent);// returns a list of VertexType's
             cost = GetDijkstraCost(end, dist);
