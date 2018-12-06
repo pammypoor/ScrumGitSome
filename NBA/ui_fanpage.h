@@ -86,9 +86,9 @@ public:
     QLabel *capacityLabel;
     QLabel *label_12;
     QStatusBar *statusbar;
-    QButtonGroup *sortTripGroup;
     QButtonGroup *conferenceGroup;
     QButtonGroup *sortByGroup;
+    QButtonGroup *sortTripGroup;
 
     void setupUi(QMainWindow *fanpage)
     {
@@ -461,8 +461,8 @@ public:
         tripButton->setText(QApplication::translate("fanpage", "Plan Trip", nullptr));
         shortestTripButton->setText(QApplication::translate("fanpage", "Travel Shortest Distance", nullptr));
         minimumSpanTreeButton->setText(QApplication::translate("fanpage", "Minimum Spanning Tree", nullptr));
-        dfsButton->setText(QApplication::translate("fanpage", "DFS", nullptr));
-        bfsButton->setText(QApplication::translate("fanpage", "BFS", nullptr));
+        dfsButton->setText(QApplication::translate("fanpage", "Depth First Search", nullptr));
+        bfsButton->setText(QApplication::translate("fanpage", "Breadth First Search", nullptr));
         backSouvenirButton->setText(QApplication::translate("fanpage", "Back", nullptr));
         label_2->setText(QApplication::translate("fanpage", "Show by:", nullptr));
         label_3->setText(QApplication::translate("fanpage", "View Souvenirs", nullptr));

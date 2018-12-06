@@ -466,9 +466,32 @@ void fanpage::on_planTripTable_activated(const QModelIndex &index)
 
 void fanpage::on_tripButton_clicked()
 {
-    tripPage = new trip(this, tripTeams);
-    tripPage->show();
-    tripPage->loadTotalDistance(getDistanceTrip(tripTeams));
+
+    if(ui->distanceButton->isChecked())
+    {
+        qDebug() << "SHORT";
+    }
+    else if(ui->orderButton->isChecked())
+    {
+        if(ui->teamCombo->currentText() != tripTeams.begin())
+        {
+            for(int count = 0; count < tripTeams.size(); count++)
+            {
+                if(tripTeams.at(count) == ui->teamCombo->currentText())
+                {
+                    tripTeams.removeAt(count);
+                }
+            }
+            tripTeams.insert(0, ui->teamCombo->currentText());
+        }
+
+
+        tripPage = new trip(this, tripTeams);
+        tripPage->show();
+        tripPage->loadTotalDistance(getDistanceTrip(tripTeams));
+    }
+
+
 }
 
 //ShortestTripButtonClicked - activated when there are two teams selected

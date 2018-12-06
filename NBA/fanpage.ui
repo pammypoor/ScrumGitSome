@@ -883,7 +883,7 @@ color: #003366;</string>
  <connections/>
  <buttongroups>
   <buttongroup name="conferenceGroup"/>
-  <buttongroup name="sortTripGroup"/>
   <buttongroup name="sortByGroup"/>
+  <buttongroup name="sortTripGroup"/>
  </buttongroups>
 </ui>
