@@ -424,7 +424,7 @@ border-radius: 10px;
 }color: white;</string>
       </property>
       <property name="text">
-       <string>DFS</string>
+       <string>Depth First Search</string>
       </property>
      </widget>
      <widget class="QPushButton" name="bfsButton">
@@ -450,7 +450,7 @@ border-radius: 10px;
 }color: white;</string>
       </property>
       <property name="text">
-       <string>BFS</string>
+       <string>Breadth First Search</string>
       </property>
      </widget>
     </widget>
@@ -882,8 +882,8 @@ color: #003366;</string>
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="sortTripGroup"/>
   <buttongroup name="conferenceGroup"/>
+  <buttongroup name="sortTripGroup"/>
   <buttongroup name="sortByGroup"/>
  </buttongroups>
 </ui>

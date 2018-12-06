@@ -272,18 +272,12 @@ class Graph
         }
 
         //METHOD - dfs traversal recursive implementation
-        void dfs(const VertexIt& v, map<VertexType, bool>& visited)
+        void dfs(const VertexIt& v, map<VertexType, bool>& visited, QVector<QString> &dfsTeam)
         {
-            QFile fin(DFSFILE);
-            if(!fin.open(QFile::WriteOnly | QFile::Text))
-            {
-                qDebug() << "Could not open file";
-                return;
-            }
-            QTextStream out(&fin);
+
 
             visited[v->vertexElem] = true;
-            out << v->vertexElem << "\n";
+            dfsTeam.push_back(v->vertexElem);
 
             list<Edge> incList = returnListOfIncidentEdges(v);
 
@@ -315,8 +309,8 @@ class Graph
                     if(!visited[w->vertexElem])
                     {
                         sum = sum + incidentWeights[index];
-//                        cout << "Discovery Edge: " << incidentWeights[index];
-                        dfs(w, visited);
+
+                        dfs(w, visited, dfsTeam);
                     }
                     if(visited[w->vertexElem])
                     {
@@ -329,16 +323,32 @@ class Graph
                     it++;
                 } //END IF
             } // END WHILE
-            out << "\n\nTotal distance traveled: " << sum << "\n\n";
-            fin.flush();
-            fin.close();
+
         }
 
         //METHOD - dfs used as interface for calling the dfs algorithm
         void dfs(const VertexType& start)
         {
+            QVector<QString> dfsTeams;
             map<VertexType, bool> visited;
-            dfs(findVertex(start), visited);
+            dfs(findVertex(start), visited, dfsTeams);
+            QFile fin(DFSFILE);
+            if(!fin.open(QFile::WriteOnly | QFile::Text))
+            {
+                qDebug() << "Could not open file";
+                return;
+            }
+
+            QTextStream out(&fin);
+
+            for(int count = 0; count < dfsTeams.size(); count++)
+            {
+                out << dfsTeams.at(count) << "\n";
+            }
+
+            out << "\n\nTotal distance traveled: " << sum << "\n\n";
+            fin.flush();
+            fin.close();
         }
 
         //METHOD - breadth first traversal yet to be modified
