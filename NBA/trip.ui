@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
@@ -149,8 +149,8 @@ font-size: 35px;</string>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>85</y>
+        <x>20</x>
+        <y>80</y>
         <width>231</width>
         <height>31</height>
        </rect>
@@ -166,9 +166,9 @@ font-size: 20px;</string>
      <widget class="QTableWidget" name="arenaTable">
       <property name="geometry">
        <rect>
-        <x>390</x>
+        <x>305</x>
         <y>120</y>
-        <width>256</width>
+        <width>341</width>
         <height>321</height>
        </rect>
       </property>
@@ -193,9 +193,9 @@ font-size: 20px;</string>
      <widget class="QTableWidget" name="reviewSouvenirTable">
       <property name="geometry">
        <rect>
-        <x>700</x>
+        <x>665</x>
         <y>120</y>
-        <width>256</width>
+        <width>361</width>
         <height>321</height>
        </rect>
       </property>
@@ -220,7 +220,7 @@ font-size: 20px;</string>
      <widget class="QTableWidget" name="reviewTeamTable">
       <property name="geometry">
        <rect>
-        <x>80</x>
+        <x>20</x>
         <y>120</y>
         <width>256</width>
         <height>321</height>

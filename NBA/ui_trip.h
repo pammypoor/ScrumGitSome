@@ -117,12 +117,12 @@ public:
 "font-size: 35px;"));
         label_4 = new QLabel(page_2);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(90, 85, 231, 31));
+        label_4->setGeometry(QRect(20, 80, 231, 31));
         label_4->setStyleSheet(QLatin1String("color: white;\n"
 "font-size: 20px;"));
         arenaTable = new QTableWidget(page_2);
         arenaTable->setObjectName(QStringLiteral("arenaTable"));
-        arenaTable->setGeometry(QRect(390, 120, 256, 321));
+        arenaTable->setGeometry(QRect(305, 120, 341, 321));
         label_7 = new QLabel(page_2);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setGeometry(QRect(400, 90, 171, 21));
@@ -130,7 +130,7 @@ public:
 "font-size: 20px;"));
         reviewSouvenirTable = new QTableWidget(page_2);
         reviewSouvenirTable->setObjectName(QStringLiteral("reviewSouvenirTable"));
-        reviewSouvenirTable->setGeometry(QRect(700, 120, 256, 321));
+        reviewSouvenirTable->setGeometry(QRect(665, 120, 361, 321));
         label_8 = new QLabel(page_2);
         label_8->setObjectName(QStringLiteral("label_8"));
         label_8->setGeometry(QRect(700, 90, 191, 21));
@@ -138,7 +138,7 @@ public:
 "font-size: 20px;"));
         reviewTeamTable = new QTableWidget(page_2);
         reviewTeamTable->setObjectName(QStringLiteral("reviewTeamTable"));
-        reviewTeamTable->setGeometry(QRect(80, 120, 256, 321));
+        reviewTeamTable->setGeometry(QRect(20, 120, 256, 321));
         groupBox = new QGroupBox(page_2);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(410, 490, 221, 141));
@@ -191,7 +191,7 @@ public:
 
         retranslateUi(trip);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(trip);
