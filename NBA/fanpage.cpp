@@ -47,6 +47,9 @@ void fanpage::populateGraph()
     QVector<double> insertedEdges;
     QVector<double>::iterator fIt;
 
+    sizeOfGraph = DbManager::instance().getNumOfTeams();
+    /**REMOVE -1 when updated teams table in db**/
+    sizeOfGraph--;
 
     fromTeams = DbManager::instance().getFromTeams();
     toTeams   = DbManager::instance().getToTeams();
@@ -485,6 +488,10 @@ void fanpage::on_tripButton_clicked()
             tripTeams.insert(0, ui->teamCombo->currentText());
         }
 
+        // This statement works but does the same thing recursively
+        // It returns a vector containing the path of the trip that will be taken.
+//        QVector<QString> test = getTripInFanOrder();
+
 
         tripPage = new trip(this, tripTeams);
         tripPage->show();
@@ -606,4 +613,68 @@ void fanpage::on_dfsButton_clicked()
     tripPage = new trip(this, tripTeams);
     tripPage->show();
     tripPage->displayDFS();
+}
+
+QVector<QString> fanpage::getTripInFanOrder()
+{
+    QVector<QString> pathForTrip;
+    int totalCost = 0;
+    grandTotalForUserSpecificPath = 0;
+
+    if(tripTeams.size() > 1)
+    {
+        ShortestPath(0, 1, tripTeams.size() - 1, pathForTrip, totalCost);
+
+        qDebug() << "After recursion this list will be passed in the Trip UI";
+        for(QVector<QString>::iterator it = pathForTrip.begin();
+            it != pathForTrip.end(); it++)
+        {
+            qDebug() << *it;
+
+        }
+        qDebug() << grandTotalForUserSpecificPath;
+        qDebug() << endl;
+    }
+    else
+    {
+        qDebug() << "Could not calculate recursive on 1 element only";
+    }
+
+    return pathForTrip;
+}
+
+//recursive call to obtain the shortest trip
+void fanpage::ShortestPath(int start, int end, int finish, QVector<QString>& path, int& totalCost)
+{
+    if(tripTeams[end] == tripTeams[finish])
+    {
+        QVector<QString> temp;
+        temp = myGraph->Dijkstra(tripTeams[start], tripTeams[finish], totalCost);
+        grandTotalForUserSpecificPath = grandTotalForUserSpecificPath + totalCost;
+        QVector<QString>::iterator itEnd = temp.end();
+        QVector<QString>::iterator itBegin = temp.begin();
+        for(; itBegin != itEnd; itBegin++)
+        {
+            path.push_back(*itBegin);
+        }
+
+    }
+    else
+    {
+        QVector<QString> temp;
+        temp = myGraph->Dijkstra(tripTeams[start], tripTeams[end], totalCost);
+        grandTotalForUserSpecificPath = grandTotalForUserSpecificPath + totalCost;
+        QVector<QString>::iterator itEnd = temp.end();
+        itEnd--;
+        QVector<QString>::iterator itBegin = temp.begin();
+
+        for(; itBegin != itEnd; itBegin++)
+        {
+            path.push_back(*itBegin);
+        }
+
+        ShortestPath(start + 1, end + 1, finish, path, totalCost);
+
+    }
+
 }

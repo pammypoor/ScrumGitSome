@@ -77,12 +77,20 @@ private slots:
 
     void on_dfsButton_clicked();
 
+    QVector<QString> getTripInFanOrder();
+
+    void ShortestPath(int start, int end, int finish, QVector<QString>& path, int& totalCost);
+
+
 private:
     Ui::fanpage *ui;
     QVector<QString> tripTeams;
     QVector<souvenir> fanSouvenirs;
     Graph<QString, double> *myGraph;
     trip* tripPage;
+
+    //For recursive user specific path
+    int grandTotalForUserSpecificPath;
 };
 
 #endif // FANPAGE_H

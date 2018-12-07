@@ -227,6 +227,19 @@ QVector<double> DbManager::getWeights()
     }
     return weights;
 }
+int DbManager::getNumOfTeams()
+{
+    QSqlQuery query;
+    int       size = -1;
+    query.prepare("SELECT COUNT(team) FROM teams");
+    query.exec();
+    if(query.next())
+    {
+        size = query.value(0).toInt();
+    }
+
+    return size;
+}
 
 bool DbManager::addTeam(team newTeam)
 {

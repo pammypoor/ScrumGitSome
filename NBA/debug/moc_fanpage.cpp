@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'fanpage.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.10.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -9,10 +9,11 @@
 #include "../fanpage.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
+#include <QtCore/QVector>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'fanpage.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.10.1. It"
+#error "This file was generated using the moc from 5.11.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -21,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_fanpage_t {
-    QByteArrayData data[30];
-    char stringdata0[757];
+    QByteArrayData data[41];
+    char stringdata0[872];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -52,15 +53,26 @@ QT_MOC_LITERAL(17, 460, 28), // "on_teamYearSortRadio_clicked"
 QT_MOC_LITERAL(18, 489, 36), // "on_divisionCombo_currentIndex..."
 QT_MOC_LITERAL(19, 526, 25), // "on_backTripButton_clicked"
 QT_MOC_LITERAL(20, 552, 26), // "on_planTripTable_activated"
-QT_MOC_LITERAL(21, 579, 5), // "index"
-QT_MOC_LITERAL(22, 585, 21), // "on_tripButton_clicked"
-QT_MOC_LITERAL(23, 607, 29), // "on_shortestTripButton_clicked"
-QT_MOC_LITERAL(24, 637, 33), // "on_selectedTeamsTable_cellCha..."
-QT_MOC_LITERAL(25, 671, 3), // "row"
-QT_MOC_LITERAL(26, 675, 6), // "column"
-QT_MOC_LITERAL(27, 682, 32), // "on_minimumSpanTreeButton_clicked"
-QT_MOC_LITERAL(28, 715, 20), // "on_bfsButton_clicked"
-QT_MOC_LITERAL(29, 736, 20) // "on_dfsButton_clicked"
+QT_MOC_LITERAL(21, 579, 11), // "QModelIndex"
+QT_MOC_LITERAL(22, 591, 5), // "index"
+QT_MOC_LITERAL(23, 597, 21), // "on_tripButton_clicked"
+QT_MOC_LITERAL(24, 619, 29), // "on_shortestTripButton_clicked"
+QT_MOC_LITERAL(25, 649, 33), // "on_selectedTeamsTable_cellCha..."
+QT_MOC_LITERAL(26, 683, 3), // "row"
+QT_MOC_LITERAL(27, 687, 6), // "column"
+QT_MOC_LITERAL(28, 694, 32), // "on_minimumSpanTreeButton_clicked"
+QT_MOC_LITERAL(29, 727, 20), // "on_bfsButton_clicked"
+QT_MOC_LITERAL(30, 748, 20), // "on_dfsButton_clicked"
+QT_MOC_LITERAL(31, 769, 17), // "getTripInFanOrder"
+QT_MOC_LITERAL(32, 787, 16), // "QVector<QString>"
+QT_MOC_LITERAL(33, 804, 12), // "ShortestPath"
+QT_MOC_LITERAL(34, 817, 5), // "start"
+QT_MOC_LITERAL(35, 823, 3), // "end"
+QT_MOC_LITERAL(36, 827, 6), // "finish"
+QT_MOC_LITERAL(37, 834, 17), // "QVector<QString>&"
+QT_MOC_LITERAL(38, 852, 4), // "path"
+QT_MOC_LITERAL(39, 857, 4), // "int&"
+QT_MOC_LITERAL(40, 862, 9) // "totalCost"
 
     },
     "fanpage\0on_mainPlanTripButton_clicked\0"
@@ -79,12 +91,15 @@ QT_MOC_LITERAL(29, 736, 20) // "on_dfsButton_clicked"
     "on_teamYearSortRadio_clicked\0"
     "on_divisionCombo_currentIndexChanged\0"
     "on_backTripButton_clicked\0"
-    "on_planTripTable_activated\0index\0"
-    "on_tripButton_clicked\0"
+    "on_planTripTable_activated\0QModelIndex\0"
+    "index\0on_tripButton_clicked\0"
     "on_shortestTripButton_clicked\0"
     "on_selectedTeamsTable_cellChanged\0row\0"
     "column\0on_minimumSpanTreeButton_clicked\0"
-    "on_bfsButton_clicked\0on_dfsButton_clicked"
+    "on_bfsButton_clicked\0on_dfsButton_clicked\0"
+    "getTripInFanOrder\0QVector<QString>\0"
+    "ShortestPath\0start\0end\0finish\0"
+    "QVector<QString>&\0path\0int&\0totalCost"
 };
 #undef QT_MOC_LITERAL
 
@@ -94,7 +109,7 @@ static const uint qt_meta_data_fanpage[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      24,   14, // methods
+      26,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -102,30 +117,32 @@ static const uint qt_meta_data_fanpage[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  134,    2, 0x08 /* Private */,
-       3,    0,  135,    2, 0x08 /* Private */,
-       4,    0,  136,    2, 0x08 /* Private */,
-       5,    0,  137,    2, 0x08 /* Private */,
-       6,    0,  138,    2, 0x08 /* Private */,
-       7,    1,  139,    2, 0x08 /* Private */,
-       9,    0,  142,    2, 0x08 /* Private */,
-      10,    1,  143,    2, 0x08 /* Private */,
-      11,    0,  146,    2, 0x08 /* Private */,
-      12,    0,  147,    2, 0x08 /* Private */,
-      13,    0,  148,    2, 0x08 /* Private */,
-      14,    0,  149,    2, 0x08 /* Private */,
-      15,    0,  150,    2, 0x08 /* Private */,
-      16,    0,  151,    2, 0x08 /* Private */,
-      17,    0,  152,    2, 0x08 /* Private */,
-      18,    1,  153,    2, 0x08 /* Private */,
-      19,    0,  156,    2, 0x08 /* Private */,
-      20,    1,  157,    2, 0x08 /* Private */,
-      22,    0,  160,    2, 0x08 /* Private */,
-      23,    0,  161,    2, 0x08 /* Private */,
-      24,    2,  162,    2, 0x08 /* Private */,
-      27,    0,  167,    2, 0x08 /* Private */,
-      28,    0,  168,    2, 0x08 /* Private */,
-      29,    0,  169,    2, 0x08 /* Private */,
+       1,    0,  144,    2, 0x08 /* Private */,
+       3,    0,  145,    2, 0x08 /* Private */,
+       4,    0,  146,    2, 0x08 /* Private */,
+       5,    0,  147,    2, 0x08 /* Private */,
+       6,    0,  148,    2, 0x08 /* Private */,
+       7,    1,  149,    2, 0x08 /* Private */,
+       9,    0,  152,    2, 0x08 /* Private */,
+      10,    1,  153,    2, 0x08 /* Private */,
+      11,    0,  156,    2, 0x08 /* Private */,
+      12,    0,  157,    2, 0x08 /* Private */,
+      13,    0,  158,    2, 0x08 /* Private */,
+      14,    0,  159,    2, 0x08 /* Private */,
+      15,    0,  160,    2, 0x08 /* Private */,
+      16,    0,  161,    2, 0x08 /* Private */,
+      17,    0,  162,    2, 0x08 /* Private */,
+      18,    1,  163,    2, 0x08 /* Private */,
+      19,    0,  166,    2, 0x08 /* Private */,
+      20,    1,  167,    2, 0x08 /* Private */,
+      23,    0,  170,    2, 0x08 /* Private */,
+      24,    0,  171,    2, 0x08 /* Private */,
+      25,    2,  172,    2, 0x08 /* Private */,
+      28,    0,  177,    2, 0x08 /* Private */,
+      29,    0,  178,    2, 0x08 /* Private */,
+      30,    0,  179,    2, 0x08 /* Private */,
+      31,    0,  180,    2, 0x08 /* Private */,
+      33,    5,  181,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -145,13 +162,15 @@ static const uint qt_meta_data_fanpage[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    8,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QModelIndex,   21,
+    QMetaType::Void, 0x80000000 | 21,   22,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   25,   26,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   26,   27,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    0x80000000 | 32,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, 0x80000000 | 37, 0x80000000 | 39,   34,   35,   36,   38,   40,
 
        0        // eod
 };
@@ -186,6 +205,9 @@ void fanpage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 21: _t->on_minimumSpanTreeButton_clicked(); break;
         case 22: _t->on_bfsButton_clicked(); break;
         case 23: _t->on_dfsButton_clicked(); break;
+        case 24: { QVector<QString> _r = _t->getTripInFanOrder();
+            if (_a[0]) *reinterpret_cast< QVector<QString>*>(_a[0]) = std::move(_r); }  break;
+        case 25: _t->ShortestPath((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< QVector<QString>(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
         default: ;
         }
     }
@@ -216,13 +238,13 @@ int fanpage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 24)
+        if (_id < 26)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 24;
+        _id -= 26;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 24)
+        if (_id < 26)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 24;
+        _id -= 26;
     }
     return _id;
 }

@@ -62,6 +62,7 @@ public:
     QVector<QString> getFromTeams();
     QVector<QString> getToTeams();
     QVector<double>  getWeights();
+    int              getNumOfTeams();
 
     void updateArena(team aTeam, QString newArena);
     void updateCapacity(team aTeam, int newCapacity);
