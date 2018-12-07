@@ -472,7 +472,24 @@ void fanpage::on_tripButton_clicked()
 
     if(ui->distanceButton->isChecked())
     {
-        qDebug() << "SHORT";
+        if(ui->teamCombo->currentText() != tripTeams.begin())
+        {
+            for(int count = 0; count < tripTeams.size(); count++)
+            {
+                if(tripTeams.at(count) == ui->teamCombo->currentText())
+                {
+                    tripTeams.removeAt(count);
+                }
+            }
+            tripTeams.insert(0, ui->teamCombo->currentText());
+        }
+        tripTeams = shortestTrip(tripTeams);
+
+
+        tripPage = new trip(this, tripTeams);
+        tripPage->show();
+        tripPage->loadTotalDistance(getDistanceTrip(tripTeams));
+
     }
     else if(ui->orderButton->isChecked())
     {
@@ -497,8 +514,6 @@ void fanpage::on_tripButton_clicked()
         tripPage->show();
         tripPage->loadTotalDistance(getDistanceTrip(tripTeams));
     }
-
-
 }
 
 //ShortestTripButtonClicked - activated when there are two teams selected
@@ -549,7 +564,6 @@ void fanpage::on_shortestTripButton_clicked()
             tripPage->loadTeamVisited(shortestPath[i]);
         }
     }
-
 }
 
 //SelectedTeamsTableChanged - activates button only when there are two teams selected
@@ -674,7 +688,35 @@ void fanpage::ShortestPath(int start, int end, int finish, QVector<QString>& pat
         }
 
         ShortestPath(start + 1, end + 1, finish, path, totalCost);
-
     }
+}
 
+QVector<QString> fanpage::shortestTrip(QVector<QString> teams)
+{
+    QVector<QString> toReturn;
+    toReturn.push_back(teams.at(0));
+    teams.remove(0);
+    int cost = 0;
+    int smallestCost = 10000000000000;
+    int smallestCostAt=0;
+
+    for(int count = 0; count < teams.size(); count++)
+    {
+        for(int i = 0; i < teams.size(); i++)
+        {
+
+            QVector<QString> temp = myGraph->Dijkstra(toReturn.at(count), teams.at(i), cost);
+            if(cost < smallestCost)
+            {
+                smallestCostAt = i;
+                smallestCost = cost;
+            }
+            qDebug() << toReturn.at(count) << teams.at(i) << cost << smallestCost;
+        }
+        toReturn.push_back(teams.at(smallestCostAt));
+        teams.remove(smallestCostAt);
+        smallestCost = 100000000000000;
+    }
+    toReturn.push_back(teams.at(0));
+    return toReturn;
 }

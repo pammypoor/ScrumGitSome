@@ -192,7 +192,6 @@ void trip::on_tripButton_clicked()
 {
     double totalSpent = 0;
     teamCount++;
-    qDebug() << teamCount << teamsVisited.size();
     if(teamCount < teamsVisited.size())
     {
         loadSouvenirs(teamsVisited.at(teamCount));
@@ -236,7 +235,6 @@ void trip::on_souvenirsTable_doubleClicked(const QModelIndex &index)
         if(exists)
         {
             toAdd  = ui->cartTable->item(foundAt,3)->text().toInt();
-            qDebug() << toAdd;
         }
 
         QInputDialog inputOperation;
@@ -272,7 +270,6 @@ void trip::on_souvenirsTable_doubleClicked(const QModelIndex &index)
 
                     for(int count = 0; count < ui->arenaTable->rowCount(); count++)
                     {
-                        qDebug() << ui->arenaTable->item(count,0)->text();
                         if(ui->arenaTable->item(count,0)->text() == arena)
                         {
                             double sum = 0;
@@ -399,5 +396,4 @@ void trip::loadArenas(QString team)
     ui->arenaTable->insertRow(ui->arenaTable->rowCount());
     ui->arenaTable->setItem(ui->arenaTable->rowCount()-1, 0, new QTableWidgetItem(arena));
     ui->arenaTable->setItem(ui->arenaTable->rowCount()-1, 1, new QTableWidgetItem("zero"));
-    qDebug() << "TEST";
 }
