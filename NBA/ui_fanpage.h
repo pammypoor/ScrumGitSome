@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGroupBox>
@@ -48,6 +49,7 @@ public:
     QRadioButton *orderButton;
     QComboBox *teamCombo;
     QLabel *label_9;
+    QCheckBox *checkBox;
     QTableView *planTripTable;
     QLabel *label_11;
     QLabel *label_13;
@@ -86,9 +88,9 @@ public:
     QLabel *capacityLabel;
     QLabel *label_12;
     QStatusBar *statusbar;
-    QButtonGroup *conferenceGroup;
-    QButtonGroup *sortByGroup;
     QButtonGroup *sortTripGroup;
+    QButtonGroup *sortByGroup;
+    QButtonGroup *conferenceGroup;
 
     void setupUi(QMainWindow *fanpage)
     {
@@ -181,7 +183,7 @@ public:
 "}color: white;"));
         groupBox_3 = new QGroupBox(page_2);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(130, 490, 491, 61));
+        groupBox_3->setGeometry(QRect(40, 490, 581, 61));
         groupBox_3->setStyleSheet(QStringLiteral("color: white;"));
         distanceButton = new QRadioButton(groupBox_3);
         sortTripGroup = new QButtonGroup(fanpage);
@@ -203,6 +205,9 @@ public:
         label_9 = new QLabel(groupBox_3);
         label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setGeometry(QRect(220, 30, 51, 21));
+        checkBox = new QCheckBox(groupBox_3);
+        checkBox->setObjectName(QStringLiteral("checkBox"));
+        checkBox->setGeometry(QRect(490, 30, 72, 20));
         planTripTable = new QTableView(page_2);
         planTripTable->setObjectName(QStringLiteral("planTripTable"));
         planTripTable->setGeometry(QRect(40, 41, 661, 431));
@@ -456,6 +461,7 @@ public:
         distanceButton->setText(QApplication::translate("fanpage", "shortest distance", nullptr));
         orderButton->setText(QApplication::translate("fanpage", "order specified", nullptr));
         label_9->setText(QApplication::translate("fanpage", "Starting at", nullptr));
+        checkBox->setText(QApplication::translate("fanpage", "all", nullptr));
         label_11->setText(QApplication::translate("fanpage", "Teams", nullptr));
         label_13->setText(QApplication::translate("fanpage", "Teams selected:", nullptr));
         tripButton->setText(QApplication::translate("fanpage", "Plan Trip", nullptr));

@@ -10,7 +10,15 @@ fanpage::fanpage(QWidget *parent) :
     ui->mainLogo->setPixmap(pix.scaled(200,200, Qt::IgnoreAspectRatio, Qt::FastTransformation));
     ui->stackedWidget->setCurrentIndex(0);
     populateGraph();
-    ui->shortestTripButton->setDisabled(true);
+
+    ui->selectedTeamsTable->insertColumn(0);
+    ui->selectedTeamsTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->selectedTeamsTable->setAlternatingRowColors(true);
+    ui->selectedTeamsTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+    ui->selectedTeamsTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Team Name"));
+    ui->selectedTeamsTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->planTripTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+
 }
 
 fanpage::~fanpage()
@@ -22,14 +30,11 @@ void fanpage::on_mainPlanTripButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
     loadPlanTeams();
-    ui->planTripTable->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->distanceButton->setChecked(1);
-    ui->selectedTeamsTable->insertColumn(0);
-    ui->selectedTeamsTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    ui->selectedTeamsTable->setAlternatingRowColors(true);
-    ui->selectedTeamsTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
-    ui->selectedTeamsTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Team Name"));
-    ui->selectedTeamsTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->shortestTripButton->setDisabled(true);
+    ui->teamCombo->clear();
+    ui->tripButton->setDisabled(true);
+    ui->checkBox->setCheckState(Qt::Unchecked);
 }
 
 void fanpage::populateGraph()
@@ -48,8 +53,6 @@ void fanpage::populateGraph()
     QVector<double>::iterator fIt;
 
     sizeOfGraph = DbManager::instance().getNumOfTeams();
-    /**REMOVE -1 when updated teams table in db**/
-    sizeOfGraph--;
 
     fromTeams = DbManager::instance().getFromTeams();
     toTeams   = DbManager::instance().getToTeams();
@@ -124,6 +127,9 @@ void fanpage::on_backTeamButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
     ui->teamNameTeamCombo->clear();
+    ui->selectedTeamsTable->setRowCount(0);
+    tripTeams.clear();
+    qDebug() << tripTeams.size();
 }
 
 void fanpage::loadAllTeams()
@@ -483,8 +489,8 @@ void fanpage::on_tripButton_clicked()
             }
             tripTeams.insert(0, ui->teamCombo->currentText());
         }
-        tripTeams = shortestTrip(tripTeams);
 
+        tripTeams = shortestTrip(tripTeams);
 
         tripPage = new trip(this, tripTeams);
         tripPage->show();
@@ -514,6 +520,12 @@ void fanpage::on_tripButton_clicked()
         tripPage->show();
         tripPage->loadTotalDistance(getDistanceTrip(tripTeams));
     }
+    ui->selectedTeamsTable->setRowCount(0);
+    tripTeams.clear();
+    ui->teamCombo->clear();
+    ui->shortestTripButton->setDisabled(true);
+    ui->tripButton->setDisabled(true);
+    ui->checkBox->setCheckState(Qt::Unchecked);
 }
 
 //ShortestTripButtonClicked - activated when there are two teams selected
@@ -556,6 +568,10 @@ void fanpage::on_shortestTripButton_clicked()
 
         tripPage->show();
         tripPage->loadTotalDistance(cost);
+        for(int count = 0; count < shortestPath.size(); count++)
+        {
+            tripPage->loadArenas(shortestPath.at(count));
+        }
 //        tripPage->loadTeamVisited(starting);
 //        tripPage->loadTeamVisited(ending);
 
@@ -564,6 +580,12 @@ void fanpage::on_shortestTripButton_clicked()
             tripPage->loadTeamVisited(shortestPath[i]);
         }
     }
+    ui->selectedTeamsTable->setRowCount(0);
+    tripTeams.clear();
+    ui->teamCombo->clear();
+    ui->tripButton->setDisabled(true);
+    ui->shortestTripButton->setDisabled(true);
+    ui->checkBox->setCheckState(Qt::Unchecked);
 }
 
 //SelectedTeamsTableChanged - activates button only when there are two teams selected
@@ -573,10 +595,17 @@ void fanpage::on_selectedTeamsTable_cellChanged(int row, int column)
     if(ui->selectedTeamsTable->rowCount() == 2)
     {
         ui->shortestTripButton->setEnabled(true);
+        ui->tripButton->setEnabled(true);
+    }
+    else if(ui->selectedTeamsTable->rowCount() == 0)
+    {
+        ui->shortestTripButton->setDisabled(true);
+        ui->tripButton->setDisabled(true);
     }
     else
     {
         ui->shortestTripButton->setDisabled(true);
+        ui->tripButton->setEnabled(true);
     }
 }
 
@@ -606,8 +635,17 @@ double fanpage::getDistanceTrip(QVector<QString> teams)
            tripPage->loadArenas(starting);
            sum += cost;
         }
-        tripPage->loadTeamVisited(ending);
-        tripPage->loadArenas(ending);
+
+        if(teams.size() == 1)
+        {
+            tripPage->loadArenas(teams.at(0));
+            tripPage->loadTeamVisited(teams.at(0));
+        }
+        else
+        {
+            tripPage->loadTeamVisited(ending);
+            tripPage->loadArenas(ending);
+        }
         return sum;
 }
 
@@ -694,29 +732,53 @@ void fanpage::ShortestPath(int start, int end, int finish, QVector<QString>& pat
 QVector<QString> fanpage::shortestTrip(QVector<QString> teams)
 {
     QVector<QString> toReturn;
+    int size = teams.size();
     toReturn.push_back(teams.at(0));
     teams.remove(0);
     int cost = 0;
     int smallestCost = 10000000000000;
     int smallestCostAt=0;
 
-    for(int count = 0; count < teams.size(); count++)
+    qDebug() << toReturn.size() << teams.size();
+
+    for(int count = 0; count < size-1; count++)
     {
         for(int i = 0; i < teams.size(); i++)
         {
-
             QVector<QString> temp = myGraph->Dijkstra(toReturn.at(count), teams.at(i), cost);
             if(cost < smallestCost)
             {
                 smallestCostAt = i;
                 smallestCost = cost;
-            }
-            qDebug() << toReturn.at(count) << teams.at(i) << cost << smallestCost;
+            }   
         }
         toReturn.push_back(teams.at(smallestCostAt));
         teams.remove(smallestCostAt);
         smallestCost = 100000000000000;
     }
-    toReturn.push_back(teams.at(0));
     return toReturn;
+}
+
+void fanpage::on_checkBox_stateChanged(int arg1)
+{
+    if(ui->checkBox->checkState() == Qt::Checked)
+    {
+        ui->selectedTeamsTable->setRowCount(0);
+        tripTeams.clear();
+        ui->teamCombo->clear();
+
+        for(int count = 0; count < ui->planTripTable->model()->rowCount(); count++)
+        {
+            ui->selectedTeamsTable->insertRow(ui->selectedTeamsTable->rowCount());
+            ui->teamCombo->addItem(ui->planTripTable->model()->index(count, 0).data().toString());
+            ui->selectedTeamsTable->setItem( ui->selectedTeamsTable->rowCount()-1, 0,  new QTableWidgetItem(ui->planTripTable->model()->index(count, 0).data().toString()));
+            tripTeams.push_back(ui->planTripTable->model()->index(count, 0).data().toString());
+        }
+    }
+    else
+    {
+        ui->selectedTeamsTable->setRowCount(0);
+        tripTeams.clear();
+        ui->teamCombo->clear();
+    }
 }

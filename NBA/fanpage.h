@@ -83,6 +83,8 @@ private slots:
     void ShortestPath(int start, int end, int finish, QVector<QString>& path, int& totalCost);
 
 
+    void on_checkBox_stateChanged(int arg1);
+
 private:
     Ui::fanpage *ui;
     QVector<QString> tripTeams;

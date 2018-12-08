@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_fanpage_t {
-    QByteArrayData data[40];
-    char stringdata0[860];
+    QByteArrayData data[41];
+    char stringdata0[885];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -71,7 +71,8 @@ QT_MOC_LITERAL(35, 815, 6), // "finish"
 QT_MOC_LITERAL(36, 822, 17), // "QVector<QString>&"
 QT_MOC_LITERAL(37, 840, 4), // "path"
 QT_MOC_LITERAL(38, 845, 4), // "int&"
-QT_MOC_LITERAL(39, 850, 9) // "totalCost"
+QT_MOC_LITERAL(39, 850, 9), // "totalCost"
+QT_MOC_LITERAL(40, 860, 24) // "on_checkBox_stateChanged"
 
     },
     "fanpage\0on_mainPlanTripButton_clicked\0"
@@ -98,7 +99,8 @@ QT_MOC_LITERAL(39, 850, 9) // "totalCost"
     "on_bfsButton_clicked\0on_dfsButton_clicked\0"
     "getTripInFanOrder\0QVector<QString>\0"
     "ShortestPath\0start\0end\0finish\0"
-    "QVector<QString>&\0path\0int&\0totalCost"
+    "QVector<QString>&\0path\0int&\0totalCost\0"
+    "on_checkBox_stateChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -108,7 +110,7 @@ static const uint qt_meta_data_fanpage[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      26,   14, // methods
+      27,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -116,32 +118,33 @@ static const uint qt_meta_data_fanpage[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  144,    2, 0x08 /* Private */,
-       3,    0,  145,    2, 0x08 /* Private */,
-       4,    0,  146,    2, 0x08 /* Private */,
-       5,    0,  147,    2, 0x08 /* Private */,
-       6,    0,  148,    2, 0x08 /* Private */,
-       7,    1,  149,    2, 0x08 /* Private */,
-       9,    0,  152,    2, 0x08 /* Private */,
-      10,    1,  153,    2, 0x08 /* Private */,
-      11,    0,  156,    2, 0x08 /* Private */,
-      12,    0,  157,    2, 0x08 /* Private */,
-      13,    0,  158,    2, 0x08 /* Private */,
-      14,    0,  159,    2, 0x08 /* Private */,
-      15,    0,  160,    2, 0x08 /* Private */,
-      16,    0,  161,    2, 0x08 /* Private */,
-      17,    0,  162,    2, 0x08 /* Private */,
-      18,    1,  163,    2, 0x08 /* Private */,
-      19,    0,  166,    2, 0x08 /* Private */,
-      20,    1,  167,    2, 0x08 /* Private */,
-      22,    0,  170,    2, 0x08 /* Private */,
-      23,    0,  171,    2, 0x08 /* Private */,
-      24,    2,  172,    2, 0x08 /* Private */,
-      27,    0,  177,    2, 0x08 /* Private */,
-      28,    0,  178,    2, 0x08 /* Private */,
-      29,    0,  179,    2, 0x08 /* Private */,
-      30,    0,  180,    2, 0x08 /* Private */,
-      32,    5,  181,    2, 0x08 /* Private */,
+       1,    0,  149,    2, 0x08 /* Private */,
+       3,    0,  150,    2, 0x08 /* Private */,
+       4,    0,  151,    2, 0x08 /* Private */,
+       5,    0,  152,    2, 0x08 /* Private */,
+       6,    0,  153,    2, 0x08 /* Private */,
+       7,    1,  154,    2, 0x08 /* Private */,
+       9,    0,  157,    2, 0x08 /* Private */,
+      10,    1,  158,    2, 0x08 /* Private */,
+      11,    0,  161,    2, 0x08 /* Private */,
+      12,    0,  162,    2, 0x08 /* Private */,
+      13,    0,  163,    2, 0x08 /* Private */,
+      14,    0,  164,    2, 0x08 /* Private */,
+      15,    0,  165,    2, 0x08 /* Private */,
+      16,    0,  166,    2, 0x08 /* Private */,
+      17,    0,  167,    2, 0x08 /* Private */,
+      18,    1,  168,    2, 0x08 /* Private */,
+      19,    0,  171,    2, 0x08 /* Private */,
+      20,    1,  172,    2, 0x08 /* Private */,
+      22,    0,  175,    2, 0x08 /* Private */,
+      23,    0,  176,    2, 0x08 /* Private */,
+      24,    2,  177,    2, 0x08 /* Private */,
+      27,    0,  182,    2, 0x08 /* Private */,
+      28,    0,  183,    2, 0x08 /* Private */,
+      29,    0,  184,    2, 0x08 /* Private */,
+      30,    0,  185,    2, 0x08 /* Private */,
+      32,    5,  186,    2, 0x08 /* Private */,
+      40,    1,  197,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -170,6 +173,7 @@ static const uint qt_meta_data_fanpage[] = {
     QMetaType::Void,
     0x80000000 | 31,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, 0x80000000 | 36, 0x80000000 | 38,   33,   34,   35,   37,   39,
+    QMetaType::Void, QMetaType::Int,    8,
 
        0        // eod
 };
@@ -207,6 +211,7 @@ void fanpage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 24: { QVector<QString> _r = _t->getTripInFanOrder();
             if (_a[0]) *reinterpret_cast< QVector<QString>*>(_a[0]) = std::move(_r); }  break;
         case 25: _t->ShortestPath((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< QVector<QString>(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
+        case 26: _t->on_checkBox_stateChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -237,13 +242,13 @@ int fanpage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 26)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 26;
+        _id -= 27;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 26)
+        if (_id < 27)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 26;
+        _id -= 27;
     }
     return _id;
 }
