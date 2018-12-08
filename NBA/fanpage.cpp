@@ -536,7 +536,7 @@ void fanpage::on_shortestTripButton_clicked()
 {
     bool validNumOfTeams = false;
     QVector<QString> shortestPath;
-    int cost;
+    double cost;
     QString starting;
     QString ending;
 
@@ -622,8 +622,8 @@ void fanpage::on_minimumSpanTreeButton_clicked()
 
 double fanpage::getDistanceTrip(QVector<QString> teams)
 {
-    int sum = 0;
-    int cost =0;
+    double sum = 0;
+    double cost =0;
     QString starting;
     QString ending;
         for(int count = 0; count < teams.size()-1; count++)
@@ -670,7 +670,7 @@ void fanpage::on_dfsButton_clicked()
 QVector<QString> fanpage::getTripInFanOrder()
 {
     QVector<QString> pathForTrip;
-    int totalCost = 0;
+    double totalCost = 0;
     grandTotalForUserSpecificPath = 0;
 
     if(tripTeams.size() > 1)
@@ -696,7 +696,7 @@ QVector<QString> fanpage::getTripInFanOrder()
 }
 
 //recursive call to obtain the shortest trip
-void fanpage::ShortestPath(int start, int end, int finish, QVector<QString>& path, int& totalCost)
+void fanpage::ShortestPath(int start, int end, int finish, QVector<QString>& path, double& totalCost)
 {
     if(tripTeams[end] == tripTeams[finish])
     {
@@ -735,8 +735,8 @@ QVector<QString> fanpage::shortestTrip(QVector<QString> teams)
     int size = teams.size();
     toReturn.push_back(teams.at(0));
     teams.remove(0);
-    int cost = 0;
-    int smallestCost = 10000000000000;
+    double cost = 0.0;
+    double smallestCost = 10000000000000.0;
     int smallestCostAt=0;
 
     qDebug() << toReturn.size() << teams.size();
@@ -754,8 +754,9 @@ QVector<QString> fanpage::shortestTrip(QVector<QString> teams)
         }
         toReturn.push_back(teams.at(smallestCostAt));
         teams.remove(smallestCostAt);
-        smallestCost = 100000000000000;
+        smallestCost = 100000000000000.0;
     }
+
     return toReturn;
 }
 

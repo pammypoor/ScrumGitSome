@@ -39,6 +39,7 @@ public:
     QPushButton *menuSouvenirButton;
     QPushButton *MenuTeamButton;
     QPushButton *menuDistanceButton;
+    QLabel *label_5;
     QWidget *page_2;
     QPushButton *teamBackButton;
     QPushButton *addTeamButton;
@@ -77,16 +78,16 @@ public:
         page->setObjectName(QStringLiteral("page"));
         settingsPic = new QLabel(page);
         settingsPic->setObjectName(QStringLiteral("settingsPic"));
-        settingsPic->setGeometry(QRect(420, 110, 281, 221));
+        settingsPic->setGeometry(QRect(380, 120, 281, 221));
         settingsPic->setPixmap(QPixmap(QString::fromUtf8("settings.png")));
         label = new QLabel(page);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(460, 50, 201, 41));
+        label->setGeometry(QRect(420, 60, 201, 41));
         label->setStyleSheet(QLatin1String("color: white;\n"
 "font-size: 35px;"));
         menuSouvenirButton = new QPushButton(page);
         menuSouvenirButton->setObjectName(QStringLiteral("menuSouvenirButton"));
-        menuSouvenirButton->setGeometry(QRect(500, 370, 171, 121));
+        menuSouvenirButton->setGeometry(QRect(460, 380, 171, 121));
         menuSouvenirButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -100,7 +101,7 @@ public:
 "}"));
         MenuTeamButton = new QPushButton(page);
         MenuTeamButton->setObjectName(QStringLiteral("MenuTeamButton"));
-        MenuTeamButton->setGeometry(QRect(300, 370, 171, 121));
+        MenuTeamButton->setGeometry(QRect(260, 380, 171, 121));
         MenuTeamButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -114,7 +115,7 @@ public:
 "}"));
         menuDistanceButton = new QPushButton(page);
         menuDistanceButton->setObjectName(QStringLiteral("menuDistanceButton"));
-        menuDistanceButton->setGeometry(QRect(700, 370, 171, 121));
+        menuDistanceButton->setGeometry(QRect(660, 380, 171, 121));
         menuDistanceButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -126,6 +127,11 @@ public:
 "color: white;\n"
 "border-radius: 10px;\n"
 "}"));
+        label_5 = new QLabel(page);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(10, 10, 171, 31));
+        label_5->setStyleSheet(QLatin1String("color: white;\n"
+"font-size: 25px;"));
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
@@ -290,7 +296,7 @@ public:
 
         retranslateUi(maintenance);
 
-        stackedWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(maintenance);
@@ -304,6 +310,7 @@ public:
         menuSouvenirButton->setText(QApplication::translate("maintenance", "Modify Souvenirs", nullptr));
         MenuTeamButton->setText(QApplication::translate("maintenance", "Modify Teams", nullptr));
         menuDistanceButton->setText(QApplication::translate("maintenance", "Modify Distances", nullptr));
+        label_5->setText(QApplication::translate("maintenance", "Profile: Admin", nullptr));
         teamBackButton->setText(QApplication::translate("maintenance", "Back", nullptr));
         addTeamButton->setText(QApplication::translate("maintenance", "Add Team File", nullptr));
         groupBox_2->setTitle(QApplication::translate("maintenance", "Add Souvenir", nullptr));

@@ -80,7 +80,7 @@ private slots:
 
     QVector<QString> getTripInFanOrder();
 
-    void ShortestPath(int start, int end, int finish, QVector<QString>& path, int& totalCost);
+    void ShortestPath(int start, int end, int finish, QVector<QString>& path, double& totalCost);
 
 
     void on_checkBox_stateChanged(int arg1);

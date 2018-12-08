@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
@@ -325,7 +325,7 @@ font-size: 20px;</string>
         <rect>
          <x>120</x>
          <y>60</y>
-         <width>61</width>
+         <width>91</width>
          <height>21</height>
         </rect>
        </property>
@@ -343,8 +343,8 @@ font-size: 20px;</string>
         <rect>
          <x>120</x>
          <y>90</y>
-         <width>47</width>
-         <height>14</height>
+         <width>91</width>
+         <height>16</height>
         </rect>
        </property>
        <property name="font">

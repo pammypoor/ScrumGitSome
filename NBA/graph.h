@@ -601,7 +601,7 @@ class Graph
         }
 
         //METHOD - returns the sum of the discovery edges
-        int OutputSum()
+        double OutputSum()
         {
             return sum;
         }
@@ -630,9 +630,9 @@ class Graph
 
         //Dijkstra - returns a vector of vertexType, and returns the cost through modifying
         //           the cost parameter
-        QVector<VertexType> Dijkstra(const VertexType& start, const VertexType& end, int& cost)
+        QVector<VertexType> Dijkstra(const VertexType& start, const VertexType& end, double& cost)
         {
-            int dist[maxSize]; // The output array. dist[i] will hold the shortest
+            double dist[maxSize]; // The output array. dist[i] will hold the shortest
                          // distance from v to i
             int parent[maxSize];
             bool sptSet[maxSize]; // sptSet[i] will be true if vertex i is included
@@ -729,19 +729,19 @@ class Graph
             return shortestPath;
         }
 
+        //changed
     protected:
-        int GetDijkstraCost(const VertexType& end, int dist[])
+        double GetDijkstraCost(const VertexType& end, double dist[])
         {
             int endingUniqInt;
 
             endingUniqInt = findVertex(end)->i;
-
             return dist[endingUniqInt];
         }
 
         QVector<VertexType> GetDijkstraPath(const VertexType& start,
                                             const VertexType& end,
-                                            int dist[], int parent[])
+                                            double dist[], int parent[])
         {
             QVector<VertexType> shortestPath;
             int startingUniqInt;
@@ -809,7 +809,7 @@ class Graph
     protected:
 
         //METHOD - used to find the minimum distance in dijkstra's algorithm
-        int minDistance(int dist[], bool sptSet[])
+        int minDistance(double dist[], bool sptSet[])
         {
             int min = INT_MAX;
             int min_index;
@@ -969,7 +969,7 @@ class Graph
         vector< vector<Edge> >adjacencyMatrix;
         int uniqueInt;
         int maxSize;
-        int sum;                // sum of the discovery edges
+        double sum;                // sum of the discovery edges
 };
 
 #endif // GRAPH_H

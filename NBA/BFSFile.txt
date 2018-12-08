@@ -30,5 +30,5 @@ Boston Celtics
 Brooklyn Nets
 
 
-Total distance traveled: 12203
+Total distance traveled: 12213.8
 

@@ -8,26 +8,6 @@
 #include <QSpinBox>
 #include <QStyledItemDelegate>
 
-class SpinBoxDelegate : public QStyledItemDelegate
-{
-    Q_OBJECT
-
-public:
-    SpinBoxDelegate(QObject *parent = 0);
-
-    QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option,
-                          const QModelIndex &index) const override;
-
-    void setEditorData(QWidget *editor, const QModelIndex &index) const override;
-    void setModelData(QWidget *editor, QAbstractItemModel *model,
-                      const QModelIndex &index) const override;
-
-    void updateEditorGeometry(QWidget *editor,
-        const QStyleOptionViewItem &option, const QModelIndex &index) const override;
-};
-
-
-
 namespace Ui {
 class trip;
 }
@@ -41,7 +21,7 @@ public:
     explicit trip(QWidget *parent, QVector<QString> teams);
     explicit trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisited);
     void loadSouvenirs(QString team);
-    void loadTotalDistance(int distance);
+    void loadTotalDistance(double distance);
     void loadTeamVisited(QString team);
     void loadArenas(QString team);
     void displayBFS();
@@ -58,7 +38,7 @@ private slots:
 private:
     Ui::trip *ui;
     int teamCount;
-    int totalDistance;
+    double totalDistance;
     QVector<QString> teams;
     QVector<QString> teamsVisited;
 };

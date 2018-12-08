@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_fanpage_t {
     QByteArrayData data[41];
-    char stringdata0[885];
+    char stringdata0[888];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -70,9 +70,9 @@ QT_MOC_LITERAL(34, 811, 3), // "end"
 QT_MOC_LITERAL(35, 815, 6), // "finish"
 QT_MOC_LITERAL(36, 822, 17), // "QVector<QString>&"
 QT_MOC_LITERAL(37, 840, 4), // "path"
-QT_MOC_LITERAL(38, 845, 4), // "int&"
-QT_MOC_LITERAL(39, 850, 9), // "totalCost"
-QT_MOC_LITERAL(40, 860, 24) // "on_checkBox_stateChanged"
+QT_MOC_LITERAL(38, 845, 7), // "double&"
+QT_MOC_LITERAL(39, 853, 9), // "totalCost"
+QT_MOC_LITERAL(40, 863, 24) // "on_checkBox_stateChanged"
 
     },
     "fanpage\0on_mainPlanTripButton_clicked\0"
@@ -99,7 +99,7 @@ QT_MOC_LITERAL(40, 860, 24) // "on_checkBox_stateChanged"
     "on_bfsButton_clicked\0on_dfsButton_clicked\0"
     "getTripInFanOrder\0QVector<QString>\0"
     "ShortestPath\0start\0end\0finish\0"
-    "QVector<QString>&\0path\0int&\0totalCost\0"
+    "QVector<QString>&\0path\0double&\0totalCost\0"
     "on_checkBox_stateChanged"
 };
 #undef QT_MOC_LITERAL
@@ -210,7 +210,7 @@ void fanpage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 23: _t->on_dfsButton_clicked(); break;
         case 24: { QVector<QString> _r = _t->getTripInFanOrder();
             if (_a[0]) *reinterpret_cast< QVector<QString>*>(_a[0]) = std::move(_r); }  break;
-        case 25: _t->ShortestPath((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< QVector<QString>(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
+        case 25: _t->ShortestPath((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< QVector<QString>(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5]))); break;
         case 26: _t->on_checkBox_stateChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }

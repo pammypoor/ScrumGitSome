@@ -87,6 +87,7 @@ public:
     QLabel *label_10;
     QLabel *capacityLabel;
     QLabel *label_12;
+    QFrame *line;
     QStatusBar *statusbar;
     QButtonGroup *sortTripGroup;
     QButtonGroup *sortByGroup;
@@ -213,7 +214,7 @@ public:
         planTripTable->setGeometry(QRect(40, 41, 661, 431));
         label_11 = new QLabel(page_2);
         label_11->setObjectName(QStringLiteral("label_11"));
-        label_11->setGeometry(QRect(320, 10, 91, 20));
+        label_11->setGeometry(QRect(310, 10, 91, 20));
         label_11->setStyleSheet(QLatin1String("color: white;\n"
 "font-size: 25px;"));
         label_13 = new QLabel(page_2);
@@ -226,7 +227,7 @@ public:
         selectedTeamsTable->setGeometry(QRect(730, 40, 321, 431));
         tripButton = new QPushButton(page_2);
         tripButton->setObjectName(QStringLiteral("tripButton"));
-        tripButton->setGeometry(QRect(160, 560, 181, 22));
+        tripButton->setGeometry(QRect(120, 560, 181, 22));
         tripButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -240,7 +241,7 @@ public:
 "}color: white;"));
         shortestTripButton = new QPushButton(page_2);
         shortestTripButton->setObjectName(QStringLiteral("shortestTripButton"));
-        shortestTripButton->setGeometry(QRect(400, 560, 181, 22));
+        shortestTripButton->setGeometry(QRect(340, 560, 181, 22));
         shortestTripButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -335,7 +336,7 @@ public:
         page_4->setObjectName(QStringLiteral("page_4"));
         backTeamButton = new QPushButton(page_4);
         backTeamButton->setObjectName(QStringLiteral("backTeamButton"));
-        backTeamButton->setGeometry(QRect(990, 580, 80, 22));
+        backTeamButton->setGeometry(QRect(950, 570, 111, 22));
         backTeamButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:DarkGrey ;\n"
 "color: white;\n"
@@ -349,7 +350,7 @@ public:
 "}color: white;"));
         label_4 = new QLabel(page_4);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(440, 30, 191, 20));
+        label_4->setGeometry(QRect(460, 20, 141, 31));
         label_4->setStyleSheet(QLatin1String("color: white;\n"
 "font-size: 25px;"));
         teamTable = new QTableView(page_4);
@@ -433,6 +434,12 @@ public:
         label_12 = new QLabel(groupBox_2);
         label_12->setObjectName(QStringLiteral("label_12"));
         label_12->setGeometry(QRect(130, 80, 47, 14));
+        line = new QFrame(page_4);
+        line->setObjectName(QStringLiteral("line"));
+        line->setGeometry(QRect(470, 50, 118, 3));
+        line->setStyleSheet(QStringLiteral("background: white;"));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
         stackedWidget->addWidget(page_4);
         fanpage->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(fanpage);

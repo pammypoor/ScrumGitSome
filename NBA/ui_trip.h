@@ -165,11 +165,11 @@ public:
         label_6->setFont(font);
         totalSpent = new QLabel(groupBox);
         totalSpent->setObjectName(QStringLiteral("totalSpent"));
-        totalSpent->setGeometry(QRect(120, 60, 61, 21));
+        totalSpent->setGeometry(QRect(120, 60, 91, 21));
         totalSpent->setFont(font);
         totalArenasVisited = new QLabel(groupBox);
         totalArenasVisited->setObjectName(QStringLiteral("totalArenasVisited"));
-        totalArenasVisited->setGeometry(QRect(120, 90, 47, 14));
+        totalArenasVisited->setGeometry(QRect(120, 90, 91, 16));
         totalArenasVisited->setFont(font);
         stackedWidget->addWidget(page_2);
         page_3 = new QWidget();
@@ -191,7 +191,7 @@ public:
 
         retranslateUi(trip);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(trip);
