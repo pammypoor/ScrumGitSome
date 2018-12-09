@@ -28,16 +28,20 @@ SOURCES += \
         mainwindow.cpp \
     dbmanager.cpp \
     maintenance.cpp \
-    fanpage.cpp
+    fanpage.cpp \
+    trip.cpp
 
 HEADERS += \
         mainwindow.h \
     dbmanager.h \
     filesused.h \
     maintenance.h \
-    fanpage.h
+    fanpage.h \
+    graph.h \
+    trip.h
 
 FORMS += \
         mainwindow.ui \
     maintenance.ui \
-    fanpage.ui
+    fanpage.ui \
+    trip.ui

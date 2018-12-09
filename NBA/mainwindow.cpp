@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     QPixmap pix(LOGOPIC);
-    ui->logo->setPixmap(pix.scaled(250,150, Qt::IgnoreAspectRatio, Qt::FastTransformation));
+    ui->logo->setPixmap(pix.scaled(650,500, Qt::IgnoreAspectRatio, Qt::FastTransformation));
     setWindowTitle("Let's Play NBA Basketball");
     ui->passwordLineEdit->setEchoMode(QLineEdit::Password);
 }
@@ -26,7 +26,7 @@ void MainWindow::on_logOnPushButton_clicked()
     }
     QString usertype = DbManager::instance().LoginCheck(ui->usernameLineEdit->text(), ui->passwordLineEdit->text());
 
-    if(usertype=="fan")
+    if(usertype == "fan")
     {
         //open fan page
         close();
@@ -42,6 +42,10 @@ void MainWindow::on_logOnPushButton_clicked()
         adminPage->show();
         qDebug() <<"Maintanence page opened.";
     }
+    else
+    {
+        QMessageBox::information(this, "Login", "Invalid Login. Try Again.");
+    }
     ui->usernameLineEdit->clear();
     ui->passwordLineEdit->clear();
 }
@@ -50,4 +54,9 @@ void MainWindow::on_logOnPushButton_clicked()
 void MainWindow::on_showPassword_stateChanged(int arg1)
 {
     ui->passwordLineEdit->setEchoMode(ui->showPassword->checkState()== Qt::Checked ? QLineEdit::Normal: QLineEdit::Password);
+}
+
+void MainWindow::on_passwordLineEdit_returnPressed()
+{
+    on_logOnPushButton_clicked();
 }

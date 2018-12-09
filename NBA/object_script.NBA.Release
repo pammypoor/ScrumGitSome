@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\dbmanager.o
+./release\maintenance.o
+./release\fanpage.o
+./release\trip.o
+./release\moc_mainwindow.o
+./release\moc_maintenance.o
+./release\moc_fanpage.o
+./release\moc_trip.o
+);

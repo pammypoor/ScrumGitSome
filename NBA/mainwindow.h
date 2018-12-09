@@ -23,6 +23,8 @@ private slots:
 
     void on_showPassword_stateChanged(int arg1);
 
+    void on_passwordLineEdit_returnPressed();
+
 private:
     Ui::MainWindow *ui;
     maintenance* adminPage;

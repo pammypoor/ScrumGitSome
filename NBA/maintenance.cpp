@@ -42,8 +42,8 @@ void maintenance::on_souvenirBackButton_clicked()
     ui->stackedWidget->setCurrentIndex(0);
     ui->SouvenirNameLineEdit->clear();
     ui->SouvenirCostSpin->clear();
-    ui->SouvenirTeamCombo->setCurrentIndex(0);
-    ui->showTeamsCombo->setCurrentIndex(0);
+    ui->SouvenirTeamCombo->clear();
+    ui->showTeamsCombo->clear();
 }
 
 void maintenance::on_pushButton_clicked()
@@ -74,7 +74,7 @@ void maintenance::loadSouvenirData()
     }
     ui->SouvenirTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->SouvenirTableView->setAlternatingRowColors(true);
-    ui->SouvenirTableView->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+    ui->SouvenirTableView->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
 
 }
 
@@ -202,7 +202,7 @@ void maintenance::loadTeamData()
     ui->teamMaintenanceTableView->setModel(DbManager::instance().toTableTeam());
     ui->teamMaintenanceTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->teamMaintenanceTableView->setAlternatingRowColors(true);
-    ui->teamMaintenanceTableView->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+    ui->teamMaintenanceTableView->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
     qDebug() << "Showing teams.";
 }
 
@@ -231,13 +231,22 @@ void maintenance::on_teamMaintenanceTableView_doubleClicked(const QModelIndex &i
     {
         if(inputOperation.textValue() == "Edit arena name")
         {
-            bool ok;
-            QString arena = QInputDialog::getText(this, "Edit Option", "Edit arena name: ", QLineEdit::Normal, "", &ok);
-            if(ok && !arena.isEmpty())
+            bool ok, allSpace;
+            QString arena = QInputDialog::getText(this, "Edit Option", "Edit arena name: ", QLineEdit::Normal, aTeam.arena, &ok);
+
+            for (std::size_t i = 0; i < arena.size(); ++i)
+                    if (!((arena[i]>='a' && arena[i]<='z') || (arena[i]>='A' && arena[i]<='Z') || arena[i]==' ' || arena[i]=='-' ))
+                            ok = false;
+            for (std::size_t i = 0; i < arena.size(); ++i)
+                    if (!(arena[i] == ' '))
+                            allSpace = false;
+
+            if(ok && !allSpace)
             {
                 DbManager::instance().updateArena(aTeam, arena);
                 loadTeamData();
             }
+
         }
         else if(inputOperation.textValue() == "Edit arena capacity")
         {
@@ -254,4 +263,82 @@ void maintenance::on_teamMaintenanceTableView_doubleClicked(const QModelIndex &i
             }
         }
     }
+}
+
+void maintenance::on_distanceBackButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void maintenance::on_menuDistanceButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+    loadDistances();
+}
+
+void maintenance::loadDistances()
+{
+    ui->distancesTable->setModel(DbManager::instance().toTableDistances());
+    ui->distancesTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->distancesTable->setAlternatingRowColors(true);
+    ui->distancesTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
+}
+
+void maintenance::on_addDistancesButton_clicked()
+{
+
+
+    QString filename = QFileDialog::getOpenFileName(this, tr("Open Image"), FOLDER, tr("*.xlsx"));
+    if(filename.isEmpty())
+    {
+        return;
+    }
+    filename.replace('/','\\');
+    QAxObject* excel = new QAxObject( "Excel.Application", 0 );
+    QAxObject* workbooks = excel->querySubObject( "Workbooks" );
+    QAxObject* workbook = workbooks->querySubObject( "Open(const QString&)", filename );
+    QAxObject* sheets = workbook->querySubObject( "Worksheets" );
+    int sheetCount = sheets->dynamicCall("Count()").toInt();        //worksheets count
+    QAxObject* sheet = sheets->querySubObject( "Item( int )", sheetCount );
+
+    // Find the cells that actually have content
+    QAxObject* usedrange = sheet->querySubObject( "UsedRange");
+    QAxObject * rows = usedrange->querySubObject("Rows");
+    QAxObject * columns = usedrange->querySubObject("Columns");
+    int intRowStart = usedrange->property("Row").toInt();
+    int intColStart = usedrange->property("Column").toInt();
+    int intCols = columns->property("Count").toInt();
+    int intRows = rows->property("Count").toInt();
+
+    QString b;
+    QString arena;
+    QString e;
+    double d;
+
+    //Row starts at 1 to remove header columns
+    for (int row=intRowStart + 1 ; row < intRowStart + intRows ; row++) {
+
+        for (int col=intColStart ; col < intColStart + intCols ; col++)
+        {
+            QAxObject* cell = sheet->querySubObject( "Cells( int, int )", row, col );
+            QVariant value = cell->dynamicCall( "Value()" );
+
+            switch (col)
+            {
+                case 1: b=value.toString();
+                    break;
+                case 2: arena=value.toString();
+                    break;
+                case 3: e=value.toString();
+                    break;
+                case 4: {d=value.toDouble();
+                          if(DbManager::instance().addDistance(b,arena,e,d))
+                            {}};
+                    break;
+            }
+        }
+    }
+    workbook->dynamicCall("Close()");
+    excel->dynamicCall("Quit()");
+    loadDistances();
 }

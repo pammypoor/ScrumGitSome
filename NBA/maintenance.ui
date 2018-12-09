@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1052</width>
+    <height>603</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,21 +19,21 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>801</width>
+      <width>1051</width>
       <height>581</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background: #003366;</string>
+     <string notr="true">background: #D3D3D3;</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="settingsPic">
       <property name="geometry">
        <rect>
-        <x>260</x>
+        <x>380</x>
         <y>120</y>
         <width>281</width>
         <height>221</height>
@@ -49,14 +49,14 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>300</x>
+        <x>440</x>
         <y>60</y>
         <width>201</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: DarkGrey;
 font-size: 35px;</string>
       </property>
       <property name="text">
@@ -66,7 +66,7 @@ font-size: 35px;</string>
      <widget class="QPushButton" name="menuSouvenirButton">
       <property name="geometry">
        <rect>
-        <x>410</x>
+        <x>460</x>
         <y>380</y>
         <width>171</width>
         <height>121</height>
@@ -74,16 +74,16 @@ font-size: 35px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
-}</string>
+}color: white;</string>
       </property>
       <property name="text">
        <string>Modify Souvenirs</string>
@@ -92,7 +92,7 @@ border-radius: 10px;
      <widget class="QPushButton" name="MenuTeamButton">
       <property name="geometry">
        <rect>
-        <x>200</x>
+        <x>260</x>
         <y>380</y>
         <width>171</width>
         <height>121</height>
@@ -100,13 +100,13 @@ border-radius: 10px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }</string>
@@ -115,26 +115,69 @@ border-radius: 10px;
        <string>Modify Teams</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="menuDistanceButton">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>380</y>
+        <width>171</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background:#D2691E ;
+color: white;
+border-radius: 10px;
+}
+QPushButton:hover:!pressed
+{
+background: #FF8C00;
+color: white;
+border-radius: 10px;
+}color: white;</string>
+      </property>
+      <property name="text">
+       <string>Modify Distances</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #D2691E;
+font-size: 25px;</string>
+      </property>
+      <property name="text">
+       <string>Profile: Admin</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_2">
      <widget class="QPushButton" name="teamBackButton">
       <property name="geometry">
        <rect>
-        <x>700</x>
-        <y>540</y>
+        <x>960</x>
+        <y>550</y>
         <width>80</width>
         <height>22</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -146,7 +189,7 @@ border-radius: 10px;
      <widget class="QPushButton" name="addTeamButton">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>460</x>
         <y>510</y>
         <width>201</width>
         <height>22</height>
@@ -154,13 +197,13 @@ border-radius: 10px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -174,7 +217,7 @@ border-radius: 10px;
        <rect>
         <x>5</x>
         <y>11</y>
-        <width>781</width>
+        <width>1031</width>
         <height>481</height>
        </rect>
       </property>
@@ -204,7 +247,7 @@ QScrollBar::handle:vertical{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">color: #D2691E;</string>
       </property>
       <property name="title">
        <string>Add Souvenir</string>
@@ -304,13 +347,13 @@ color: #003366;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -323,24 +366,24 @@ border-radius: 10px;
      <widget class="QPushButton" name="souvenirBackButton">
       <property name="geometry">
        <rect>
-        <x>700</x>
-        <y>540</y>
+        <x>960</x>
+        <y>550</y>
         <width>80</width>
         <height>22</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
-}</string>
+}color: white;</string>
       </property>
       <property name="text">
        <string>Back</string>
@@ -351,7 +394,7 @@ border-radius: 10px;
        <rect>
         <x>15</x>
         <y>11</y>
-        <width>771</width>
+        <width>1021</width>
         <height>381</height>
        </rect>
       </property>
@@ -362,14 +405,14 @@ border-radius: 10px;
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>430</y>
+        <x>760</x>
+        <y>410</y>
         <width>47</width>
         <height>14</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">color: #D2691E;</string>
       </property>
       <property name="text">
        <string>Show:</string>
@@ -378,8 +421,8 @@ border-radius: 10px;
      <widget class="QComboBox" name="showTeamsCombo">
       <property name="geometry">
        <rect>
-        <x>550</x>
-        <y>421</y>
+        <x>800</x>
+        <y>401</y>
         <width>231</width>
         <height>31</height>
        </rect>
@@ -389,6 +432,70 @@ border-radius: 10px;
 border: 1px solid Gray;
 border-radius: 5px;
 color: #003366;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_4">
+     <widget class="QPushButton" name="distanceBackButton">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>550</y>
+        <width>80</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background:#D2691E ;
+color: white;
+border-radius: 10px;
+}
+QPushButton:hover:!pressed
+{
+background: #FF8C00;
+color: white;
+border-radius: 10px;
+}color: white;</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="distancesTable">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>1031</width>
+        <height>501</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addDistancesButton">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>530</y>
+        <width>201</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background:#D2691E ;
+color: white;
+border-radius: 10px;
+}
+QPushButton:hover:!pressed
+{
+background: #FF8C00;
+color: white;
+border-radius: 10px;
+}color: white;</string>
+      </property>
+      <property name="text">
+       <string>Add distances file</string>
       </property>
      </widget>
     </widget>

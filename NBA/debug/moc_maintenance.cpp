@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_maintenance_t {
-    QByteArrayData data[13];
-    char stringdata0[298];
+    QByteArrayData data[16];
+    char stringdata0[388];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,7 +43,10 @@ QT_MOC_LITERAL(8, 182, 5), // "index"
 QT_MOC_LITERAL(9, 188, 24), // "on_addTeamButton_clicked"
 QT_MOC_LITERAL(10, 213, 37), // "on_showTeamsCombo_currentInde..."
 QT_MOC_LITERAL(11, 251, 4), // "arg1"
-QT_MOC_LITERAL(12, 256, 41) // "on_teamMaintenanceTableView_d..."
+QT_MOC_LITERAL(12, 256, 41), // "on_teamMaintenanceTableView_d..."
+QT_MOC_LITERAL(13, 298, 29), // "on_distanceBackButton_clicked"
+QT_MOC_LITERAL(14, 328, 29), // "on_menuDistanceButton_clicked"
+QT_MOC_LITERAL(15, 358, 29) // "on_addDistancesButton_clicked"
 
     },
     "maintenance\0on_MenuTeamButton_clicked\0"
@@ -54,7 +57,10 @@ QT_MOC_LITERAL(12, 256, 41) // "on_teamMaintenanceTableView_d..."
     "on_SouvenirTableView_doubleClicked\0"
     "index\0on_addTeamButton_clicked\0"
     "on_showTeamsCombo_currentIndexChanged\0"
-    "arg1\0on_teamMaintenanceTableView_doubleClicked"
+    "arg1\0on_teamMaintenanceTableView_doubleClicked\0"
+    "on_distanceBackButton_clicked\0"
+    "on_menuDistanceButton_clicked\0"
+    "on_addDistancesButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -64,7 +70,7 @@ static const uint qt_meta_data_maintenance[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -72,15 +78,18 @@ static const uint qt_meta_data_maintenance[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   59,    2, 0x08 /* Private */,
-       3,    0,   60,    2, 0x08 /* Private */,
-       4,    0,   61,    2, 0x08 /* Private */,
-       5,    0,   62,    2, 0x08 /* Private */,
-       6,    0,   63,    2, 0x08 /* Private */,
-       7,    1,   64,    2, 0x08 /* Private */,
-       9,    0,   67,    2, 0x08 /* Private */,
-      10,    1,   68,    2, 0x08 /* Private */,
-      12,    1,   71,    2, 0x08 /* Private */,
+       1,    0,   74,    2, 0x08 /* Private */,
+       3,    0,   75,    2, 0x08 /* Private */,
+       4,    0,   76,    2, 0x08 /* Private */,
+       5,    0,   77,    2, 0x08 /* Private */,
+       6,    0,   78,    2, 0x08 /* Private */,
+       7,    1,   79,    2, 0x08 /* Private */,
+       9,    0,   82,    2, 0x08 /* Private */,
+      10,    1,   83,    2, 0x08 /* Private */,
+      12,    1,   86,    2, 0x08 /* Private */,
+      13,    0,   89,    2, 0x08 /* Private */,
+      14,    0,   90,    2, 0x08 /* Private */,
+      15,    0,   91,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -92,6 +101,9 @@ static const uint qt_meta_data_maintenance[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   11,
     QMetaType::Void, QMetaType::QModelIndex,    8,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -111,6 +123,9 @@ void maintenance::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 6: _t->on_addTeamButton_clicked(); break;
         case 7: _t->on_showTeamsCombo_currentIndexChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 8: _t->on_teamMaintenanceTableView_doubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 9: _t->on_distanceBackButton_clicked(); break;
+        case 10: _t->on_menuDistanceButton_clicked(); break;
+        case 11: _t->on_addDistancesButton_clicked(); break;
         default: ;
         }
     }
@@ -141,13 +156,13 @@ int maintenance::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 12)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 12;
     }
     return _id;
 }

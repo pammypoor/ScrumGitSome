@@ -1,5 +1,7 @@
 #include "dbmanager.h"
-
+#include<string>
+#include<iostream>
+using namespace std;
 DbManager::DbManager()
 {
     database = QSqlDatabase::addDatabase("QSQLITE");
@@ -186,6 +188,59 @@ QStringList DbManager::getTeams()
     return lst;
 }
 
+QVector<QString> DbManager::getFromTeams()
+{
+    QSqlQuery query;
+    QVector<QString> fromTeams;
+
+    query.prepare("SELECT bTeam FROM distances");
+    query.exec();
+    while(query.next())
+    {
+        fromTeams.push_back(query.value(0).toString());
+    }
+    return fromTeams;
+}
+QVector<QString> DbManager::getToTeams()
+{
+    QSqlQuery query;
+    QVector<QString> toTeams;
+
+    query.prepare("Select eTeam FROM distances");
+    query.exec();
+    while(query.next())
+    {
+        toTeams.push_back(query.value(0).toString());
+    }
+    return toTeams;
+}
+QVector<double> DbManager::getWeights()
+{
+    QSqlQuery query;
+    QVector<double> weights;
+
+    query.prepare("SELECT distance FROM distances");
+    query.exec();
+    while(query.next())
+    {
+        weights.push_back(query.value(0).toDouble());
+    }
+    return weights;
+}
+int DbManager::getNumOfTeams()
+{
+    QSqlQuery query;
+    int       size = -1;
+    query.prepare("SELECT COUNT(team) FROM teams");
+    query.exec();
+    if(query.next())
+    {
+        size = query.value(0).toInt();
+    }
+
+    return size;
+}
+
 bool DbManager::addTeam(team newTeam)
 {
     if(teamExist(newTeam))
@@ -274,6 +329,13 @@ QSqlQueryModel* DbManager::toTableTeam()
     return modal;
 }
 
+QSqlQueryModel * DbManager::toTableTeamName()
+{
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    modal->setQuery("SELECT team, location FROM teams ORDER BY team ASC;");
+    return modal;
+}
+
 void DbManager::updateArena(team aTeam, QString newArena)
 {
     QSqlQuery query;
@@ -305,3 +367,93 @@ void DbManager::updateCapacity(team aTeam, int newCapacity)
         qDebug() << "Update capacity failed.";
     }
 }
+
+QSqlQueryModel* DbManager::getSingleTeam(QString teamName)
+{
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QString queryString = "SELECT * FROM teams WHERE team = '" + teamName + "';";
+    modal->setQuery(queryString);
+    return modal;
+}
+
+QSqlQueryModel* DbManager::getDivision(QString division, QString sort)
+{
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QString queryString;
+    queryString = "SELECT * FROM teams WHERE division = '" + division + "' ORDER BY " + sort + " ASC;";
+    modal->setQuery(queryString);
+    return modal;
+}
+
+QSqlQueryModel* DbManager::getConference(QString conference, QString sort)
+{
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QString queryString;
+
+    if(conference != '*')
+    {
+        queryString = "SELECT * FROM teams WHERE conference = '" + conference + "' ORDER BY " + sort + " ASC;";
+    }
+    else if(conference == '*')
+    {
+        queryString = "SELECT * FROM teams ORDER BY " + sort + " ASC;";
+    }
+
+    modal->setQuery(queryString);
+    return modal;
+}
+
+QSqlQueryModel* DbManager::toTableDistances()
+{
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QString queryString;
+    queryString = "SELECT * FROM distances ORDER BY bTeam ASC;";
+    modal->setQuery(queryString);
+    return modal;
+}
+
+bool DbManager::addDistance(QString bTeam, QString bArena, QString eTeam, double distance)
+{
+    QSqlQuery query;
+    query.prepare("INSERT INTO distances(bTeam, bArena, eTeam, distance) VALUES(:bTeam, :bArena, :eTeam, :distance)");
+    query.bindValue(":bTeam", bTeam);
+    query.bindValue(":bArena", bArena);
+    query.bindValue(":eTeam", eTeam);
+    query.bindValue(":distance", distance);
+
+    if(query.exec())
+    {
+        qDebug() << "distance added.";
+        return true;
+    }
+    else
+    {
+        qDebug() << bTeam << bArena << eTeam, distance;
+        qDebug() << "distance failed.";
+        return false;
+    }
+}
+
+QSqlQueryModel* DbManager::getTeamSouvenir(QString team)
+{
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QString queryString;
+    queryString = "SELECT * FROM souvenirs WHERE team = '" + team + "' ORDER BY name ASC;";
+    modal->setQuery(queryString);
+    return modal;
+}
+
+QString DbManager::getArena(QString teamName)
+{
+    QSqlQuery query;
+
+    query.prepare("SELECT arena FROM teams WHERE team = (:teamName)");
+    query.bindValue(":teamName", teamName);
+    query.exec();
+    if(query.next())
+    {
+        return query.value(0).toString();
+    }
+    return NULL;
+}
+

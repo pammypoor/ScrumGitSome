@@ -1,0 +1,34 @@
+Denver Nuggets
+Utah Jazz
+Los Angeles Lakers
+Los Angeles Clippers
+Phoenix Suns
+Golden State Warriors
+Sacramento Kings
+Portland Trail Blazers
+Minnesota Timberwolves
+Milwaukee Bucks
+Chicago Bulls
+Indiana Pacers
+Cleveland Cavaliers
+Detroit Pistons
+Toronto Raptors
+New York Knicks
+Brooklyn Nets
+Philadelphia 76ers
+Washington Wizards
+Charlotte Hornets
+Atlanta Hawks
+Memphis Grizzlies
+New Orleans Pelicans
+Houston Rockets
+San Antonio Spurs
+Dallas Mavericks
+Oklahoma City Thunder
+Miami Heat
+Orlando Magic
+Boston Celtics
+
+
+Total distance traveled: 22463.3
+
