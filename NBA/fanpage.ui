@@ -24,117 +24,19 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background: #003366;</string>
+     <string notr="true">background: #D3D3D3;</string>
     </property>
     <property name="currentIndex">
      <number>1</number>
     </property>
     <widget class="QWidget" name="page">
-     <widget class="QFrame" name="frame">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>400</y>
-        <width>561</width>
-        <height>191</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background: Gainsboro;
-border-radius: 25px;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QPushButton" name="mainPlanTripButton">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>30</y>
-         <width>161</width>
-         <height>131</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-background: #003366;
-color: white;
-border-radius: 10px;
-}
-QPushButton:hover:!pressed
-{
-background: #17408B ;
-color: white;
-border-radius: 10px;
-}</string>
-       </property>
-       <property name="text">
-        <string>Plan Trip</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="mainViewSouvenirsButton">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>30</y>
-         <width>161</width>
-         <height>131</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-background: #003366;
-color: white;
-border-radius: 10px;
-}
-QPushButton:hover:!pressed
-{
-background: #17408B;
-color: white;
-border-radius: 10px;
-}</string>
-       </property>
-       <property name="text">
-        <string>View Souvenirs</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="mainViewTeamsButton">
-       <property name="geometry">
-        <rect>
-         <x>380</x>
-         <y>30</y>
-         <width>161</width>
-         <height>131</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-background: #003366;
-color: white;
-border-radius: 10px;
-}
-QPushButton:hover:!pressed
-{
-background: #17408B;
-color: white;
-border-radius: 10px;
-}</string>
-       </property>
-       <property name="text">
-        <string>View Teams</string>
-       </property>
-      </widget>
-     </widget>
      <widget class="QLabel" name="mainLogo">
       <property name="geometry">
        <rect>
-        <x>440</x>
-        <y>50</y>
+        <x>60</x>
+        <y>410</y>
         <width>241</width>
-        <height>241</height>
+        <height>231</height>
        </rect>
       </property>
       <property name="text">
@@ -147,21 +49,135 @@ border-radius: 10px;
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label">
+     <widget class="QPushButton" name="mainViewTeamsButton">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>310</y>
-        <width>181</width>
-        <height>51</height>
+        <x>230</x>
+        <y>330</y>
+        <width>101</width>
+        <height>101</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size: 35px;
-color: white;</string>
+       <string notr="true">QPushButton{
+background:#D2691E ;
+color: white;
+border-radius: 50px;
+}
+QPushButton:hover:!pressed
+{
+background: #FF8C00;
+color: white;
+border-radius: 50px;
+}color: white;</string>
       </property>
       <property name="text">
-       <string>Main Menu</string>
+       <string>View Teams</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="mainViewSouvenirsButton">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>220</y>
+        <width>141</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background: #D2691E ;
+color: white;
+border-radius: 70px;
+}
+QPushButton:hover:!pressed
+{
+background: #FF8C00;
+color: white;
+border-radius: 70px;
+}color: white;</string>
+      </property>
+      <property name="text">
+       <string>View Souvenirs</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="mainPlanTripButton">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>170</y>
+        <width>181</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background:#D2691E ;
+color: white;
+border-radius: 90px;
+}
+QPushButton:hover:!pressed
+{
+background: #FF8C00;
+color: white;
+border-radius: 90px;
+}color: white;</string>
+      </property>
+      <property name="text">
+       <string>Plan Trip</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lebron">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>280</y>
+        <width>211</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>lebron.PNG</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>30</y>
+        <width>481</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 75px;
+color: 	#D2691E;</string>
+      </property>
+      <property name="text">
+       <string>Let's Play NBA</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>110</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 25px;
+color: 	#D2691E;</string>
+      </property>
+      <property name="text">
+       <string>Profile: Fan</string>
       </property>
      </widget>
     </widget>
@@ -177,13 +193,13 @@ color: white;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -202,7 +218,7 @@ border-radius: 10px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">color: #D2691E;</string>
       </property>
       <property name="title">
        <string>Trip Options</string>
@@ -302,7 +318,7 @@ color: #003366;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: #D2691E;
 font-size: 25px;</string>
       </property>
       <property name="text">
@@ -319,7 +335,7 @@ font-size: 25px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: #D2691E;
 font-size: 25px;</string>
       </property>
       <property name="text">
@@ -347,13 +363,13 @@ font-size: 25px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -373,13 +389,13 @@ border-radius: 10px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -399,13 +415,13 @@ border-radius: 10px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -425,13 +441,13 @@ border-radius: 10px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -451,13 +467,13 @@ border-radius: 10px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -489,13 +505,13 @@ border-radius: 10px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -530,7 +546,7 @@ color: #003366;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">color: #D2691E;</string>
       </property>
       <property name="text">
        <string>Show by:</string>
@@ -546,7 +562,7 @@ color: #003366;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: #D2691E;
 font-size: 25px;</string>
       </property>
       <property name="text">
@@ -566,13 +582,13 @@ font-size: 25px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -591,7 +607,7 @@ border-radius: 10px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: #D2691E;
 font-size: 25px;</string>
       </property>
       <property name="text">
@@ -618,7 +634,7 @@ font-size: 25px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">color: #D2691E;</string>
       </property>
       <property name="title">
        <string>Options:</string>
@@ -807,7 +823,7 @@ color: #003366;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">color: #D2691E;</string>
       </property>
       <property name="text">
        <string>Select Team:</string>
@@ -839,7 +855,7 @@ color: #003366;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">color: #D2691E;</string>
       </property>
       <property name="title">
        <string>Total Capacity</string>
@@ -897,7 +913,7 @@ color: #003366;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: white;</string>
+       <string notr="true">background: #D2691E;</string>
       </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -911,8 +927,8 @@ color: #003366;</string>
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="sortTripGroup"/>
   <buttongroup name="sortByGroup"/>
+  <buttongroup name="sortTripGroup"/>
   <buttongroup name="conferenceGroup"/>
  </buttongroups>
 </ui>

@@ -74,7 +74,7 @@ void maintenance::loadSouvenirData()
     }
     ui->SouvenirTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->SouvenirTableView->setAlternatingRowColors(true);
-    ui->SouvenirTableView->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+    ui->SouvenirTableView->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
 
 }
 
@@ -202,7 +202,7 @@ void maintenance::loadTeamData()
     ui->teamMaintenanceTableView->setModel(DbManager::instance().toTableTeam());
     ui->teamMaintenanceTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->teamMaintenanceTableView->setAlternatingRowColors(true);
-    ui->teamMaintenanceTableView->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+    ui->teamMaintenanceTableView->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
     qDebug() << "Showing teams.";
 }
 
@@ -281,7 +281,7 @@ void maintenance::loadDistances()
     ui->distancesTable->setModel(DbManager::instance().toTableDistances());
     ui->distancesTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->distancesTable->setAlternatingRowColors(true);
-    ui->distancesTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+    ui->distancesTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
 }
 
 void maintenance::on_addDistancesButton_clicked()

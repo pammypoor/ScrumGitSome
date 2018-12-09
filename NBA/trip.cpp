@@ -19,7 +19,7 @@ trip::trip(QWidget *parent, QVector<QString> teams) :
         ui->tripTeamName->setAlignment(Qt::AlignCenter);
         ui->souvenirsTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->souvenirsTable->setAlternatingRowColors(true);
-        ui->souvenirsTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->souvenirsTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
 
         teamCount = 0;
         if(teams.size() > 0)
@@ -39,7 +39,7 @@ trip::trip(QWidget *parent, QVector<QString> teams) :
 
         ui->cartTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->cartTable->setAlternatingRowColors(true);
-        ui->cartTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->cartTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
         ui->cartTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
         ui->stackedWidget->setCurrentIndex(0);
@@ -48,7 +48,7 @@ trip::trip(QWidget *parent, QVector<QString> teams) :
         ui->reviewTeamTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Team Name"));
         ui->reviewTeamTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->reviewTeamTable->setAlternatingRowColors(true);
-        ui->reviewTeamTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->reviewTeamTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
         ui->reviewTeamTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
         ui->arenaTable->insertColumn(0);ui->arenaTable->insertColumn(0);
@@ -56,7 +56,7 @@ trip::trip(QWidget *parent, QVector<QString> teams) :
         ui->arenaTable->setHorizontalHeaderItem(1, new QTableWidgetItem("Arena Total"));
         ui->arenaTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->arenaTable->setAlternatingRowColors(true);
-        ui->arenaTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->arenaTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
         ui->arenaTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
         ui->reviewSouvenirTable->insertColumn(0); ui->reviewSouvenirTable->insertColumn(0); ui->reviewSouvenirTable->insertColumn(0);
@@ -65,7 +65,7 @@ trip::trip(QWidget *parent, QVector<QString> teams) :
         ui->reviewSouvenirTable->setHorizontalHeaderItem(2, new QTableWidgetItem("Item Amount"));
         ui->reviewSouvenirTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->reviewSouvenirTable->setAlternatingRowColors(true);
-        ui->reviewSouvenirTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->reviewSouvenirTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
         ui->reviewSouvenirTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
@@ -78,7 +78,7 @@ trip::trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisite
         ui->tripTeamName->setAlignment(Qt::AlignCenter);
         ui->souvenirsTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->souvenirsTable->setAlternatingRowColors(true);
-        ui->souvenirsTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->souvenirsTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
         teamCount = 0;
         if(teamsVisited.size() > 0)
         {
@@ -97,7 +97,7 @@ trip::trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisite
 
         ui->cartTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->cartTable->setAlternatingRowColors(true);
-        ui->cartTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->cartTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
 
         ui->stackedWidget->setCurrentIndex(0);
 
@@ -105,7 +105,7 @@ trip::trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisite
         ui->reviewTeamTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Team Name"));
         ui->reviewTeamTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->reviewTeamTable->setAlternatingRowColors(true);
-        ui->reviewTeamTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->reviewTeamTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
         ui->reviewTeamTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
         ui->arenaTable->insertColumn(0);ui->arenaTable->insertColumn(0);
@@ -113,7 +113,7 @@ trip::trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisite
         ui->arenaTable->setHorizontalHeaderItem(1, new QTableWidgetItem("Arena Total"));
         ui->arenaTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->arenaTable->setAlternatingRowColors(true);
-        ui->arenaTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->arenaTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
         ui->arenaTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
         ui->reviewSouvenirTable->insertColumn(0); ui->reviewSouvenirTable->insertColumn(0); ui->reviewSouvenirTable->insertColumn(0);
@@ -122,7 +122,7 @@ trip::trip(QWidget *parent, QVector<QString> teams, QVector<QString> teamsVisite
         ui->reviewSouvenirTable->setHorizontalHeaderItem(2, new QTableWidgetItem("Item Amount"));
         ui->reviewSouvenirTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
         ui->reviewSouvenirTable->setAlternatingRowColors(true);
-        ui->reviewSouvenirTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+        ui->reviewSouvenirTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
         ui->reviewSouvenirTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 

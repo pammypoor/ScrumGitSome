@@ -14,17 +14,17 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background: #003366 ;
-color: white;</string>
+   <string notr="true">background: #D3D3D3;
+color: #D2691E ;</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QLabel" name="logo">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>230</y>
-      <width>301</width>
-      <height>191</height>
+      <x>-130</x>
+      <y>80</y>
+      <width>431</width>
+      <height>501</height>
      </rect>
     </property>
     <property name="text">
@@ -44,7 +44,7 @@ color: white;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: white;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Copyright © 2018 NBA Properties Inc. All Rights Reserved.</string>
@@ -111,7 +111,7 @@ color: #003366;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: white;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Password:</string>
@@ -127,7 +127,7 @@ color: #003366;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: white;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Username:</string>
@@ -161,13 +161,13 @@ color: #white;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: #17408B;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -192,7 +192,7 @@ border-radius: 10px;
     </property>
     <property name="styleSheet">
      <string notr="true">font-size: 35px;
-color: white;</string>
+</string>
     </property>
     <property name="text">
      <string>Login</string>
@@ -221,7 +221,7 @@ color: white;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background: white;</string>
+     <string notr="true">background: #D2691E ;</string>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>

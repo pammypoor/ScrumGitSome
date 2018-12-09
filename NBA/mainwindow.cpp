@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     QPixmap pix(LOGOPIC);
-    ui->logo->setPixmap(pix.scaled(250,150, Qt::IgnoreAspectRatio, Qt::FastTransformation));
+    ui->logo->setPixmap(pix.scaled(650,500, Qt::IgnoreAspectRatio, Qt::FastTransformation));
     setWindowTitle("Let's Play NBA Basketball");
     ui->passwordLineEdit->setEchoMode(QLineEdit::Password);
 }

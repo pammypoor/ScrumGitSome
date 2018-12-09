@@ -9,5 +9,6 @@
 #define MSTFILE "C://Users//pammy//Documents//GitHub//ScrumGitSome//NBA//MSTFile.txt"
 #define DFSFILE "C://Users//pammy//Documents//GitHub//ScrumGitSome//NBA//DFSFile.txt"
 #define BFSFILE "C://Users//pammy//Documents//GitHub//ScrumGitSome//NBA//BFSFile.txt"
+#define LPIC "C://Users//pammy//Documents//GitHub//ScrumGitSome//NBA//lebron.png"
 
 #endif // FILESUSED_H

@@ -48,18 +48,18 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(908, 682);
-        MainWindow->setStyleSheet(QLatin1String("background: #003366 ;\n"
-"color: white;"));
+        MainWindow->setStyleSheet(QLatin1String("background: #D3D3D3;\n"
+"color: #D2691E ;"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         logo = new QLabel(centralWidget);
         logo->setObjectName(QStringLiteral("logo"));
-        logo->setGeometry(QRect(40, 230, 301, 191));
+        logo->setGeometry(QRect(-130, 80, 431, 501));
         logo->setPixmap(QPixmap(QString::fromUtf8("NBALogo.png")));
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(320, 630, 291, 20));
-        label_2->setStyleSheet(QStringLiteral("color: white;"));
+        label_2->setStyleSheet(QStringLiteral(""));
         line = new QFrame(centralWidget);
         line->setObjectName(QStringLiteral("line"));
         line->setGeometry(QRect(360, 120, 51, 411));
@@ -82,11 +82,11 @@ public:
         label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(430, 300, 51, 16));
-        label_4->setStyleSheet(QStringLiteral("color: white;"));
+        label_4->setStyleSheet(QStringLiteral(""));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(430, 270, 61, 16));
-        label_3->setStyleSheet(QStringLiteral("color: white;"));
+        label_3->setStyleSheet(QStringLiteral(""));
         showPassword = new QCheckBox(centralWidget);
         showPassword->setObjectName(QStringLiteral("showPassword"));
         showPassword->setGeometry(QRect(490, 330, 101, 20));
@@ -96,13 +96,13 @@ public:
         logOnPushButton->setObjectName(QStringLiteral("logOnPushButton"));
         logOnPushButton->setGeometry(QRect(490, 360, 391, 41));
         logOnPushButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background:DarkGrey ;\n"
+"background:#D2691E ;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}\n"
 "QPushButton:hover:!pressed\n"
 "{\n"
-"background: #17408B;\n"
+"background: #FF8C00;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}color: white;"));
@@ -112,14 +112,14 @@ public:
         QFont font;
         label->setFont(font);
         label->setStyleSheet(QLatin1String("font-size: 35px;\n"
-"color: white;"));
+""));
         label_5 = new QLabel(centralWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(550, 410, 251, 20));
         line_2 = new QFrame(centralWidget);
         line_2->setObjectName(QStringLiteral("line_2"));
         line_2->setGeometry(QRect(620, 240, 118, 3));
-        line_2->setStyleSheet(QStringLiteral("background: white;"));
+        line_2->setStyleSheet(QStringLiteral("background: #D2691E ;"));
         line_2->setFrameShape(QFrame::HLine);
         line_2->setFrameShadow(QFrame::Sunken);
         MainWindow->setCentralWidget(centralWidget);

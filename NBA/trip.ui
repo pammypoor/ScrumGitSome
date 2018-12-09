@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background: #003366;</string>
+   <string notr="true">background: #D3D3D3;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QStackedWidget" name="stackedWidget">
@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
@@ -40,7 +40,7 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: #D2691E;
 font-size: 25px;</string>
       </property>
       <property name="text">
@@ -58,13 +58,13 @@ font-size: 25px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -76,18 +76,18 @@ border-radius: 10px;
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>870</x>
+        <x>820</x>
         <y>150</y>
-        <width>47</width>
+        <width>151</width>
         <height>21</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: #D2691E;
 font-size: 20px;</string>
       </property>
       <property name="text">
-       <string>Cart</string>
+       <string>Shopping cart</string>
       </property>
      </widget>
      <widget class="QLabel" name="tripTeamName">
@@ -101,7 +101,7 @@ font-size: 20px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">font-size: 35px;
-color: white;</string>
+color: #D2691E;</string>
       </property>
       <property name="text">
        <string>TEAM NAME</string>
@@ -132,31 +132,31 @@ color: white;</string>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>430</x>
+        <x>420</x>
         <y>10</y>
         <width>191</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: #D2691E;
 font-size: 35px;</string>
       </property>
       <property name="text">
-       <string>Trip Review</string>
+       <string>Trip Details</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>80</x>
         <y>80</y>
-        <width>231</width>
+        <width>131</width>
         <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: #D2691E;
 font-size: 20px;</string>
       </property>
       <property name="text">
@@ -168,7 +168,7 @@ font-size: 20px;</string>
        <rect>
         <x>305</x>
         <y>120</y>
-        <width>341</width>
+        <width>331</width>
         <height>321</height>
        </rect>
       </property>
@@ -183,7 +183,7 @@ font-size: 20px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: #D2691E;
 font-size: 20px;</string>
       </property>
       <property name="text">
@@ -196,7 +196,7 @@ font-size: 20px;</string>
         <x>665</x>
         <y>120</y>
         <width>361</width>
-        <height>321</height>
+        <height>551</height>
        </rect>
       </property>
      </widget>
@@ -210,7 +210,7 @@ font-size: 20px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: #D2691E;
 font-size: 20px;</string>
       </property>
       <property name="text">
@@ -223,21 +223,21 @@ font-size: 20px;</string>
         <x>20</x>
         <y>120</y>
         <width>256</width>
-        <height>321</height>
+        <height>541</height>
        </rect>
       </property>
      </widget>
      <widget class="QGroupBox" name="groupBox">
       <property name="geometry">
        <rect>
-        <x>410</x>
-        <y>490</y>
+        <x>360</x>
+        <y>480</y>
         <width>221</width>
         <height>141</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">color: #D2691E;</string>
       </property>
       <property name="title">
        <string>Totals</string>
@@ -369,7 +369,7 @@ font-size: 20px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">color: #D2691E;</string>
       </property>
      </widget>
      <widget class="QLabel" name="labelName">
@@ -382,7 +382,7 @@ font-size: 20px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: #D2691E;
 font-size: 35px;</string>
       </property>
       <property name="text">

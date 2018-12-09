@@ -24,10 +24,10 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background: #003366;</string>
+     <string notr="true">background: #D3D3D3;</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="settingsPic">
@@ -49,14 +49,14 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>420</x>
+        <x>440</x>
         <y>60</y>
         <width>201</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: DarkGrey;
 font-size: 35px;</string>
       </property>
       <property name="text">
@@ -74,16 +74,16 @@ font-size: 35px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
-}</string>
+}color: white;</string>
       </property>
       <property name="text">
        <string>Modify Souvenirs</string>
@@ -100,13 +100,13 @@ border-radius: 10px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }</string>
@@ -126,16 +126,16 @@ border-radius: 10px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
-}</string>
+}color: white;</string>
       </property>
       <property name="text">
        <string>Modify Distances</string>
@@ -151,7 +151,7 @@ border-radius: 10px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: #D2691E;
 font-size: 25px;</string>
       </property>
       <property name="text">
@@ -171,13 +171,13 @@ font-size: 25px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -197,13 +197,13 @@ border-radius: 10px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -247,7 +247,7 @@ QScrollBar::handle:vertical{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">color: #D2691E;</string>
       </property>
       <property name="title">
        <string>Add Souvenir</string>
@@ -347,13 +347,13 @@ color: #003366;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>
@@ -374,16 +374,16 @@ border-radius: 10px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
-}</string>
+}color: white;</string>
       </property>
       <property name="text">
        <string>Back</string>
@@ -412,7 +412,7 @@ border-radius: 10px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">color: #D2691E;</string>
       </property>
       <property name="text">
        <string>Show:</string>
@@ -447,16 +447,16 @@ color: #003366;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
-}</string>
+}color: white;</string>
       </property>
       <property name="text">
        <string>Back</string>
@@ -483,13 +483,13 @@ border-radius: 10px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-background:DarkGrey ;
+background:#D2691E ;
 color: white;
 border-radius: 10px;
 }
 QPushButton:hover:!pressed
 {
-background: Gray;
+background: #FF8C00;
 color: white;
 border-radius: 10px;
 }color: white;</string>

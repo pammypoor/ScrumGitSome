@@ -64,7 +64,7 @@ public:
         if (trip->objectName().isEmpty())
             trip->setObjectName(QStringLiteral("trip"));
         trip->resize(1066, 707);
-        trip->setStyleSheet(QStringLiteral("background: #003366;"));
+        trip->setStyleSheet(QStringLiteral("background: #D3D3D3;"));
         centralwidget = new QWidget(trip);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         stackedWidget = new QStackedWidget(centralwidget);
@@ -75,32 +75,32 @@ public:
         label = new QLabel(page);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(250, 20, 221, 31));
-        label->setStyleSheet(QLatin1String("color: white;\n"
+        label->setStyleSheet(QLatin1String("color: #D2691E;\n"
 "font-size: 25px;"));
         tripButton = new QPushButton(page);
         tripButton->setObjectName(QStringLiteral("tripButton"));
         tripButton->setGeometry(QRect(250, 650, 181, 22));
         tripButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background:DarkGrey ;\n"
+"background:#D2691E ;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}\n"
 "QPushButton:hover:!pressed\n"
 "{\n"
-"background: Gray;\n"
+"background: #FF8C00;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}color: white;"));
         label_2 = new QLabel(page);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(870, 150, 47, 21));
-        label_2->setStyleSheet(QLatin1String("color: white;\n"
+        label_2->setGeometry(QRect(820, 150, 151, 21));
+        label_2->setStyleSheet(QLatin1String("color: #D2691E;\n"
 "font-size: 20px;"));
         tripTeamName = new QLabel(page);
         tripTeamName->setObjectName(QStringLiteral("tripTeamName"));
         tripTeamName->setGeometry(QRect(700, 50, 341, 51));
         tripTeamName->setStyleSheet(QLatin1String("font-size: 35px;\n"
-"color: white;"));
+"color: #D2691E;"));
         souvenirsTable = new QTableView(page);
         souvenirsTable->setObjectName(QStringLiteral("souvenirsTable"));
         souvenirsTable->setGeometry(QRect(5, 61, 671, 581));
@@ -112,37 +112,37 @@ public:
         page_2->setObjectName(QStringLiteral("page_2"));
         label_3 = new QLabel(page_2);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(430, 10, 191, 41));
-        label_3->setStyleSheet(QLatin1String("color: white;\n"
+        label_3->setGeometry(QRect(420, 10, 191, 41));
+        label_3->setStyleSheet(QLatin1String("color: #D2691E;\n"
 "font-size: 35px;"));
         label_4 = new QLabel(page_2);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(20, 80, 231, 31));
-        label_4->setStyleSheet(QLatin1String("color: white;\n"
+        label_4->setGeometry(QRect(80, 80, 131, 31));
+        label_4->setStyleSheet(QLatin1String("color: #D2691E;\n"
 "font-size: 20px;"));
         arenaTable = new QTableWidget(page_2);
         arenaTable->setObjectName(QStringLiteral("arenaTable"));
-        arenaTable->setGeometry(QRect(305, 120, 341, 321));
+        arenaTable->setGeometry(QRect(305, 120, 331, 321));
         label_7 = new QLabel(page_2);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setGeometry(QRect(400, 90, 171, 21));
-        label_7->setStyleSheet(QLatin1String("color: white;\n"
+        label_7->setStyleSheet(QLatin1String("color: #D2691E;\n"
 "font-size: 20px;"));
         reviewSouvenirTable = new QTableWidget(page_2);
         reviewSouvenirTable->setObjectName(QStringLiteral("reviewSouvenirTable"));
-        reviewSouvenirTable->setGeometry(QRect(665, 120, 361, 321));
+        reviewSouvenirTable->setGeometry(QRect(665, 120, 361, 551));
         label_8 = new QLabel(page_2);
         label_8->setObjectName(QStringLiteral("label_8"));
         label_8->setGeometry(QRect(700, 90, 191, 21));
-        label_8->setStyleSheet(QLatin1String("color: white;\n"
+        label_8->setStyleSheet(QLatin1String("color: #D2691E;\n"
 "font-size: 20px;"));
         reviewTeamTable = new QTableWidget(page_2);
         reviewTeamTable->setObjectName(QStringLiteral("reviewTeamTable"));
-        reviewTeamTable->setGeometry(QRect(20, 120, 256, 321));
+        reviewTeamTable->setGeometry(QRect(20, 120, 256, 541));
         groupBox = new QGroupBox(page_2);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(410, 490, 221, 141));
-        groupBox->setStyleSheet(QStringLiteral("color: white;"));
+        groupBox->setGeometry(QRect(360, 480, 221, 141));
+        groupBox->setStyleSheet(QStringLiteral("color: #D2691E;"));
         totalDistanceNum = new QLabel(groupBox);
         totalDistanceNum->setObjectName(QStringLiteral("totalDistanceNum"));
         totalDistanceNum->setGeometry(QRect(120, 30, 91, 21));
@@ -177,11 +177,11 @@ public:
         textBrowser = new QTextBrowser(page_3);
         textBrowser->setObjectName(QStringLiteral("textBrowser"));
         textBrowser->setGeometry(QRect(310, 120, 451, 481));
-        textBrowser->setStyleSheet(QStringLiteral("color: white;"));
+        textBrowser->setStyleSheet(QStringLiteral("color: #D2691E;"));
         labelName = new QLabel(page_3);
         labelName->setObjectName(QStringLiteral("labelName"));
         labelName->setGeometry(QRect(420, 60, 271, 41));
-        labelName->setStyleSheet(QLatin1String("color: white;\n"
+        labelName->setStyleSheet(QLatin1String("color: #D2691E;\n"
 "font-size: 35px;"));
         stackedWidget->addWidget(page_3);
         trip->setCentralWidget(centralwidget);
@@ -191,7 +191,7 @@ public:
 
         retranslateUi(trip);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(trip);
@@ -202,9 +202,9 @@ public:
         trip->setWindowTitle(QApplication::translate("trip", "MainWindow", nullptr));
         label->setText(QApplication::translate("trip", "Purchase Souvenirs", nullptr));
         tripButton->setText(QApplication::translate("trip", "Next Team", nullptr));
-        label_2->setText(QApplication::translate("trip", "Cart", nullptr));
+        label_2->setText(QApplication::translate("trip", "Shopping cart", nullptr));
         tripTeamName->setText(QApplication::translate("trip", "TEAM NAME", nullptr));
-        label_3->setText(QApplication::translate("trip", "Trip Review", nullptr));
+        label_3->setText(QApplication::translate("trip", "Trip Details", nullptr));
         label_4->setText(QApplication::translate("trip", "Teams visited:", nullptr));
         label_7->setText(QApplication::translate("trip", "Arenas Visited:", nullptr));
         label_8->setText(QApplication::translate("trip", "Souvenirs purchased:", nullptr));

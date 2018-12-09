@@ -73,7 +73,7 @@ public:
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
         stackedWidget->setGeometry(QRect(0, 0, 1051, 581));
-        stackedWidget->setStyleSheet(QStringLiteral("background: #003366;"));
+        stackedWidget->setStyleSheet(QStringLiteral("background: #D3D3D3;"));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
         settingsPic = new QLabel(page);
@@ -82,34 +82,34 @@ public:
         settingsPic->setPixmap(QPixmap(QString::fromUtf8("settings.png")));
         label = new QLabel(page);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(420, 60, 201, 41));
-        label->setStyleSheet(QLatin1String("color: white;\n"
+        label->setGeometry(QRect(440, 60, 201, 41));
+        label->setStyleSheet(QLatin1String("color: DarkGrey;\n"
 "font-size: 35px;"));
         menuSouvenirButton = new QPushButton(page);
         menuSouvenirButton->setObjectName(QStringLiteral("menuSouvenirButton"));
         menuSouvenirButton->setGeometry(QRect(460, 380, 171, 121));
         menuSouvenirButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background:DarkGrey ;\n"
+"background:#D2691E ;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}\n"
 "QPushButton:hover:!pressed\n"
 "{\n"
-"background: Gray;\n"
+"background: #FF8C00;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
-"}"));
+"}color: white;"));
         MenuTeamButton = new QPushButton(page);
         MenuTeamButton->setObjectName(QStringLiteral("MenuTeamButton"));
         MenuTeamButton->setGeometry(QRect(260, 380, 171, 121));
         MenuTeamButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background:DarkGrey ;\n"
+"background:#D2691E ;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}\n"
 "QPushButton:hover:!pressed\n"
 "{\n"
-"background: gray;\n"
+"background: #FF8C00;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}"));
@@ -117,20 +117,20 @@ public:
         menuDistanceButton->setObjectName(QStringLiteral("menuDistanceButton"));
         menuDistanceButton->setGeometry(QRect(660, 380, 171, 121));
         menuDistanceButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background:DarkGrey ;\n"
+"background:#D2691E ;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}\n"
 "QPushButton:hover:!pressed\n"
 "{\n"
-"background: Gray;\n"
+"background: #FF8C00;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
-"}"));
+"}color: white;"));
         label_5 = new QLabel(page);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(10, 10, 171, 31));
-        label_5->setStyleSheet(QLatin1String("color: white;\n"
+        label_5->setStyleSheet(QLatin1String("color: #D2691E;\n"
 "font-size: 25px;"));
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
@@ -139,13 +139,13 @@ public:
         teamBackButton->setObjectName(QStringLiteral("teamBackButton"));
         teamBackButton->setGeometry(QRect(960, 550, 80, 22));
         teamBackButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background:DarkGrey ;\n"
+"background:#D2691E ;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}\n"
 "QPushButton:hover:!pressed\n"
 "{\n"
-"background: Gray;\n"
+"background: #FF8C00;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}color: white;"));
@@ -153,13 +153,13 @@ public:
         addTeamButton->setObjectName(QStringLiteral("addTeamButton"));
         addTeamButton->setGeometry(QRect(460, 510, 201, 22));
         addTeamButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background:DarkGrey ;\n"
+"background:#D2691E ;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}\n"
 "QPushButton:hover:!pressed\n"
 "{\n"
-"background: Gray;\n"
+"background: #FF8C00;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}color: white;"));
@@ -183,7 +183,7 @@ public:
         groupBox_2 = new QGroupBox(page_3);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
         groupBox_2->setGeometry(QRect(20, 400, 421, 161));
-        groupBox_2->setStyleSheet(QStringLiteral("color: white;"));
+        groupBox_2->setStyleSheet(QStringLiteral("color: #D2691E;"));
         SouvenirLabelName = new QLabel(groupBox_2);
         SouvenirLabelName->setObjectName(QStringLiteral("SouvenirLabelName"));
         SouvenirLabelName->setGeometry(QRect(20, 40, 81, 16));
@@ -215,13 +215,13 @@ public:
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(160, 130, 80, 22));
         pushButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background:DarkGrey ;\n"
+"background:#D2691E ;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}\n"
 "QPushButton:hover:!pressed\n"
 "{\n"
-"background: Gray;\n"
+"background: #FF8C00;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}color: white;"));
@@ -229,16 +229,16 @@ public:
         souvenirBackButton->setObjectName(QStringLiteral("souvenirBackButton"));
         souvenirBackButton->setGeometry(QRect(960, 550, 80, 22));
         souvenirBackButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background:DarkGrey ;\n"
+"background:#D2691E ;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}\n"
 "QPushButton:hover:!pressed\n"
 "{\n"
-"background: Gray;\n"
+"background: #FF8C00;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
-"}"));
+"}color: white;"));
         SouvenirTableView = new QTableView(page_3);
         SouvenirTableView->setObjectName(QStringLiteral("SouvenirTableView"));
         SouvenirTableView->setGeometry(QRect(15, 11, 1021, 381));
@@ -246,7 +246,7 @@ public:
         label_4 = new QLabel(page_3);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(760, 410, 47, 14));
-        label_4->setStyleSheet(QStringLiteral("color: white;"));
+        label_4->setStyleSheet(QStringLiteral("color: #D2691E;"));
         showTeamsCombo = new QComboBox(page_3);
         showTeamsCombo->setObjectName(QStringLiteral("showTeamsCombo"));
         showTeamsCombo->setGeometry(QRect(800, 401, 231, 31));
@@ -261,16 +261,16 @@ public:
         distanceBackButton->setObjectName(QStringLiteral("distanceBackButton"));
         distanceBackButton->setGeometry(QRect(960, 550, 80, 22));
         distanceBackButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background:DarkGrey ;\n"
+"background:#D2691E ;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}\n"
 "QPushButton:hover:!pressed\n"
 "{\n"
-"background: Gray;\n"
+"background: #FF8C00;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
-"}"));
+"}color: white;"));
         distancesTable = new QTableView(page_4);
         distancesTable->setObjectName(QStringLiteral("distancesTable"));
         distancesTable->setGeometry(QRect(10, 10, 1031, 501));
@@ -278,13 +278,13 @@ public:
         addDistancesButton->setObjectName(QStringLiteral("addDistancesButton"));
         addDistancesButton->setGeometry(QRect(400, 530, 201, 22));
         addDistancesButton->setStyleSheet(QLatin1String("QPushButton{\n"
-"background:DarkGrey ;\n"
+"background:#D2691E ;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}\n"
 "QPushButton:hover:!pressed\n"
 "{\n"
-"background: Gray;\n"
+"background: #FF8C00;\n"
 "color: white;\n"
 "border-radius: 10px;\n"
 "}color: white;"));
@@ -296,7 +296,7 @@ public:
 
         retranslateUi(maintenance);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(maintenance);

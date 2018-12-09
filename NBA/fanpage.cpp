@@ -9,16 +9,19 @@ fanpage::fanpage(QWidget *parent) :
     QPixmap pix(MAINPIC);
     ui->mainLogo->setPixmap(pix.scaled(200,200, Qt::IgnoreAspectRatio, Qt::FastTransformation));
     ui->stackedWidget->setCurrentIndex(0);
+
+    QPixmap leb(LPIC);
+    ui->lebron->setPixmap(leb.scaled(200,200, Qt::IgnoreAspectRatio, Qt::FastTransformation));
+
     populateGraph();
 
     ui->selectedTeamsTable->insertColumn(0);
     ui->selectedTeamsTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->selectedTeamsTable->setAlternatingRowColors(true);
-    ui->selectedTeamsTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+    ui->selectedTeamsTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
     ui->selectedTeamsTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Team Name"));
     ui->selectedTeamsTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->planTripTable->setSelectionBehavior(QAbstractItemView::SelectRows);
-
 }
 
 fanpage::~fanpage()
@@ -114,7 +117,7 @@ void fanpage::loadAllSouvenirs()
     }
     ui->souvenirTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->souvenirTable->setAlternatingRowColors(true);
-    ui->souvenirTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+    ui->souvenirTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
 }
 
 void fanpage::on_teamNameSouvenirCombo_currentIndexChanged(const QString &arg1)
@@ -146,7 +149,7 @@ void fanpage::loadAllTeams()
     }
     ui->teamTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->teamTable->setAlternatingRowColors(true);
-    ui->teamTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+    ui->teamTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
 }
 
 void fanpage::loadPlanTeams()
@@ -154,7 +157,7 @@ void fanpage::loadPlanTeams()
     ui->planTripTable->setModel(DbManager::instance().toTableTeamName());
     ui->planTripTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->planTripTable->setAlternatingRowColors(true);
-    ui->planTripTable->setStyleSheet("alternate-background-color: #1E90FF; background-color: #4682B4;");
+    ui->planTripTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
 }
 
 void fanpage::on_teamNameTeamCombo_currentIndexChanged(const QString &arg1)
