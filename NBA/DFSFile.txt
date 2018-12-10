@@ -6,7 +6,6 @@ Phoenix Suns
 Golden State Warriors
 Sacramento Kings
 Portland Trail Blazers
-Seattle Supersonics
 Minnesota Timberwolves
 Milwaukee Bucks
 Chicago Bulls
@@ -31,5 +30,5 @@ Orlando Magic
 Boston Celtics
 
 
-Total distance traveled: 10423.3
+Total distance traveled: 10249.5
 

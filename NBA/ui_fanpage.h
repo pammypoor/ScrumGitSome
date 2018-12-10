@@ -315,10 +315,10 @@ public:
         page_3->setObjectName(QStringLiteral("page_3"));
         souvenirTable = new QTableView(page_3);
         souvenirTable->setObjectName(QStringLiteral("souvenirTable"));
-        souvenirTable->setGeometry(QRect(35, 61, 1031, 511));
+        souvenirTable->setGeometry(QRect(35, 61, 1031, 501));
         backSouvenirButton = new QPushButton(page_3);
         backSouvenirButton->setObjectName(QStringLiteral("backSouvenirButton"));
-        backSouvenirButton->setGeometry(QRect(980, 580, 80, 22));
+        backSouvenirButton->setGeometry(QRect(980, 570, 80, 22));
         backSouvenirButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:#D2691E ;\n"
 "color: white;\n"

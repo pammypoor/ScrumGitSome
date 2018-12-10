@@ -5,7 +5,6 @@ Chicago Bulls --- Milwaukee Bucks
 Brooklyn Nets --- Philadelphia 76ers
 Philadelphia 76ers --- Washington Wizards
 Cleveland Cavaliers --- Detroit Pistons
-Portland Trail Blazers --- Seattle Supersonics
 Chicago Bulls --- Indiana Pacers
 Houston Rockets --- San Antonio Spurs
 Dallas Mavericks --- Oklahoma City Thunder
@@ -29,4 +28,4 @@ Portland Trail Blazers --- Sacramento Kings
 Denver Nuggets --- Oklahoma City Thunder
 Los Angeles Lakers --- Utah Jazz
 
-COST MST: 8696.3
+COST MST: 8522.5

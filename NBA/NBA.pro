@@ -38,7 +38,8 @@ HEADERS += \
     maintenance.h \
     fanpage.h \
     graph.h \
-    trip.h
+    trip.h \
+    maptemplate.h
 
 FORMS += \
         mainwindow.ui \
