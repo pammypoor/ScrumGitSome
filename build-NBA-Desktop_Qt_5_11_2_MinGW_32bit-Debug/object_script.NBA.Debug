@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\dbmanager.o
+./debug\maintenance.o
+./debug\fanpage.o
+./debug\trip.o
+./debug\moc_mainwindow.o
+./debug\moc_maintenance.o
+./debug\moc_fanpage.o
+./debug\moc_trip.o
+);

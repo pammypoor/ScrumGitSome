@@ -1,3 +1,13 @@
+Orlando Magic
+Miami Heat
+Charlotte Hornets
+Atlanta Hawks
+Memphis Grizzlies
+New Orleans Pelicans
+Houston Rockets
+San Antonio Spurs
+Dallas Mavericks
+Oklahoma City Thunder
 Denver Nuggets
 Utah Jazz
 Los Angeles Lakers
@@ -17,18 +27,8 @@ New York Knicks
 Brooklyn Nets
 Philadelphia 76ers
 Washington Wizards
-Charlotte Hornets
-Atlanta Hawks
-Memphis Grizzlies
-New Orleans Pelicans
-Houston Rockets
-San Antonio Spurs
-Dallas Mavericks
-Oklahoma City Thunder
-Miami Heat
-Orlando Magic
 Boston Celtics
 
 
-Total distance traveled: 10249.5
+Total distance traveled: 10391.9
 

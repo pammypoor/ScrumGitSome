@@ -669,7 +669,7 @@ void fanpage::on_bfsButton_clicked()
 
 void fanpage::on_dfsButton_clicked()
 {
-    myGraph->dfs("Denver Nuggets");
+    myGraph->dfs("Orlando Magic");
 
     tripPage = new trip(this, tripTeams);
     tripPage->show();

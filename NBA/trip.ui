@@ -93,9 +93,9 @@ font-size: 20px;</string>
      <widget class="QLabel" name="tripTeamName">
       <property name="geometry">
        <rect>
-        <x>670</x>
+        <x>630</x>
         <y>50</y>
-        <width>381</width>
+        <width>421</width>
         <height>51</height>
        </rect>
       </property>
@@ -112,7 +112,7 @@ color: #D2691E;</string>
        <rect>
         <x>5</x>
         <y>61</y>
-        <width>661</width>
+        <width>621</width>
         <height>581</height>
        </rect>
       </property>

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'trip.ui'
 **
-** Created by: Qt User Interface Compiler version 5.10.1
+** Created by: Qt User Interface Compiler version 5.11.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,9 +10,7 @@
 #define UI_TRIP_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -98,12 +96,12 @@ public:
 "font-size: 20px;"));
         tripTeamName = new QLabel(page);
         tripTeamName->setObjectName(QStringLiteral("tripTeamName"));
-        tripTeamName->setGeometry(QRect(700, 50, 341, 51));
+        tripTeamName->setGeometry(QRect(630, 50, 421, 51));
         tripTeamName->setStyleSheet(QLatin1String("font-size: 35px;\n"
 "color: #D2691E;"));
         souvenirsTable = new QTableView(page);
         souvenirsTable->setObjectName(QStringLiteral("souvenirsTable"));
-        souvenirsTable->setGeometry(QRect(5, 61, 671, 581));
+        souvenirsTable->setGeometry(QRect(5, 61, 621, 581));
         cartTable = new QTableWidget(page);
         cartTable->setObjectName(QStringLiteral("cartTable"));
         cartTable->setGeometry(QRect(700, 180, 341, 451));
@@ -191,7 +189,7 @@ public:
 
         retranslateUi(trip);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(trip);
