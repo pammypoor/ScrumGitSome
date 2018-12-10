@@ -6,22 +6,39 @@ fanpage::fanpage(QWidget *parent) :
     ui(new Ui::fanpage)
 {
     ui->setupUi(this);
+
+    //Sets up images
     QPixmap pix(MAINPIC);
     ui->mainLogo->setPixmap(pix.scaled(200,200, Qt::IgnoreAspectRatio, Qt::FastTransformation));
     ui->stackedWidget->setCurrentIndex(0);
-
     QPixmap leb(LPIC);
     ui->lebron->setPixmap(leb.scaled(200,200, Qt::IgnoreAspectRatio, Qt::FastTransformation));
 
     populateGraph();
 
+    //sets up selected teams table
     ui->selectedTeamsTable->insertColumn(0);
+    ui->selectedTeamsTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Team Name"));
     ui->selectedTeamsTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->selectedTeamsTable->setAlternatingRowColors(true);
     ui->selectedTeamsTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
-    ui->selectedTeamsTable->setHorizontalHeaderItem(0, new QTableWidgetItem("Team Name"));
     ui->selectedTeamsTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    //sets up plan trip table
     ui->planTripTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->planTripTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->planTripTable->setAlternatingRowColors(true);
+    ui->planTripTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
+
+    //sets up souvenir table
+    ui->souvenirTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->souvenirTable->setAlternatingRowColors(true);
+    ui->souvenirTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
+
+    //sets up team tables
+    ui->teamTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->teamTable->setAlternatingRowColors(true);
+    ui->teamTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
 }
 
 fanpage::~fanpage()
@@ -42,11 +59,11 @@ void fanpage::on_mainPlanTripButton_clicked()
 
 void fanpage::populateGraph()
 {
-    typedef Graph<QString, double> Graph; //readability purposes
-    typedef Graph::Link Link;         //readability purposes
+    typedef Graph<QString, double> Graph;   //readability purposes
+    typedef Graph::Link Link;               //readability purposes
 
     vector<Link> links;
-    int sizeOfGraph = 30; // modify when adding another team or distance
+    int sizeOfGraph = 30;                   // modify when adding another team or distance
 
     QVector<QString> fromTeams;
     QVector<QString> toTeams;
@@ -115,14 +132,10 @@ void fanpage::loadAllSouvenirs()
     {
          ui->souvenirTable->setModel(DbManager::instance().toTableSingleTeamSouvenirs(ui->teamNameSouvenirCombo->currentText()));
     }
-    ui->souvenirTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    ui->souvenirTable->setAlternatingRowColors(true);
-    ui->souvenirTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
 }
 
 void fanpage::on_teamNameSouvenirCombo_currentIndexChanged(const QString &arg1)
 {
-    qDebug() << "Showing souvenirs for " << arg1 << ".";
     loadAllSouvenirs();
 }
 
@@ -132,7 +145,6 @@ void fanpage::on_backTeamButton_clicked()
     ui->teamNameTeamCombo->clear();
     ui->selectedTeamsTable->setRowCount(0);
     tripTeams.clear();
-    qDebug() << tripTeams.size();
 }
 
 void fanpage::loadAllTeams()
@@ -147,22 +159,16 @@ void fanpage::loadAllTeams()
          ui->teamTable->setModel(DbManager::instance().getSingleTeam(ui->teamNameTeamCombo->currentText()));
          loadCapacity(DbManager::instance().getSingleTeam(ui->teamNameTeamCombo->currentText()));
     }
-    ui->teamTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    ui->teamTable->setAlternatingRowColors(true);
-    ui->teamTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
+
 }
 
 void fanpage::loadPlanTeams()
 {
     ui->planTripTable->setModel(DbManager::instance().toTableTeamName());
-    ui->planTripTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    ui->planTripTable->setAlternatingRowColors(true);
-    ui->planTripTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
 }
 
 void fanpage::on_teamNameTeamCombo_currentIndexChanged(const QString &arg1)
 {
-    qDebug() << "Showing info for " << arg1 << ".";
     loadAllTeams();
     if(arg1!="Show All")
     {
@@ -679,8 +685,6 @@ QVector<QString> fanpage::getTripInFanOrder()
     if(tripTeams.size() > 1)
     {
         ShortestPath(0, 1, tripTeams.size() - 1, pathForTrip, totalCost);
-
-        qDebug() << "After recursion this list will be passed in the Trip UI";
         for(QVector<QString>::iterator it = pathForTrip.begin();
             it != pathForTrip.end(); it++)
         {
@@ -732,6 +736,7 @@ void fanpage::ShortestPath(int start, int end, int finish, QVector<QString>& pat
     }
 }
 
+//Calculates the shortest trip with teams selected. Returns a vector with teams in that order
 QVector<QString> fanpage::shortestTrip(QVector<QString> teams)
 {
     QVector<QString> toReturn;
@@ -763,6 +768,7 @@ QVector<QString> fanpage::shortestTrip(QVector<QString> teams)
     return toReturn;
 }
 
+//Checks if user wants to select all teams available or not. If checked it will add all teams to table. Unchecked removes all teams.
 void fanpage::on_checkBox_stateChanged(int arg1)
 {
     if(ui->checkBox->checkState() == Qt::Checked)

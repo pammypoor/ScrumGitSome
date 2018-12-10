@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Admin</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QStackedWidget" name="stackedWidget">
@@ -27,7 +27,7 @@
      <string notr="true">background: #D3D3D3;</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="settingsPic">
@@ -222,17 +222,7 @@ border-radius: 10px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QScrollBar{
-	border: 1px solid #999999;
-	background: white;
-	width: 10px;
-	margin: 0px 0px 0px 0px;
-}
-QScrollBar::handle:vertical{
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop: 0 rgb(32, 47, 130), stop: 0.5 rgb(32, 47, 130), stop:1 rgb(32, 47, 130));
-	min-height: 0px;
-}
-</string>
+       <string notr="true"/>
       </property>
      </widget>
     </widget>
@@ -399,7 +389,8 @@ border-radius: 10px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">
+</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
@@ -470,6 +461,9 @@ border-radius: 10px;
         <width>1031</width>
         <height>501</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
      </widget>
      <widget class="QPushButton" name="addDistancesButton">

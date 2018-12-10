@@ -7,9 +7,25 @@ maintenance::maintenance(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
+
     QPixmap pix(SETTINGSPIC);
     ui->settingsPic->setPixmap(pix.scaled(250,250, Qt::IgnoreAspectRatio, Qt::FastTransformation));
-    setWindowTitle("Let's Play NBA Basketball");
+
+    //sets design for distances table
+    ui->distancesTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->distancesTable->setAlternatingRowColors(true);
+    ui->distancesTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
+
+    //sets design for team table
+    ui->teamMaintenanceTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->teamMaintenanceTableView->setAlternatingRowColors(true);
+    ui->teamMaintenanceTableView->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
+
+    //sets design for souvenir table
+    ui->SouvenirTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->SouvenirTableView->setAlternatingRowColors(true);
+    ui->SouvenirTableView->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
+
 }
 
 maintenance::~maintenance()
@@ -72,10 +88,6 @@ void maintenance::loadSouvenirData()
     {
          ui->SouvenirTableView->setModel(DbManager::instance().toTableSingleTeamSouvenirs(ui->showTeamsCombo->currentText()));
     }
-    ui->SouvenirTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    ui->SouvenirTableView->setAlternatingRowColors(true);
-    ui->SouvenirTableView->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
-
 }
 
 void maintenance::on_SouvenirTableView_doubleClicked(const QModelIndex &index)
@@ -191,21 +203,19 @@ void maintenance::on_addTeamButton_clicked()
             loadTeamData();
 }
 
+//loads souvenirs for specific team
 void maintenance::on_showTeamsCombo_currentIndexChanged(const QString &arg1)
 {
-    qDebug() << "Showing souvenirs for " << arg1 << ".";
     loadSouvenirData();
 }
 
+//loads teams into team table
 void maintenance::loadTeamData()
 {
     ui->teamMaintenanceTableView->setModel(DbManager::instance().toTableTeam());
-    ui->teamMaintenanceTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    ui->teamMaintenanceTableView->setAlternatingRowColors(true);
-    ui->teamMaintenanceTableView->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
-    qDebug() << "Showing teams.";
 }
 
+//reads in team information from excel file into data base
 void maintenance::on_teamMaintenanceTableView_doubleClicked(const QModelIndex &index)
 {
     team aTeam;
@@ -265,25 +275,26 @@ void maintenance::on_teamMaintenanceTableView_doubleClicked(const QModelIndex &i
     }
 }
 
+//brings back to admin main menu
 void maintenance::on_distanceBackButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
 
+//changes to distance page
 void maintenance::on_menuDistanceButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
     loadDistances();
 }
 
+//Loads distances from sql database into table
 void maintenance::loadDistances()
 {
     ui->distancesTable->setModel(DbManager::instance().toTableDistances());
-    ui->distancesTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    ui->distancesTable->setAlternatingRowColors(true);
-    ui->distancesTable->setStyleSheet("alternate-background-color: 	#FF8C00; background-color: #E9967A;");
 }
 
+//Reads in an excel file for distances.
 void maintenance::on_addDistancesButton_clicked()
 {
 

@@ -6,6 +6,7 @@ Sacramento Kings
 Utah Jazz
 Denver Nuggets
 Portland Trail Blazers
+Seattle Supersonics
 Oklahoma City Thunder
 Minnesota Timberwolves
 Dallas Mavericks
@@ -30,5 +31,5 @@ Boston Celtics
 Brooklyn Nets
 
 
-Total distance traveled: 12213.8
+Total distance traveled: 12966.2
 

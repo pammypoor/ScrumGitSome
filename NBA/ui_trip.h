@@ -122,37 +122,37 @@ public:
 "font-size: 20px;"));
         arenaTable = new QTableWidget(page_2);
         arenaTable->setObjectName(QStringLiteral("arenaTable"));
-        arenaTable->setGeometry(QRect(305, 120, 331, 321));
+        arenaTable->setGeometry(QRect(335, 120, 321, 321));
         label_7 = new QLabel(page_2);
         label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setGeometry(QRect(400, 90, 171, 21));
+        label_7->setGeometry(QRect(420, 90, 171, 21));
         label_7->setStyleSheet(QLatin1String("color: #D2691E;\n"
 "font-size: 20px;"));
         reviewSouvenirTable = new QTableWidget(page_2);
         reviewSouvenirTable->setObjectName(QStringLiteral("reviewSouvenirTable"));
-        reviewSouvenirTable->setGeometry(QRect(665, 120, 361, 551));
+        reviewSouvenirTable->setGeometry(QRect(685, 120, 341, 551));
         label_8 = new QLabel(page_2);
         label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(700, 90, 191, 21));
+        label_8->setGeometry(QRect(760, 90, 191, 21));
         label_8->setStyleSheet(QLatin1String("color: #D2691E;\n"
 "font-size: 20px;"));
         reviewTeamTable = new QTableWidget(page_2);
         reviewTeamTable->setObjectName(QStringLiteral("reviewTeamTable"));
-        reviewTeamTable->setGeometry(QRect(20, 120, 256, 541));
+        reviewTeamTable->setGeometry(QRect(20, 120, 281, 541));
         groupBox = new QGroupBox(page_2);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(360, 480, 221, 141));
+        groupBox->setGeometry(QRect(360, 480, 271, 141));
         groupBox->setStyleSheet(QStringLiteral("color: #D2691E;"));
         totalDistanceNum = new QLabel(groupBox);
         totalDistanceNum->setObjectName(QStringLiteral("totalDistanceNum"));
-        totalDistanceNum->setGeometry(QRect(120, 30, 91, 21));
+        totalDistanceNum->setGeometry(QRect(170, 30, 91, 21));
         QFont font;
         font.setPointSize(10);
         totalDistanceNum->setFont(font);
         totalDistanceNum->setAutoFillBackground(false);
         totalDistanceLabel = new QLabel(groupBox);
         totalDistanceLabel->setObjectName(QStringLiteral("totalDistanceLabel"));
-        totalDistanceLabel->setGeometry(QRect(20, 30, 91, 20));
+        totalDistanceLabel->setGeometry(QRect(20, 30, 131, 20));
         totalDistanceLabel->setFont(font);
         totalDistanceLabel->setStyleSheet(QStringLiteral(""));
         label_5 = new QLabel(groupBox);
@@ -161,15 +161,15 @@ public:
         label_5->setFont(font);
         label_6 = new QLabel(groupBox);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(20, 90, 91, 16));
+        label_6->setGeometry(QRect(20, 90, 101, 16));
         label_6->setFont(font);
         totalSpent = new QLabel(groupBox);
         totalSpent->setObjectName(QStringLiteral("totalSpent"));
-        totalSpent->setGeometry(QRect(120, 60, 91, 21));
+        totalSpent->setGeometry(QRect(170, 60, 91, 21));
         totalSpent->setFont(font);
         totalArenasVisited = new QLabel(groupBox);
         totalArenasVisited->setObjectName(QStringLiteral("totalArenasVisited"));
-        totalArenasVisited->setGeometry(QRect(120, 90, 91, 16));
+        totalArenasVisited->setGeometry(QRect(170, 90, 91, 16));
         totalArenasVisited->setFont(font);
         stackedWidget->addWidget(page_2);
         page_3 = new QWidget();
@@ -191,7 +191,7 @@ public:
 
         retranslateUi(trip);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(trip);
@@ -199,7 +199,7 @@ public:
 
     void retranslateUi(QMainWindow *trip)
     {
-        trip->setWindowTitle(QApplication::translate("trip", "MainWindow", nullptr));
+        trip->setWindowTitle(QApplication::translate("trip", "Trip Review", nullptr));
         label->setText(QApplication::translate("trip", "Purchase Souvenirs", nullptr));
         tripButton->setText(QApplication::translate("trip", "Next Team", nullptr));
         label_2->setText(QApplication::translate("trip", "Shopping cart", nullptr));
@@ -210,9 +210,9 @@ public:
         label_8->setText(QApplication::translate("trip", "Souvenirs purchased:", nullptr));
         groupBox->setTitle(QApplication::translate("trip", "Totals", nullptr));
         totalDistanceNum->setText(QApplication::translate("trip", "TextLabel", nullptr));
-        totalDistanceLabel->setText(QApplication::translate("trip", "Total Distance", nullptr));
-        label_5->setText(QApplication::translate("trip", "Total Spent", nullptr));
-        label_6->setText(QApplication::translate("trip", "Total Arenas", nullptr));
+        totalDistanceLabel->setText(QApplication::translate("trip", "Total Distance:", nullptr));
+        label_5->setText(QApplication::translate("trip", "Total Spent:", nullptr));
+        label_6->setText(QApplication::translate("trip", "Total Arenas:", nullptr));
         totalSpent->setText(QApplication::translate("trip", "TextLabel", nullptr));
         totalArenasVisited->setText(QApplication::translate("trip", "TextLabel", nullptr));
         labelName->setText(QApplication::translate("trip", "TextLabel", nullptr));

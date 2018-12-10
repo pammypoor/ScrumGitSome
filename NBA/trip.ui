@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Trip Review</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background: #D3D3D3;</string>
@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
@@ -166,9 +166,9 @@ font-size: 20px;</string>
      <widget class="QTableWidget" name="arenaTable">
       <property name="geometry">
        <rect>
-        <x>305</x>
+        <x>335</x>
         <y>120</y>
-        <width>331</width>
+        <width>321</width>
         <height>321</height>
        </rect>
       </property>
@@ -176,7 +176,7 @@ font-size: 20px;</string>
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>400</x>
+        <x>420</x>
         <y>90</y>
         <width>171</width>
         <height>21</height>
@@ -193,9 +193,9 @@ font-size: 20px;</string>
      <widget class="QTableWidget" name="reviewSouvenirTable">
       <property name="geometry">
        <rect>
-        <x>665</x>
+        <x>685</x>
         <y>120</y>
-        <width>361</width>
+        <width>341</width>
         <height>551</height>
        </rect>
       </property>
@@ -203,7 +203,7 @@ font-size: 20px;</string>
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>700</x>
+        <x>760</x>
         <y>90</y>
         <width>191</width>
         <height>21</height>
@@ -222,7 +222,7 @@ font-size: 20px;</string>
        <rect>
         <x>20</x>
         <y>120</y>
-        <width>256</width>
+        <width>281</width>
         <height>541</height>
        </rect>
       </property>
@@ -232,7 +232,7 @@ font-size: 20px;</string>
        <rect>
         <x>360</x>
         <y>480</y>
-        <width>221</width>
+        <width>271</width>
         <height>141</height>
        </rect>
       </property>
@@ -245,7 +245,7 @@ font-size: 20px;</string>
       <widget class="QLabel" name="totalDistanceNum">
        <property name="geometry">
         <rect>
-         <x>120</x>
+         <x>170</x>
          <y>30</y>
          <width>91</width>
          <height>21</height>
@@ -268,7 +268,7 @@ font-size: 20px;</string>
         <rect>
          <x>20</x>
          <y>30</y>
-         <width>91</width>
+         <width>131</width>
          <height>20</height>
         </rect>
        </property>
@@ -281,7 +281,7 @@ font-size: 20px;</string>
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>Total Distance</string>
+        <string>Total Distance:</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_5">
@@ -299,7 +299,7 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="text">
-        <string>Total Spent</string>
+        <string>Total Spent:</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_6">
@@ -307,7 +307,7 @@ font-size: 20px;</string>
         <rect>
          <x>20</x>
          <y>90</y>
-         <width>91</width>
+         <width>101</width>
          <height>16</height>
         </rect>
        </property>
@@ -317,13 +317,13 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="text">
-        <string>Total Arenas</string>
+        <string>Total Arenas:</string>
        </property>
       </widget>
       <widget class="QLabel" name="totalSpent">
        <property name="geometry">
         <rect>
-         <x>120</x>
+         <x>170</x>
          <y>60</y>
          <width>91</width>
          <height>21</height>
@@ -341,7 +341,7 @@ font-size: 20px;</string>
       <widget class="QLabel" name="totalArenasVisited">
        <property name="geometry">
         <rect>
-         <x>120</x>
+         <x>170</x>
          <y>90</y>
          <width>91</width>
          <height>16</height>

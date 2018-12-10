@@ -329,6 +329,7 @@ class Graph
         //METHOD - dfs used as interface for calling the dfs algorithm
         void dfs(const VertexType& start)
         {
+            sum = 0;
             QVector<QString> dfsTeams;
             map<VertexType, bool> visited;
             dfs(findVertex(start), visited, dfsTeams);
@@ -938,7 +939,6 @@ class Graph
 //            sort(edges, edges + edges.size());
             edges.sort();
 
-            out << "MINIMUM SPANNING TREE FOR GRAPH" << endl;
             for(typename list<Edge>::iterator it = edges.begin();
                 it != edges.end(); it++)
             {

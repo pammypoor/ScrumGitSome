@@ -58,7 +58,7 @@ public:
         logo->setPixmap(QPixmap(QString::fromUtf8("NBALogo.png")));
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(320, 630, 291, 20));
+        label_2->setGeometry(QRect(320, 630, 341, 20));
         label_2->setStyleSheet(QStringLiteral(""));
         line = new QFrame(centralWidget);
         line->setObjectName(QStringLiteral("line"));
@@ -81,15 +81,15 @@ public:
 "color: #003366;"));
         label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(430, 300, 51, 16));
+        label_4->setGeometry(QRect(410, 300, 61, 16));
         label_4->setStyleSheet(QStringLiteral(""));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(430, 270, 61, 16));
+        label_3->setGeometry(QRect(410, 270, 61, 16));
         label_3->setStyleSheet(QStringLiteral(""));
         showPassword = new QCheckBox(centralWidget);
         showPassword->setObjectName(QStringLiteral("showPassword"));
-        showPassword->setGeometry(QRect(490, 330, 101, 20));
+        showPassword->setGeometry(QRect(490, 330, 141, 20));
         showPassword->setStyleSheet(QLatin1String("border: #white;\n"
 "color: #white;"));
         logOnPushButton = new QPushButton(centralWidget);
@@ -115,7 +115,7 @@ public:
 ""));
         label_5 = new QLabel(centralWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(550, 410, 251, 20));
+        label_5->setGeometry(QRect(550, 410, 281, 20));
         line_2 = new QFrame(centralWidget);
         line_2->setObjectName(QStringLiteral("line_2"));
         line_2->setGeometry(QRect(620, 240, 118, 3));

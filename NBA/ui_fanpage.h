@@ -43,6 +43,8 @@ public:
     QLabel *lebron;
     QLabel *label;
     QLabel *label_14;
+    QLabel *label_15;
+    QLabel *label_16;
     QWidget *page_2;
     QPushButton *backTripButton;
     QGroupBox *groupBox_3;
@@ -91,8 +93,8 @@ public:
     QFrame *line;
     QStatusBar *statusbar;
     QButtonGroup *sortByGroup;
-    QButtonGroup *sortTripGroup;
     QButtonGroup *conferenceGroup;
+    QButtonGroup *sortTripGroup;
 
     void setupUi(QMainWindow *fanpage)
     {
@@ -114,31 +116,31 @@ public:
         mainLogo->setScaledContents(false);
         mainViewTeamsButton = new QPushButton(page);
         mainViewTeamsButton->setObjectName(QStringLiteral("mainViewTeamsButton"));
-        mainViewTeamsButton->setGeometry(QRect(230, 330, 101, 101));
+        mainViewTeamsButton->setGeometry(QRect(390, 200, 141, 141));
         mainViewTeamsButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:#D2691E ;\n"
 "color: white;\n"
-"border-radius: 50px;\n"
+"border-radius: 70px;\n"
 "}\n"
 "QPushButton:hover:!pressed\n"
 "{\n"
 "background: #FF8C00;\n"
 "color: white;\n"
-"border-radius: 50px;\n"
+"border-radius: 70px;\n"
 "}color: white;"));
         mainViewSouvenirsButton = new QPushButton(page);
         mainViewSouvenirsButton->setObjectName(QStringLiteral("mainViewSouvenirsButton"));
-        mainViewSouvenirsButton->setGeometry(QRect(380, 220, 141, 141));
+        mainViewSouvenirsButton->setGeometry(QRect(240, 320, 101, 101));
         mainViewSouvenirsButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background: #D2691E ;\n"
 "color: white;\n"
-"border-radius: 70px;\n"
+"border-radius: 50px;\n"
 "}\n"
 "QPushButton:hover:!pressed\n"
 "{\n"
 "background: #FF8C00;\n"
 "color: white;\n"
-"border-radius: 70px;\n"
+"border-radius: 50px;\n"
 "}color: white;"));
         mainPlanTripButton = new QPushButton(page);
         mainPlanTripButton->setObjectName(QStringLiteral("mainPlanTripButton"));
@@ -161,20 +163,29 @@ public:
         lebron->setScaledContents(false);
         label = new QLabel(page);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(320, 30, 481, 81));
+        label->setGeometry(QRect(320, 10, 481, 81));
         label->setStyleSheet(QLatin1String("font-size: 75px;\n"
 "color: 	#D2691E;"));
         label_14 = new QLabel(page);
         label_14->setObjectName(QStringLiteral("label_14"));
-        label_14->setGeometry(QRect(500, 110, 141, 21));
+        label_14->setGeometry(QRect(930, 10, 141, 21));
         label_14->setStyleSheet(QLatin1String("font-size: 25px;\n"
 "color: 	#D2691E;"));
+        label_15 = new QLabel(page);
+        label_15->setObjectName(QStringLiteral("label_15"));
+        label_15->setGeometry(QRect(470, 90, 151, 41));
+        label_15->setStyleSheet(QLatin1String("font-size: 30px;\n"
+"color: 	#D2691E;"));
+        label_16 = new QLabel(page);
+        label_16->setObjectName(QStringLiteral("label_16"));
+        label_16->setGeometry(QRect(410, 580, 351, 20));
+        label_16->setStyleSheet(QStringLiteral("color: 	#D2691E;"));
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
         backTripButton = new QPushButton(page_2);
         backTripButton->setObjectName(QStringLiteral("backTripButton"));
-        backTripButton->setGeometry(QRect(980, 570, 80, 22));
+        backTripButton->setGeometry(QRect(980, 560, 80, 22));
         backTripButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:#D2691E ;\n"
 "color: white;\n"
@@ -188,7 +199,7 @@ public:
 "}color: white;"));
         groupBox_3 = new QGroupBox(page_2);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(40, 490, 581, 61));
+        groupBox_3->setGeometry(QRect(40, 490, 661, 61));
         groupBox_3->setStyleSheet(QStringLiteral("color: #D2691E;"));
         distanceButton = new QRadioButton(groupBox_3);
         sortTripGroup = new QButtonGroup(fanpage);
@@ -199,20 +210,20 @@ public:
         orderButton = new QRadioButton(groupBox_3);
         sortTripGroup->addButton(orderButton);
         orderButton->setObjectName(QStringLiteral("orderButton"));
-        orderButton->setGeometry(QRect(120, 30, 91, 20));
+        orderButton->setGeometry(QRect(150, 30, 111, 20));
         teamCombo = new QComboBox(groupBox_3);
         teamCombo->setObjectName(QStringLiteral("teamCombo"));
-        teamCombo->setGeometry(QRect(280, 30, 201, 21));
+        teamCombo->setGeometry(QRect(370, 30, 201, 21));
         teamCombo->setStyleSheet(QLatin1String("background: white;\n"
 "border: 1px solid Gray;\n"
 "border-radius: 5px;\n"
 "color: #003366;"));
         label_9 = new QLabel(groupBox_3);
         label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(220, 30, 51, 21));
+        label_9->setGeometry(QRect(300, 30, 61, 21));
         checkBox = new QCheckBox(groupBox_3);
         checkBox->setObjectName(QStringLiteral("checkBox"));
-        checkBox->setGeometry(QRect(490, 30, 72, 20));
+        checkBox->setGeometry(QRect(590, 30, 71, 20));
         planTripTable = new QTableView(page_2);
         planTripTable->setObjectName(QStringLiteral("planTripTable"));
         planTripTable->setGeometry(QRect(40, 41, 661, 431));
@@ -231,7 +242,7 @@ public:
         selectedTeamsTable->setGeometry(QRect(730, 40, 321, 431));
         tripButton = new QPushButton(page_2);
         tripButton->setObjectName(QStringLiteral("tripButton"));
-        tripButton->setGeometry(QRect(120, 560, 181, 22));
+        tripButton->setGeometry(QRect(160, 560, 181, 22));
         tripButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:#D2691E ;\n"
 "color: white;\n"
@@ -245,7 +256,7 @@ public:
 "}color: white;"));
         shortestTripButton = new QPushButton(page_2);
         shortestTripButton->setObjectName(QStringLiteral("shortestTripButton"));
-        shortestTripButton->setGeometry(QRect(340, 560, 181, 22));
+        shortestTripButton->setGeometry(QRect(380, 560, 181, 22));
         shortestTripButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:#D2691E ;\n"
 "color: white;\n"
@@ -259,7 +270,7 @@ public:
 "}color: white;"));
         minimumSpanTreeButton = new QPushButton(page_2);
         minimumSpanTreeButton->setObjectName(QStringLiteral("minimumSpanTreeButton"));
-        minimumSpanTreeButton->setGeometry(QRect(680, 500, 181, 22));
+        minimumSpanTreeButton->setGeometry(QRect(740, 500, 181, 22));
         minimumSpanTreeButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:#D2691E ;\n"
 "color: white;\n"
@@ -273,7 +284,7 @@ public:
 "}color: white;"));
         dfsButton = new QPushButton(page_2);
         dfsButton->setObjectName(QStringLiteral("dfsButton"));
-        dfsButton->setGeometry(QRect(680, 530, 181, 22));
+        dfsButton->setGeometry(QRect(740, 530, 181, 22));
         dfsButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:#D2691E ;\n"
 "color: white;\n"
@@ -287,7 +298,7 @@ public:
 "}color: white;"));
         bfsButton = new QPushButton(page_2);
         bfsButton->setObjectName(QStringLiteral("bfsButton"));
-        bfsButton->setGeometry(QRect(680, 560, 181, 22));
+        bfsButton->setGeometry(QRect(740, 560, 181, 22));
         bfsButton->setStyleSheet(QLatin1String("QPushButton{\n"
 "background:#D2691E ;\n"
 "color: white;\n"
@@ -328,7 +339,7 @@ public:
 "color: #003366;"));
         label_2 = new QLabel(page_3);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(680, 30, 47, 14));
+        label_2->setGeometry(QRect(676, 30, 51, 20));
         label_2->setStyleSheet(QStringLiteral("color: #D2691E;"));
         label_3 = new QLabel(page_3);
         label_3->setObjectName(QStringLiteral("label_3"));
@@ -369,22 +380,22 @@ public:
         sortByGroup->setObjectName(QStringLiteral("sortByGroup"));
         sortByGroup->addButton(teamTeamSortRadio);
         teamTeamSortRadio->setObjectName(QStringLiteral("teamTeamSortRadio"));
-        teamTeamSortRadio->setGeometry(QRect(20, 110, 85, 20));
+        teamTeamSortRadio->setGeometry(QRect(20, 110, 101, 20));
         teamArenaSortRadio = new QRadioButton(groupBox);
         sortByGroup->addButton(teamArenaSortRadio);
         teamArenaSortRadio->setObjectName(QStringLiteral("teamArenaSortRadio"));
-        teamArenaSortRadio->setGeometry(QRect(120, 110, 85, 20));
+        teamArenaSortRadio->setGeometry(QRect(150, 110, 111, 20));
         label_6 = new QLabel(groupBox);
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setGeometry(QRect(10, 30, 61, 16));
         teamCapacitySortRadio = new QRadioButton(groupBox);
         sortByGroup->addButton(teamCapacitySortRadio);
         teamCapacitySortRadio->setObjectName(QStringLiteral("teamCapacitySortRadio"));
-        teamCapacitySortRadio->setGeometry(QRect(220, 110, 111, 20));
+        teamCapacitySortRadio->setGeometry(QRect(270, 110, 131, 20));
         teamYearSortRadio = new QRadioButton(groupBox);
         sortByGroup->addButton(teamYearSortRadio);
         teamYearSortRadio->setObjectName(QStringLiteral("teamYearSortRadio"));
-        teamYearSortRadio->setGeometry(QRect(340, 110, 85, 20));
+        teamYearSortRadio->setGeometry(QRect(430, 110, 101, 20));
         label_7 = new QLabel(groupBox);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setGeometry(QRect(10, 80, 61, 16));
@@ -452,7 +463,7 @@ public:
 
         retranslateUi(fanpage);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
         divisionCombo->setCurrentIndex(-1);
 
 
@@ -461,7 +472,7 @@ public:
 
     void retranslateUi(QMainWindow *fanpage)
     {
-        fanpage->setWindowTitle(QApplication::translate("fanpage", "MainWindow", nullptr));
+        fanpage->setWindowTitle(QApplication::translate("fanpage", "Let's Play NBA", nullptr));
         mainLogo->setText(QString());
         mainViewTeamsButton->setText(QApplication::translate("fanpage", "View Teams", nullptr));
         mainViewSouvenirsButton->setText(QApplication::translate("fanpage", "View Souvenirs", nullptr));
@@ -469,6 +480,8 @@ public:
         lebron->setText(QString());
         label->setText(QApplication::translate("fanpage", "Let's Play NBA", nullptr));
         label_14->setText(QApplication::translate("fanpage", "Profile: Fan", nullptr));
+        label_15->setText(QApplication::translate("fanpage", "Main Menu", nullptr));
+        label_16->setText(QApplication::translate("fanpage", "Copyright \302\251 2018 NBA Properties Inc. All Rights Reserved.", nullptr));
         backTripButton->setText(QApplication::translate("fanpage", "Back", nullptr));
         groupBox_3->setTitle(QApplication::translate("fanpage", "Trip Options", nullptr));
         distanceButton->setText(QApplication::translate("fanpage", "shortest distance", nullptr));

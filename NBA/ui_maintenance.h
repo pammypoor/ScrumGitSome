@@ -166,17 +166,7 @@ public:
         teamMaintenanceTableView = new QTableView(page_2);
         teamMaintenanceTableView->setObjectName(QStringLiteral("teamMaintenanceTableView"));
         teamMaintenanceTableView->setGeometry(QRect(5, 11, 1031, 481));
-        teamMaintenanceTableView->setStyleSheet(QLatin1String("QScrollBar{\n"
-"	border: 1px solid #999999;\n"
-"	background: white;\n"
-"	width: 10px;\n"
-"	margin: 0px 0px 0px 0px;\n"
-"}\n"
-"QScrollBar::handle:vertical{\n"
-"	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop: 0 rgb(32, 47, 130), stop: 0.5 rgb(32, 47, 130), stop:1 rgb(32, 47, 130));\n"
-"	min-height: 0px;\n"
-"}\n"
-""));
+        teamMaintenanceTableView->setStyleSheet(QStringLiteral(""));
         stackedWidget->addWidget(page_2);
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
@@ -274,6 +264,7 @@ public:
         distancesTable = new QTableView(page_4);
         distancesTable->setObjectName(QStringLiteral("distancesTable"));
         distancesTable->setGeometry(QRect(10, 10, 1031, 501));
+        distancesTable->setStyleSheet(QStringLiteral(""));
         addDistancesButton = new QPushButton(page_4);
         addDistancesButton->setObjectName(QStringLiteral("addDistancesButton"));
         addDistancesButton->setGeometry(QRect(400, 530, 201, 22));
@@ -296,7 +287,7 @@ public:
 
         retranslateUi(maintenance);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(maintenance);
@@ -304,7 +295,7 @@ public:
 
     void retranslateUi(QMainWindow *maintenance)
     {
-        maintenance->setWindowTitle(QApplication::translate("maintenance", "MainWindow", nullptr));
+        maintenance->setWindowTitle(QApplication::translate("maintenance", "Admin", nullptr));
         settingsPic->setText(QString());
         label->setText(QApplication::translate("maintenance", "Maintenance", nullptr));
         menuSouvenirButton->setText(QApplication::translate("maintenance", "Modify Souvenirs", nullptr));
