@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
@@ -93,9 +93,9 @@ font-size: 20px;</string>
      <widget class="QLabel" name="tripTeamName">
       <property name="geometry">
        <rect>
-        <x>700</x>
+        <x>670</x>
         <y>50</y>
-        <width>341</width>
+        <width>381</width>
         <height>51</height>
        </rect>
       </property>
@@ -112,7 +112,7 @@ color: #D2691E;</string>
        <rect>
         <x>5</x>
         <y>61</y>
-        <width>671</width>
+        <width>661</width>
         <height>581</height>
        </rect>
       </property>
